@@ -24,11 +24,6 @@ public class montarPrato {
         this.addingredExtra = addingredExtra;
         ingr= new Produto_Ingrediente [8];
     }
-
-   
-
-   
-    
     
     double acrescentaIngrdExtra(Produto_Massa m){
         Produto_Ingrediente[] ingrExtra;
@@ -50,9 +45,6 @@ public class montarPrato {
        
         if( addprodex==true){
          custo= custo + p.getValor();
-        }
-        else{
-            custo= custo;
         }
         return custo;
 }
