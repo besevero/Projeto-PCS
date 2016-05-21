@@ -21,14 +21,13 @@ public class Pedido {
 
    
         
-        void incluirProdPed(Produto p){
-        pratos.add(p);
+    void incluirProdPed(Produto p){
+            pratos.add(p);
     }
         
-        ArrayList<Produto> mostrarPedido(){
-         
-           return pratos;
-        }
+    ArrayList<Produto> mostrarPedido(){
+        return pratos;
+    }
         
     
 

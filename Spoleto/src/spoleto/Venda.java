@@ -14,24 +14,26 @@ public class Venda {
     private String campeao_venda;
     
 
-    public Venda(double valor_venda, String campeao_venda) {
-        this.valor_venda = valor_venda;
-        this.campeao_venda = campeao_venda;
+    public Venda(double valorVenda, String maisVendido) {
+        this.valorVenda = valorVenda;
+        this.maisVendido = maisVendido;
     }
 
-    public String getCampeao_venda() {
-        return campeao_venda;
+    public String getMaisVendido() {
+        return maisVendido;
     }
 
-    public void setCampeao_venda(String campeao_venda) {
-        this.campeao_venda = campeao_venda;
+    public void setMaisVendido(String maisVendido) {
+        this.maisVendido = maisVendido;
     }
 
-    public void setValor_venda(double valor_venda) {
-        this.valor_venda = valor_venda;
+    public void setValorVenda(double valorVenda) {
+        this.valorVenda = valorVenda;
     }
-    
-    
+
+    public double getValorVenda() {
+        return valorVenda;
+    }
     
     
 }

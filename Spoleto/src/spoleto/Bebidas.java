@@ -16,15 +16,15 @@ public class Bebidas extends Produto{
     
     
     
-    ArrayList<Produto> bebid = new ArrayList();
+    ArrayList<Produto> idBebida = new ArrayList();
     public Bebidas(String nome, float valor) {
         super(nome, valor);
         
-        bebid.add(new Produto ("mate", 3.50));
-        bebid.add(new Produto ("suco de uva", 5.00));
-        bebid.add(new Produto ("suco de laranja", 5.00));
-        bebid.add(new Produto ("refrigerante", 4.50));
-        bebid.add(new Produto ("ice tea", 4.50));
+        idBebida.add(new Produto ("mate", 3.50));
+        idBebida.add(new Produto ("suco de uva", 5.00));
+        idBebida.add(new Produto ("suco de laranja", 5.00));
+        idBebida.add(new Produto ("refrigerante", 4.50));
+        idBebida.add(new Produto ("ice tea", 4.50));
         
         
     }
