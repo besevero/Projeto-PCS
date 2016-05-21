@@ -10,8 +10,8 @@ package spoleto;
  * @author PPGI
  */
 public class Venda {
-    private double valor_venda;
-    private String campeao_venda;
+    private double valorVenda;
+    private String maisVendido;
     
 
     public Venda(double valorVenda, String maisVendido) {
