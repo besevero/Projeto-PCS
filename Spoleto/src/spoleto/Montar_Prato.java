@@ -6,7 +6,7 @@
 package spoleto;
 
 
-public class Montar_Prato {
+public class Montar_Prato extends Produto{
     
     private Produto_Massa massa;
     private Produto_Ingrediente[] ingrediente;
@@ -16,7 +16,10 @@ public class Montar_Prato {
     private boolean adIngredienteExtra;
     private double custo=0.0;
     
-    public Montar_Prato(Produto_Massa m, Produto_Ingrediente[] ingr, Molho mol, Produto_Extra prodEx, boolean adProdEx, boolean adIngredExtra) {
+    public Montar_Prato(Produto_Massa m, Produto_Ingrediente[] ingr, Molho mol, 
+                        Produto_Extra prodEx, boolean adProdEx, boolean adIngredExtra, 
+                        String nome, double valor, int qtde) {
+        super(nome, valor, qtde);
         this.massa = m;
         this.ingrediente = ingr;
         this.molho = mol;
@@ -27,26 +30,38 @@ public class Montar_Prato {
     }
     
     double acrescentaIngrdExtra(Produto_Massa m){
-        Produto_Ingrediente[] ingrExtra;
+       Produto_Ingrediente[] ingrExtra;
+       
+        custo= m.getValor();
         
-        if( adIngredienteExtra==true){
-         ingrExtra= new Produto_Ingrediente[4];
-         
-         custo= m.getValor()+ 6.00;
-        }
-        else {
-            custo= m.getValor();
-        }
+        if(adIngredienteExtra == true){
+            for (int i=0; i<4; i++){ 
+                ingrExtra= new Produto_Ingrediente[4];
+                ingrExtra[i].getNome();
+        
+                if (ingrExtra[i].getQuantidade()>0){
+                    quantidade--;
+                }
+            }
+      
+           custo= m.getValor()+ 6.00;
+        }  
+        
         return custo;
-}
-    
-        
+
+    }
     
     double acrescentaprodutoExtra(Produto_Extra p){
        
-        if( adProdutoExtra==true){
-         custo= custo + p.getValor();
+        if(adIngredienteExtra == true){
+            p.getNome();
+         
+            if(p.getQuantidade()>0){
+                custo = custo + p.getValor();
+                quantidade--;
+            }
         }
+        
         return custo;
-}
+    }
 }

@@ -17,10 +17,25 @@ public class Estoque {
     public Estoque(ArrayList<Produto> prod) {
         this.prod = prod;
     }
+ 
+    int visualizarEstoqueProduto(Produto p){
      
+     return p.getQuantidade();
+ }
  
     
+    int acrescentarQtdeProduto ( Produto p, int quantidade){
+        int novaQuantidade=0;
+        novaQuantidade = p.getQuantidade() + quantidade;
+        return novaQuantidade;
+ 
+    }
    
-    
+    void visualizarTodoEstoque(Produto[] p){
+      for ( int i=0; i< p.length; i ++){
+          System.out.println(p[i].getNome() + " " + p[i].getQuantidade());
+      }
+      
+  }
     
 }
