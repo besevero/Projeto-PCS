@@ -17,14 +17,14 @@ public class Bebidas extends Produto{
     
     
     ArrayList<Produto> idBebida = new ArrayList();
-    public Bebidas(String nome, float valor) {
-        super(nome, valor);
+    public Bebidas(String nome, float valor,int quantidade) {
+        super(nome, valor, quantidade);
         
-        idBebida.add(new Produto ("mate", 3.50));
-        idBebida.add(new Produto ("suco de uva", 5.00));
-        idBebida.add(new Produto ("suco de laranja", 5.00));
-        idBebida.add(new Produto ("refrigerante", 4.50));
-        idBebida.add(new Produto ("ice tea", 4.50));
+        idBebida.add(new Produto ("mate", 3.50, 20));
+        idBebida.add(new Produto ("suco de uva", 5.00, 20));
+        idBebida.add(new Produto ("suco de laranja", 5.00, 20));
+        idBebida.add(new Produto ("refrigerante", 4.50, 20));
+        idBebida.add(new Produto ("ice tea", 4.50, 20));
         
         
     }
