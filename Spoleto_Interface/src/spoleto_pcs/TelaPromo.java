@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package spoleto_pcs;
+import Controle.ControlePromo;
 import Model.Produto;
 import Model.Pedido;
 import Model.Prato_Promocao;
@@ -14,13 +15,14 @@ public class TelaPromo extends javax.swing.JFrame {
     /**
      * Creates new form TelaPromo
      */
-    ArrayList<Produto> m = new ArrayList();
-    Prato_Promocao n = new Prato_Promocao("Mate", 3, 3, m);
-    Pedido p = new Pedido(1);
+    /*ArrayList<Produto> m = new ArrayList();
+    Prato_Promocao n = new Prato_Promocao("Mate", 3, 3, m);*/
+    Pedido pedido = new Pedido(1);
+    ControlePromo promocao = new ControlePromo(pedido, this);
     
     public TelaPromo(Pedido s) {
         initComponents();
-        p = s;
+        pedido = s;
         proximo.setEnabled(false);
     }
     public void desativar(){
@@ -203,12 +205,12 @@ public class TelaPromo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void alhoeoleoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alhoeoleoActionPerformed
-        escolha.setText(m.get(1).getNome());
+       escolha.setText(promocao.getProdutos().get(1).getNome());
        desativar();
     }//GEN-LAST:event_alhoeoleoActionPerformed
 
     private void carbonaraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carbonaraActionPerformed
-        escolha.setText(m.get(0).getNome());
+        escolha.setText(promocao.getProdutos().get(0).getNome());
         desativar();
        
        
@@ -216,10 +218,10 @@ public class TelaPromo extends javax.swing.JFrame {
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
         // TODO add your handling code here:
-       if((p.getPratos().size())%2 != 0){
-           p.getPratos().remove((p.getPratos().size()-1));
+       if((pedido.getPratos().size())%2 != 0){
+           pedido.getPratos().remove((pedido.getPratos().size()-1));
        }
-        TelaInicial TelaInicial = new TelaInicial(p);
+        TelaInicial TelaInicial = new TelaInicial(pedido);
         this.setVisible(false);
         TelaInicial.setVisible(true);
         
@@ -227,13 +229,11 @@ public class TelaPromo extends javax.swing.JFrame {
 
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
         // TODO add your handling code here:
-        for(int i=0; i<n.getPromoc().size(); i++)
-            if(n.getPromoc().get(i).getNome().equals(escolha.getText())){
-                p.getPratos().add(n.getPromoc().get(i));
-            }
-        TelaBebidas TelaBebidas = new TelaBebidas(p);
+        promocao.proximo(escolha.getText());
+        //promocao.iniciaBebida(promocao.getPedido(), this, promocao.getBebidas()); 
+       /*TelaBebidas TelaBebidas = new TelaBebidas(pedido);
         this.setVisible(false);
-        TelaBebidas.setVisible(true);
+        TelaBebidas.setVisible(true);*/
         
     }//GEN-LAST:event_proximoActionPerformed
 

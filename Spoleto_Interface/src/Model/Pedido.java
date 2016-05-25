@@ -5,6 +5,7 @@
  */
 package Model;
 
+import Controle.ControleInicial;
 import java.util.ArrayList;
 
 /**
@@ -56,5 +57,6 @@ public class Pedido {
     public void setSenha(int senha) {
         this.senha = senha;
     }
-        
+
+           
 }

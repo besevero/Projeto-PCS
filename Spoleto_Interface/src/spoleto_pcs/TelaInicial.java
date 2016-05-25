@@ -5,6 +5,7 @@
  */
 package spoleto_pcs;
 
+import Controle.ControleInicial;
 import Model.Pedido;
 import javax.swing.ImageIcon;
 
@@ -22,13 +23,15 @@ public class TelaInicial extends javax.swing.JFrame {
     
     ImageIcon favor = new ImageIcon(getClass().getResource("/Imagens/botao_favor.png"));
     ImageIcon favorClick = new ImageIcon(getClass().getResource("/Imagens/botao_favor_click.png"));
-    Pedido p = new Pedido(1);
+    
+    private Pedido pedido = new Pedido(1);
+    ControleInicial novo = new ControleInicial(pedido, this);
     /**
      * Creates new form TelaInicial
      */
     public TelaInicial(Pedido s) {
         initComponents();        
-        p = s;
+        pedido = s;
     }
 
     /**
@@ -180,9 +183,8 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_labelPratoMouseClicked
 
     private void labelPromoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelPromoMouseClicked
-       TelaPromo TelaPromo = new TelaPromo(p);
-        this.setVisible(false);
-        TelaPromo.setVisible(true);
+      novo.iniciaPromo(novo.getPedido(), this, novo.getPromo());
+      
     }//GEN-LAST:event_labelPromoMouseClicked
 
     
@@ -215,7 +217,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+           public void run() {
                 Pedido p = new Pedido(1);
                 new TelaInicial(p).setVisible(true);
             }
