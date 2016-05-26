@@ -105,9 +105,12 @@ public class TelaCartao extends javax.swing.JFrame {
 
     private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
         if(campoSenha.getText().equals("123")){
-             try{ XMLEncoder xmlEncoder= null;
-        try{ xmlEncoder = new XMLEncoder ( new FileOutputStream ("relatorio.xml"));
-        xmlEncoder.writeObject(s);
+             try{ 
+                 XMLEncoder xmlEncoder= null;
+        try{ 
+            
+            xmlEncoder = new XMLEncoder ( new FileOutputStream ("relatorio.xml"));
+            xmlEncoder.writeObject(s);
             
         }
         finally{
