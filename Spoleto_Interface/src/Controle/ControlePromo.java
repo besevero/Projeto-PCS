@@ -28,18 +28,32 @@ public class ControlePromo{
          this.pedido = pedido;
          this.promo = promo;
      }
-     public void iniciaBebida(Pedido p, TelaPromo promo, TelaBebidas bebida){
-        promo.setVisible(false);
-        bebida.setVisible(true);
+     public void iniciaBebida(Pedido p, TelaPromo promo){
+        TelaBebidas TelaBebida = new TelaBebidas(p);
+         promo.setVisible(false);
+        TelaBebida.setVisible(true);
     }
-     public void proximo(String escolha){
+     public void inicial(Pedido p, TelaPromo promo){
+        TelaInicial TelaInicial = new TelaInicial(p);
+        promo.setVisible(false);
+        TelaInicial.setVisible(true);
+     }
+     public void proximoPromo(String escolha){
          for(int i=0; i<pratos.getPromoc().size() ; i++)
             if(pratos.getPromoc().get(i).getNome().equals(escolha)){
                 pedido.getPratos().add(pratos.getPromoc().get(i));
             }
-         this.iniciaBebida(pedido, promo, bebidas);
+         this.iniciaBebida(pedido, promo);
      }
-
+     public void voltarPromo(){
+         if((pedido.getPratos().size())%2 != 0){
+           pedido.getPratos().remove((pedido.getPratos().size()-1));
+       }
+         this.inicial(pedido, promo);
+        
+        
+     }
+     
     /**
      * @return the pedido
      */

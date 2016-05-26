@@ -212,24 +212,16 @@ public class TelaPromo extends javax.swing.JFrame {
     private void carbonaraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carbonaraActionPerformed
         escolha.setText(promocao.getProdutos().get(0).getNome());
         desativar();
-       
-       
     }//GEN-LAST:event_carbonaraActionPerformed
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
         // TODO add your handling code here:
-       if((pedido.getPratos().size())%2 != 0){
-           pedido.getPratos().remove((pedido.getPratos().size()-1));
-       }
-        TelaInicial TelaInicial = new TelaInicial(pedido);
-        this.setVisible(false);
-        TelaInicial.setVisible(true);
-        
+       promocao.voltarPromo();        
     }//GEN-LAST:event_voltarActionPerformed
 
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
         // TODO add your handling code here:
-        promocao.proximo(escolha.getText());
+        promocao.proximoPromo(escolha.getText());
         //promocao.iniciaBebida(promocao.getPedido(), this, promocao.getBebidas()); 
        /*TelaBebidas TelaBebidas = new TelaBebidas(pedido);
         this.setVisible(false);
