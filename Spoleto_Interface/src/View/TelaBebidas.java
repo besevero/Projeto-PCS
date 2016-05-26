@@ -5,10 +5,8 @@
  */
 package View;
 
-import Model.Bebida;
+import Controle.ControleBebida;
 import Model.Pedido;
-import Model.Produto;
-import java.util.ArrayList;
 
 
 public class TelaBebidas extends javax.swing.JFrame {
@@ -16,10 +14,14 @@ public class TelaBebidas extends javax.swing.JFrame {
     /**
      * Creates new form TelaBebidas
      */
-    ArrayList<Produto> n = new ArrayList();
-    Bebida m = new Bebida("Mate", 3, 3, n);
     Pedido s = new Pedido(1);
+    ControleBebida bebida = new ControleBebida(s, this);
     
+    public TelaBebidas(Pedido p) {
+        initComponents();
+        s = p;
+        proximo.setEnabled(false);
+    }
     public void desativar(){
         coca.setEnabled(false);
         iceTea.setEnabled(false);
@@ -36,11 +38,7 @@ public class TelaBebidas extends javax.swing.JFrame {
         uva.setEnabled(true);
         proximo.setEnabled(false);
     }
-    public TelaBebidas(Pedido p) {
-        initComponents();
-        s = p;
-        proximo.setEnabled(false);
-    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -247,67 +245,45 @@ public class TelaBebidas extends javax.swing.JFrame {
  
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
         // TODO add your handling code here:
-        for(int i=0; i<m.getIdBebida().size(); i++)
-            if(m.getIdBebida().get(i).getNome().equals(escolhaBebida.getText())){
-                s.getPratos().add(m.getIdBebida().get(i));
-            }
-        TelaPedido TelaPedido = new TelaPedido(s);
-        this.setVisible(false);
-        TelaPedido.setVisible(true);
-        
-        
-       
+        bebida.proximoBebida(escolhaBebida.getText());
+                desativar();
     }//GEN-LAST:event_proximoActionPerformed
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
-        // TODO add your handling code here:
-        s.getPratos().remove((s.getPratos().size()-1));
-         TelaPromo TelaPromo = new TelaPromo(s);
-        this.setVisible(false);
-        TelaPromo.setVisible(true);
-        
+        bebida.voltaBebida();
+                desativar();
     }//GEN-LAST:event_voltarActionPerformed
 
     private void cocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cocaActionPerformed
-        // TODO add your handling code here:
-        n = m.getIdBebida();
-        escolhaBebida.setText(n.get(3).getNome());
-        desativar();
+        bebida.selecao(3);
+                desativar();
     }//GEN-LAST:event_cocaActionPerformed
 
     private void iceTeaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iceTeaActionPerformed
-        // TODO add your handling code here:
-        escolhaBebida.setText(n.get(4).getNome());
+        bebida.selecao(4);
         desativar();
     }//GEN-LAST:event_iceTeaActionPerformed
 
     private void laranjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laranjaActionPerformed
-        // TODO add your handling code here:
-        escolhaBebida.setText(n.get(2).getNome());
+        bebida.selecao(2);
         desativar();
     }//GEN-LAST:event_laranjaActionPerformed
 
     private void escolhaBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escolhaBebidaActionPerformed
-        // TODO add your handling code here:
        ativar();
        escolhaBebida.setText("");
     }//GEN-LAST:event_escolhaBebidaActionPerformed
 
     private void mateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mateActionPerformed
-        // TODO add your handling code here:
         desativar();
-        escolhaBebida.setText(n.get(0).getNome());
+        bebida.selecao(0);
     }//GEN-LAST:event_mateActionPerformed
 
     private void uvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uvaActionPerformed
-        // TODO add your handling code here:
+        bebida.selecao(1);
         desativar();
-        escolhaBebida.setText(n.get(1).getNome());
     }//GEN-LAST:event_uvaActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

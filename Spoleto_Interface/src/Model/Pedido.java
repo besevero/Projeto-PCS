@@ -20,8 +20,8 @@ public class Pedido {
         this.senha = senha;
     }
 
-   //public Pedido(){}
-        
+   public Pedido(){}
+   
     void incluirProdPed(Produto p){
             getPratos().add(p);
     }

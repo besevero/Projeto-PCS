@@ -5,18 +5,13 @@
  */
 package View;
 import Controle.ControlePromo;
-import Model.Produto;
 import Model.Pedido;
-import Model.Prato_Promocao;
-import java.util.ArrayList;
 
 public class TelaPromo extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaPromo
      */
-    /*ArrayList<Produto> m = new ArrayList();
-    Prato_Promocao n = new Prato_Promocao("Mate", 3, 3, m);*/
     Pedido pedido = new Pedido(1);
     ControlePromo promocao = new ControlePromo(pedido, this);
     
@@ -205,12 +200,12 @@ public class TelaPromo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void alhoeoleoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alhoeoleoActionPerformed
-       escolha.setText(promocao.getProdutos().get(1).getNome());
+       escolha.setText(promocao.selecao(1));
        desativar();
     }//GEN-LAST:event_alhoeoleoActionPerformed
 
     private void carbonaraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carbonaraActionPerformed
-        escolha.setText(promocao.getProdutos().get(0).getNome());
+        escolha.setText(promocao.selecao(1));
         desativar();
     }//GEN-LAST:event_carbonaraActionPerformed
 
@@ -222,10 +217,6 @@ public class TelaPromo extends javax.swing.JFrame {
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
         // TODO add your handling code here:
         promocao.proximoPromo(escolha.getText());
-        //promocao.iniciaBebida(promocao.getPedido(), this, promocao.getBebidas()); 
-       /*TelaBebidas TelaBebidas = new TelaBebidas(pedido);
-        this.setVisible(false);
-        TelaBebidas.setVisible(true);*/
         
     }//GEN-LAST:event_proximoActionPerformed
 

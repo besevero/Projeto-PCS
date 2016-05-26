@@ -50,8 +50,10 @@ public class ControlePromo{
            pedido.getPratos().remove((pedido.getPratos().size()-1));
        }
          this.inicial(pedido, promo);
-        
-        
+     }
+     
+     public String selecao(int i){
+         return pratos.getPromoc().get(i).getNome();
      }
      
     /**

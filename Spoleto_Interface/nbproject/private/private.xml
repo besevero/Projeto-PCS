@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/View/TelaInicial.java</file>
+            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/Model/Bebida.java</file>
+            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/Controle/ControleInicial.java</file>
+            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/Controle/ControlePromo.java</file>
+            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/View/TelaPedido.java</file>
+            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/View/TelaBebidas.java</file>
+            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/Controle/ControleBebida.java</file>
+            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/View/TelaPromo.java</file>
+        </group>
     </open-files>
 </project-private>

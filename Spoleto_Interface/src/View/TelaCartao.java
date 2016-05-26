@@ -9,7 +9,9 @@ import java.beans.XMLEncoder;
 import java.io.IOException;
 import java.io.FileOutputStream;
 import Model.Pedido;
+import Model.Produto;
 import View.TelaNotaFiscal;
+import java.util.ArrayList;
 
 
 
@@ -104,7 +106,9 @@ public class TelaCartao extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
+        
         if(campoSenha.getText().equals("123")){
+            
              try{ 
                  XMLEncoder xmlEncoder= null;
         try{ 
