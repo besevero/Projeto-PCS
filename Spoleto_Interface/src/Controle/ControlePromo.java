@@ -9,9 +9,9 @@ import Model.Pedido;
 import Model.Prato_Promocao;
 import Model.Produto;
 import java.util.ArrayList;
-import spoleto_pcs.TelaBebidas;
-import spoleto_pcs.TelaInicial;
-import spoleto_pcs.TelaPromo;
+import View.TelaBebidas;
+import View.TelaInicial;
+import View.TelaPromo;
 
 /**
  *

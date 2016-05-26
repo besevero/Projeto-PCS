@@ -6,9 +6,9 @@
 package Controle;
 
 import Model.Pedido;
-import spoleto_pcs.TelaInicial;
-import spoleto_pcs.TelaMassas;
-import spoleto_pcs.TelaPromo;
+import View.TelaInicial;
+import View.TelaMassas;
+import View.TelaPromo;
 
 /**
  *
