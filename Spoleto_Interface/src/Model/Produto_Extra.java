@@ -15,7 +15,7 @@ public class Produto_Extra extends Produto{
     
     
     ArrayList<Produto> prodExtra = new ArrayList();
-    
+    public Produto_Extra(){}
     public Produto_Extra(String nome, float valor, int quantidade) {
         super(nome, valor, quantidade);
         

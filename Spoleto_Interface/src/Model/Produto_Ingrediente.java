@@ -15,6 +15,7 @@ public class Produto_Ingrediente extends Produto{
   
      ArrayList<Produto> ingrediente = new ArrayList();
     
+     Produto_Ingrediente(){}
      
     public Produto_Ingrediente(String nome, float valor,
                                String Tipo_Ingrediente,int quantidade) {

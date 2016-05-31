@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Produto_Massa extends Produto{
 
         ArrayList<Produto> massa = new ArrayList();
-    
+    public Produto_Massa(){}
     public Produto_Massa(String nome, double valor, int quantidade) {
         super(nome, valor, quantidade);
         

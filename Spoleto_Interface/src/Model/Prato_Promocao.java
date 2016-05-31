@@ -18,7 +18,7 @@ public class Prato_Promocao extends Produto{
         promoc.add(new Produto ("Penne a Carbonara", 15.00, 30));
         promoc.add(new Produto ("Spaghetti alho e oleo", 15.00, 30));
     }
-
+    public Prato_Promocao(){}
     /**
      * @return the promoc
      */

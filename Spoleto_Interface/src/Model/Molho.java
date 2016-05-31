@@ -15,6 +15,7 @@ public class Molho extends Produto{
     
      ArrayList<Produto> molho = new ArrayList();
     
+     public Molho(){}
     public Molho(String nome, float valor, int quantidade) {
         super(nome, valor, quantidade);
         

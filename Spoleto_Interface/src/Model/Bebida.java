@@ -27,6 +27,7 @@ public class Bebida extends Produto{
         
         
     }
+    public Bebida() {}
 
     /**
      * @return the idBebida

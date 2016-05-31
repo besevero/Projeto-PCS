@@ -19,7 +19,8 @@ public class Produto {
         this.valor = valor;
         this.quantidade= quantidade;
     }
-
+    public Produto(){}
+    
     public String getNome() {
         return nome;
     }

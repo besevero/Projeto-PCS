@@ -13,7 +13,7 @@ public class Venda {
     private double valorVenda;
     private String maisVendido;
     
-
+    public Venda(){}
     public Venda(double valorVenda, String maisVendido) {
         this.valorVenda = valorVenda;
         this.maisVendido = maisVendido;
