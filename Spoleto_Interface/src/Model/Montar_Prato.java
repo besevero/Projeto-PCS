@@ -15,7 +15,7 @@ public class Montar_Prato extends Produto{
     private boolean adProdutoExtra;
     private boolean adIngredienteExtra;
     private double custo=0.0;
-    
+    public Montar_Prato(){}
     public Montar_Prato(Produto_Massa m, Produto_Ingrediente[] ingr, Molho mol, 
                         Produto_Extra prodEx, boolean adProdEx, boolean adIngredExtra, 
                         String nome, double valor, int qtde) {

@@ -17,7 +17,7 @@ public class Estoque {
     public Estoque(ArrayList<Produto> prod) {
         this.prod = prod;
     }
- 
+    public Estoque(){}
     int visualizarEstoqueProduto(Produto p){
      
      return p.getQuantidade();

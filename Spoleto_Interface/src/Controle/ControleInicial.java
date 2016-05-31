@@ -30,11 +30,7 @@ public class ControleInicial{
         inicial.setVisible(false);
         promo.setVisible(true);
     }
-   /* public void iniciaMassa(Pedido p, TelaInicial inicial, TelaMassas massa){
-        inicial.setVisible(false);
-        massa.setVisible(true);
-    }*/
-
+  
     public Pedido getPedido() {
         return pedido;
     }
