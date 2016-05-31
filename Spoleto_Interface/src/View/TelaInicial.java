@@ -177,9 +177,8 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void labelPratoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelPratoMouseClicked
         // TODO add your handling code here:
-        TelaMassas TelaMassas = new TelaMassas(p);
-        this.setVisible(false);
-        TelaMassas.setVisible(true);
+        novo.telaMassa(p);
+        
     }//GEN-LAST:event_labelPratoMouseClicked
 
     private void labelPromoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelPromoMouseClicked

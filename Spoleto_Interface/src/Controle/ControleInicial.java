@@ -7,6 +7,7 @@ package Controle;
 
 import Model.Pedido;
 import View.TelaInicial;
+import View.TelaMassas;
 import View.TelaPromo;
 
 /**
@@ -29,6 +30,11 @@ public class ControleInicial{
         TelaPromo promo = new TelaPromo(p);
         inicial.setVisible(false);
         promo.setVisible(true);
+    }
+    public void telaMassa(Pedido p){
+        TelaMassas TelaMassa = new TelaMassas(p);
+        inicial.setVisible(false);
+        TelaMassa.setVisible(true);
     }
   
     public Pedido getPedido() {
