@@ -24,14 +24,13 @@ public class TelaInicial extends javax.swing.JFrame {
     ImageIcon favor = new ImageIcon(getClass().getResource("/Imagens/botao_favor.png"));
     ImageIcon favorClick = new ImageIcon(getClass().getResource("/Imagens/botao_favor_click.png"));
     
-    Pedido p = new Pedido(1);
-    ControleInicial novo = new ControleInicial(p, this);
+    ControleInicial novo = new ControleInicial(this);
     /**
      * Creates new form TelaInicial
      */
     public TelaInicial(Pedido s) {
         initComponents();        
-        p = s;
+       
     }
 
     /**
@@ -176,16 +175,13 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_labelFavorMouseExited
 
     private void labelPratoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelPratoMouseClicked
-        // TODO add your handling code here:
-        novo.telaMassa(p);
-        
+        novo.telaMassa();
     }//GEN-LAST:event_labelPratoMouseClicked
 
     private void labelPromoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelPromoMouseClicked
-       novo.iniciaPromo(p);
+       novo.iniciaPromo();
     }//GEN-LAST:event_labelPromoMouseClicked
 
-    
     /**
      * @param args the command line arguments
      */

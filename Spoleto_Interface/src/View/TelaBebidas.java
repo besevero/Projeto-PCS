@@ -14,8 +14,7 @@ public class TelaBebidas extends javax.swing.JFrame {
     /**
      * Creates new form TelaBebidas
      */
-    Pedido p = new Pedido(1);
-    ControleBebida novo = new ControleBebida(p, this);
+    ControleBebida novo = new ControleBebida(this);
             
     public void desativar(){
         coca.setEnabled(false);
@@ -35,7 +34,6 @@ public class TelaBebidas extends javax.swing.JFrame {
     }
     public TelaBebidas(Pedido s) {
         initComponents();
-        p = s;
         proximo.setEnabled(false);
     }
     
@@ -244,12 +242,12 @@ public class TelaBebidas extends javax.swing.JFrame {
  
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
         // TODO add your handling code here:
-        novo.proximoBebida(escolhaBebida.getText(), p);
+        novo.proximoBebida(escolhaBebida.getText());
     }//GEN-LAST:event_proximoActionPerformed
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
         // TODO add your handling code here:
-        novo.voltaBebida(p);
+        novo.voltaBebida();
     }//GEN-LAST:event_voltarActionPerformed
 
     private void cocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cocaActionPerformed

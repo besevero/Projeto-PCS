@@ -15,15 +15,13 @@ import javax.swing.ImageIcon;
  */
 public class TelaMassas extends javax.swing.JFrame {
     
-    private Pedido p;
-    private ControleTelaMassas novo = new ControleTelaMassas(p, this);
+    private ControleTelaMassas novo = new ControleTelaMassas(this);
     
     /**
      * Creates new form TelaMassas
      */
     public TelaMassas(Pedido s) {
         initComponents();
-        p = s;
     }
     
     public void desativar(){
@@ -383,7 +381,7 @@ public class TelaMassas extends javax.swing.JFrame {
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
         // TODO add your handling code here:
-        TelaInicial TelaInicial = new TelaInicial(p);
+        TelaInicial TelaInicial = new TelaInicial(new Pedido(1));
         TelaInicial.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_voltarActionPerformed

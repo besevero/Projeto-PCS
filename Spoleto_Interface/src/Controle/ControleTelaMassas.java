@@ -24,14 +24,14 @@ public class ControleTelaMassas {
     private Produto_Massa massa = new Produto_Massa("Mate", 3, 3);
      
     
-    public ControleTelaMassas(Pedido p, TelaMassas TelaMassas) {
-        this.pedido = p;
+    public ControleTelaMassas(TelaMassas TelaMassas) {
+        this.pedido = new Pedido(1);
         this.TelaMassas = TelaMassas;
     }
-    public void telaIngredientes(Pedido p){
+    public void telaIngredientes(){
         TelaIngredientes TelaIngredientes = new TelaIngredientes();
         TelaIngredientes.setVisible(true);
-        this.setVisible(false);
+        TelaMassas.setVisible(false);
     }
     
 }

@@ -28,8 +28,8 @@ public class ControleInicial{
         inicial.setVisible(false);
         promo.setVisible(true);
     }
-    public void telaMassa(Pedido p){
-        TelaMassas TelaMassa = new TelaMassas(p);
+    public void telaMassa(){
+        TelaMassas TelaMassa = new TelaMassas(pedido);
         inicial.setVisible(false);
         TelaMassa.setVisible(true);
     }
