@@ -24,34 +24,34 @@ public class ControleBebida {
      private ArrayList<Produto> produtos = new ArrayList();
      private Bebida bebida = new Bebida("Mate", 1, 1, produtos);
      
-     public ControleBebida(Pedido pedido, TelaBebidas TelaBebidas){
-         this.pedido = pedido;
+     public ControleBebida(TelaBebidas TelaBebidas){
+         this.pedido = new Pedido(1);
          this.TelaBebidas = TelaBebidas;
      }
      
-     public void iniciaPedido(Pedido p){
-        TelaPedido TelaPedido = new TelaPedido(p);
+     public void iniciaPedido(){
+        TelaPedido TelaPedido = new TelaPedido(pedido);
         TelaBebidas.setVisible(false);
         TelaPedido.setVisible(true);
      }
-     public void iniciaPromocao(Pedido p){
-        TelaPromo TelaPromo = new TelaPromo(p);
+     public void iniciaPromocao(){
+        TelaPromo TelaPromo = new TelaPromo(pedido);
         TelaBebidas.setVisible(false);
         TelaPromo.setVisible(true);
      }
-     public void proximoBebida(String escolha, Pedido p){
+     public void proximoBebida(String escolha){
             for(int i=0; i<bebida.getIdBebida().size(); i++){
                 if(bebida.getIdBebida().get(i).getNome().equals(escolha)){
-                    p.getPratos().add(bebida.getIdBebida().get(i));
+                    pedido.getPratos().add(bebida.getIdBebida().get(i));
                     
                 }
                 
             }
-            this.iniciaPedido(p);
+            this.iniciaPedido();
      }
-     public void voltaBebida(Pedido p){
-         p.getPratos().remove((p.getPratos().size()-1));
-         this.iniciaPromocao(p);
+     public void voltaBebida(){
+         pedido.getPratos().remove((pedido.getPratos().size()-1));
+         this.iniciaPromocao();
      }
      public String selecao(int i){
          return bebida.getIdBebida().get(i).getNome();

@@ -21,7 +21,7 @@ public class ControlePedido {
     private TelaPedido TelaPedido;
     
     public ControlePedido(TelaPedido TelaPedido){
-        this.pedido = new pedido(1);
+        this.pedido = new Pedido(1);
         this.TelaPedido = TelaPedido;
     }
     
@@ -31,13 +31,13 @@ public class ControlePedido {
                     + " ------- " + p.getPratos().get(i).getValor()));
         }
     }
-    public void inicial(Pedido p){
-        TelaInicial TelaInicial = new TelaInicial(p);
+    public void inicial(){
+        TelaInicial TelaInicial = new TelaInicial(pedido);
         TelaPedido.setVisible(false);
         TelaInicial.setVisible(true);
     }
-    public void gerarPedido(Pedido p){
-        TelaPagamento TelaPagamento = new TelaPagamento(p);
+    public void gerarPedido(){
+        TelaPagamento TelaPagamento = new TelaPagamento(pedido);
         TelaPedido.setVisible(false);
         TelaPagamento.setVisible(true);
     }

@@ -15,7 +15,7 @@
    <void method="add">
     <object class="Model.Produto">
      <void property="nome">
-      <string>Ice tea</string>
+      <string>Suco de laranja</string>
      </void>
      <void property="quantidade">
       <int>20</int>
