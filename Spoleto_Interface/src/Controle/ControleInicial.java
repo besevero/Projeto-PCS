@@ -18,16 +18,13 @@ public class ControleInicial{
     
     private Pedido pedido;
     private TelaInicial inicial;
-    //private TelaMassas TelaMassa = new TelaMassas(pedido);
-    
-    
-            
-    public ControleInicial(Pedido pedido, TelaInicial inicial){
-        this.pedido = pedido;
+
+    public ControleInicial(TelaInicial inicial){
+        this.pedido = new Pedido(1);
         this.inicial = inicial;
     }
-    public void iniciaPromo(Pedido p){
-        TelaPromo promo = new TelaPromo(p);
+    public void iniciaPromo(){
+        TelaPromo promo = new TelaPromo(pedido);
         inicial.setVisible(false);
         promo.setVisible(true);
     }

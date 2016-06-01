@@ -628,7 +628,7 @@ public class TelaIngredientes extends javax.swing.JFrame {
     private void alcaparraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alcaparraActionPerformed
         // TODO add your handling code here:
         //jButton13.setIcon(prato);
-        jButton39.setText("<html>Cappelletti de Queijo com Presunto</html>");
+        jButton39.setText("Cappelletti de Queijo com Presunto");
     }//GEN-LAST:event_alcaparraActionPerformed
 
     private void azeitonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_azeitonaActionPerformed
