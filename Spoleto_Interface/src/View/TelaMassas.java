@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controle.ControleTelaMassas;
 import Model.Pedido;
 import javax.swing.ImageIcon;
 
@@ -15,6 +16,8 @@ import javax.swing.ImageIcon;
 public class TelaMassas extends javax.swing.JFrame {
     
     private Pedido p;
+    private ControleTelaMassas novo = new ControleTelaMassas(p, this);
+    
     /**
      * Creates new form TelaMassas
      */
@@ -325,9 +328,7 @@ public class TelaMassas extends javax.swing.JFrame {
 
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
         // TODO add your handling code here:
-        TelaIngredientes TelaIngredientes = new TelaIngredientes();
-        TelaIngredientes.setVisible(true);
-        this.setVisible(false);
+        
     }//GEN-LAST:event_proximoActionPerformed
 
     private void farfalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_farfalleActionPerformed

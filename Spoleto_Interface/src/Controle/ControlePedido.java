@@ -20,8 +20,8 @@ public class ControlePedido {
    private Pedido pedido;
     private TelaPedido TelaPedido;
     
-    public ControlePedido(Pedido pedido, TelaPedido TelaPedido){
-        this.pedido = pedido;
+    public ControlePedido(TelaPedido TelaPedido){
+        this.pedido = new pedido(1);
         this.TelaPedido = TelaPedido;
     }
     
