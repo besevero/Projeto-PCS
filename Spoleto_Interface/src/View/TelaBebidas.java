@@ -34,6 +34,7 @@ public class TelaBebidas extends javax.swing.JFrame {
     }
     public TelaBebidas(Pedido s) {
         initComponents();
+        novo.setPedido(s);
         proximo.setEnabled(false);
     }
     

@@ -30,19 +30,19 @@ public class ControleBebida {
      }
      
      public void iniciaPedido(){
-        TelaPedido TelaPedido = new TelaPedido(pedido);
-        TelaBebidas.setVisible(false);
+        TelaPedido TelaPedido = new TelaPedido(getPedido());
+        getTelaBebidas().setVisible(false);
         TelaPedido.setVisible(true);
      }
      public void iniciaPromocao(){
-        TelaPromo TelaPromo = new TelaPromo(pedido);
-        TelaBebidas.setVisible(false);
+        TelaPromo TelaPromo = new TelaPromo(getPedido());
+        getTelaBebidas().setVisible(false);
         TelaPromo.setVisible(true);
      }
      public void proximoBebida(String escolha){
-            for(int i=0; i<bebida.getIdBebida().size(); i++){
-                if(bebida.getIdBebida().get(i).getNome().equals(escolha)){
-                    pedido.getPratos().add(bebida.getIdBebida().get(i));
+            for(int i=0; i<getBebida().getIdBebida().size(); i++){
+                if(getBebida().getIdBebida().get(i).getNome().equals(escolha)){
+                    getPedido().getPratos().add(getBebida().getIdBebida().get(i));
                     
                 }
                 
@@ -50,11 +50,67 @@ public class ControleBebida {
             this.iniciaPedido();
      }
      public void voltaBebida(){
-         pedido.getPratos().remove((pedido.getPratos().size()-1));
+         getPedido().getPratos().remove((getPedido().getPratos().size()-1));
          this.iniciaPromocao();
      }
      public String selecao(int i){
-         return bebida.getIdBebida().get(i).getNome();
+         return getBebida().getIdBebida().get(i).getNome();
      }
+
+    /**
+     * @return the pedido
+     */
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    /**
+     * @param pedido the pedido to set
+     */
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
+
+    /**
+     * @return the TelaBebidas
+     */
+    public TelaBebidas getTelaBebidas() {
+        return TelaBebidas;
+    }
+
+    /**
+     * @param TelaBebidas the TelaBebidas to set
+     */
+    public void setTelaBebidas(TelaBebidas TelaBebidas) {
+        this.TelaBebidas = TelaBebidas;
+    }
+
+    /**
+     * @return the produtos
+     */
+    public ArrayList<Produto> getProdutos() {
+        return produtos;
+    }
+
+    /**
+     * @param produtos the produtos to set
+     */
+    public void setProdutos(ArrayList<Produto> produtos) {
+        this.produtos = produtos;
+    }
+
+    /**
+     * @return the bebida
+     */
+    public Bebida getBebida() {
+        return bebida;
+    }
+
+    /**
+     * @param bebida the bebida to set
+     */
+    public void setBebida(Bebida bebida) {
+        this.bebida = bebida;
+    }
 }
 

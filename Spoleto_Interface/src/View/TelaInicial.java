@@ -30,7 +30,7 @@ public class TelaInicial extends javax.swing.JFrame {
      */
     public TelaInicial(Pedido s) {
         initComponents();        
-       
+        novo.setPedido(s);
     }
 
     /**

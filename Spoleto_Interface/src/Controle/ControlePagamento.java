@@ -19,33 +19,60 @@ public class ControlePagamento {
     private Pedido pedido;
     private TelaPagamento TelaPagamento;
     
-    public ControlePagamento(Pedido pedido, TelaPagamento TelaPagamento){
-        this.pedido = pedido;
+    public ControlePagamento(TelaPagamento TelaPagamento){
+        this.pedido = new Pedido(0);
         this.TelaPagamento = TelaPagamento;
     }
-
-    public void insereListaPgto(DefaultListModel modeloPedido, Pedido p){
-        for(int i = 0; i<p.getPratos().size();i++){
-            modeloPedido.addElement((p.getPratos().get(i).getNome()
-                    + " ------- " + p.getPratos().get(i).getValor()));
+    public void insereListaPgto(DefaultListModel modeloPedido){
+        for(int i = 0; i<getPedido().getPratos().size();i++){
+            modeloPedido.addElement((getPedido().getPratos().get(i).getNome()
+                    + " ------- " + getPedido().getPratos().get(i).getValor()));
         }
         
     }
-    public double totalCompra(Pedido p){
+    public double totalCompra(){
         double totalCompra = 0;
-         for(int i = 0; i<p.getPratos().size();i++){
-                 totalCompra = totalCompra + p.getPratos().get(i).getValor();
+         for(int i = 0; i<getPedido().getPratos().size();i++){
+                 totalCompra = totalCompra + getPedido().getPratos().get(i).getValor();
          }
          return totalCompra;
     }
-    public void insereCartao(Pedido p){
-        TelaCartao TelaCartao = new TelaCartao(p);
+    public void insereCartao(){
+        TelaCartao TelaCartao = new TelaCartao(pedido);
         TelaCartao.setVisible(true);
-        TelaPagamento.setVisible(false);
+        getTelaPagamento().setVisible(false);
     }
-    public void inicio(Pedido p){
-        TelaInicial TelaInicial = new TelaInicial(p);
+    public void inicio(){
+        TelaInicial TelaInicial = new TelaInicial(pedido);
         TelaInicial.setVisible(true);
-        TelaPagamento.setVisible(false);
+        getTelaPagamento().setVisible(false);
+    }
+
+    /**
+     * @return the pedido
+     */
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    /**
+     * @param pedido the pedido to set
+     */
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
+
+    /**
+     * @return the TelaPagamento
+     */
+    public TelaPagamento getTelaPagamento() {
+        return TelaPagamento;
+    }
+
+    /**
+     * @param TelaPagamento the TelaPagamento to set
+     */
+    public void setTelaPagamento(TelaPagamento TelaPagamento) {
+        this.TelaPagamento = TelaPagamento;
     }
 }

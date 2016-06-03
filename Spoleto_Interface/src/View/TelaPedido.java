@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controle.ControlePedido;
 import Model.Pedido;
 import javax.swing.DefaultListModel;
 
@@ -18,17 +19,12 @@ public class TelaPedido extends javax.swing.JFrame {
     /**
      * Creates new form TelaPedido
      */
-    Pedido s = new Pedido(1);
-    
+    ControlePedido novo = new ControlePedido(this);
     public TelaPedido(Pedido p) {
         initComponents();
-        s = p;
-       
+        novo.setPedido(p);
         listaPedido.setModel(modeloPedido);
-        for(int i = 0; i<s.getPratos().size();i++){
-            modeloPedido.addElement((s.getPratos().get(i).getNome() 
-                    + " ------- " + s.getPratos().get(i).getValor()));
-        }
+        novo.insereLista(modeloPedido);
     }
 
     @SuppressWarnings("unchecked")
@@ -127,15 +123,11 @@ public class TelaPedido extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void adcionarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adcionarPedidoActionPerformed
-        TelaInicial TelaInicial = new TelaInicial(s);
-        this.setVisible(false);
-        TelaInicial.setVisible(true);
+        novo.inicial();
     }//GEN-LAST:event_adcionarPedidoActionPerformed
 
     private void gerarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarPedidoActionPerformed
-        TelaPagamento TelaPagamento = new TelaPagamento(s);
-        this.setVisible(false);
-        TelaPagamento.setVisible(true);
+        novo.gerarPedido();
     }//GEN-LAST:event_gerarPedidoActionPerformed
 
     /**
