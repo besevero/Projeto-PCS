@@ -21,7 +21,7 @@ public class TelaEstoque extends javax.swing.JFrame {
     public TelaEstoque() {
         
         Pedido p = new Pedido(0);
-        ControleEstoque novo = new ControleEstoque(p, this);
+        ControleEstoque novo = new ControleEstoque(this);
         
         initComponents();
     }

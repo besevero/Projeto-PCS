@@ -22,7 +22,7 @@ public class ControleBebida {
     private Pedido pedido;
      private TelaBebidas TelaBebidas;
      private ArrayList<Produto> produtos = new ArrayList();
-     private Bebida bebida = new Bebida("Mate", 1, 1, produtos);
+     private Bebida bebida = new Bebida();
      
      public ControleBebida(TelaBebidas TelaBebidas){
          this.pedido = new Pedido(1);
