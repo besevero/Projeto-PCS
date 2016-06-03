@@ -25,20 +25,48 @@ public class ControlePedido {
         this.TelaPedido = TelaPedido;
     }
     
-    public void insereLista(DefaultListModel modeloPedido, Pedido p){
-        for(int i = 0; i<p.getPratos().size();i++){
-            modeloPedido.addElement((p.getPratos().get(i).getNome() 
-                    + " ------- " + p.getPratos().get(i).getValor()));
+    public void insereLista(DefaultListModel modeloPedido){
+        for(int i = 0; i<getPedido().getPratos().size();i++){
+            modeloPedido.addElement((getPedido().getPratos().get(i).getNome() 
+                    + " ------- " + getPedido().getPratos().get(i).getValor()));
         }
     }
     public void inicial(){
-        TelaInicial TelaInicial = new TelaInicial(pedido);
-        TelaPedido.setVisible(false);
+        TelaInicial TelaInicial = new TelaInicial(getPedido());
+        getTelaPedido().setVisible(false);
         TelaInicial.setVisible(true);
     }
     public void gerarPedido(){
-        TelaPagamento TelaPagamento = new TelaPagamento(pedido);
-        TelaPedido.setVisible(false);
+        TelaPagamento TelaPagamento = new TelaPagamento(getPedido());
+        getTelaPedido().setVisible(false);
         TelaPagamento.setVisible(true);
+    }
+
+    /**
+     * @return the pedido
+     */
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    /**
+     * @param pedido the pedido to set
+     */
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
+
+    /**
+     * @return the TelaPedido
+     */
+    public TelaPedido getTelaPedido() {
+        return TelaPedido;
+    }
+
+    /**
+     * @param TelaPedido the TelaPedido to set
+     */
+    public void setTelaPedido(TelaPedido TelaPedido) {
+        this.TelaPedido = TelaPedido;
     }
 }

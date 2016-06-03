@@ -23,90 +23,64 @@ public class ControlePromo{
      private ArrayList<Produto> produtos = new ArrayList();
      private Prato_Promocao pratos = new Prato_Promocao("Mate", 3, 3, produtos);
      
-     public ControlePromo(Pedido pedido, TelaPromo promo){
-         this.pedido = pedido;
+     public ControlePromo(TelaPromo promo){
+         this.pedido = new Pedido(0);
          this.promo = promo;
      }
-     public void iniciaBebida(Pedido p){
-        TelaBebidas bebidas = new TelaBebidas(p);
+     public void iniciaBebida(){
+        TelaBebidas bebidas = new TelaBebidas(pedido);
         promo.setVisible(false);
         bebidas.setVisible(true);
     }
-     public void inicial(Pedido p){
-        TelaInicial TelaInicial = new TelaInicial(p);
+     public void inicial(){
+        TelaInicial TelaInicial = new TelaInicial(pedido);
         promo.setVisible(false);
         TelaInicial.setVisible(true);
      }
-     public void proximo(String escolha, Pedido p){
+     public void proximo(String escolha){
          for(int i=0; i<pratos.getPromoc().size() ; i++)
             if(pratos.getPromoc().get(i).getNome().equals(escolha)){
-                p.getPratos().add(pratos.getPromoc().get(i));
+                pedido.getPratos().add(pratos.getPromoc().get(i));
             }
-         this.iniciaBebida(p);
+         this.iniciaBebida();
      }
-     public void voltarPromo(Pedido p){
-         if((p.getPratos().size())%2 != 0){
-           p.getPratos().remove((p.getPratos().size()-1));
+     public void voltarPromo(){
+         if((pedido.getPratos().size())%2 != 0){
+           pedido.getPratos().remove((pedido.getPratos().size()-1));
        }
          
-         this.inicial(p);
+         this.inicial();
      }
       public String selecao(int i){
          return pratos.getPromoc().get(i).getNome();
      }
 
-    /**
-     * @return the pedido
-     */
     public Pedido getPedido() {
         return pedido;
     }
 
-    /**
-     * @param pedido the pedido to set
-     */
     public void setPedido(Pedido pedido) {
         this.pedido = pedido;
     }
-
-    /**
-     * @return the promo
-     */
     public TelaPromo getPromo() {
         return promo;
     }
 
-    /**
-     * @param promo the promo to set
-     */
     public void setPromo(TelaPromo promo) {
         this.promo = promo;
     }
 
-    /**
-     * @return the produtos
-     */
     public ArrayList<Produto> getProdutos() {
         return produtos;
     }
 
-    /**
-     * @param produtos the produtos to set
-     */
     public void setProdutos(ArrayList<Produto> produtos) {
         this.produtos = produtos;
     }
 
-    /**
-     * @return the pratos
-     */
     public Prato_Promocao getPratos() {
         return pratos;
     }
-
-    /**
-     * @param pratos the pratos to set
-     */
     public void setPratos(Prato_Promocao pratos) {
         this.pratos = pratos;
     }

@@ -15,12 +15,11 @@ public class TelaPromo extends javax.swing.JFrame {
     /**
      * Creates new form TelaPromo
      */
-   Pedido p = new Pedido(0);
-   ControlePromo ControlePromo = new ControlePromo(p, this);
+   ControlePromo ControlePromo = new ControlePromo(this);
     
     public TelaPromo(Pedido s) {
         initComponents();
-        p = s;
+        ControlePromo.setPedido(s);
         proximo.setEnabled(false);
     }
     public void desativar(){
@@ -213,13 +212,13 @@ public class TelaPromo extends javax.swing.JFrame {
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
         // TODO add your handling code here:
-        ControlePromo.voltarPromo(p);
+        ControlePromo.voltarPromo();
         
     }//GEN-LAST:event_voltarActionPerformed
 
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
         // TODO add your handling code here:
-        ControlePromo.proximo(escolha.getText(), p);
+        ControlePromo.proximo(escolha.getText());
         
     }//GEN-LAST:event_proximoActionPerformed
 

@@ -13,16 +13,15 @@ import javax.swing.DefaultListModel;
 public class TelaPagamento extends javax.swing.JFrame {
     private DefaultListModel modeloPagamento = new DefaultListModel();
     
-    Pedido p = new Pedido(0);
-    ControlePagamento novo = new ControlePagamento(p, this);
+    ControlePagamento novo = new ControlePagamento(this);
     
     public TelaPagamento(Pedido t) {
        
         initComponents();
-        p=t;
+        novo.setPedido(t);
         listaPgto.setModel(modeloPagamento);
-        novo.insereListaPgto(modeloPagamento, p);
-        totalPedido.setText("R$ " + String.valueOf(novo.totalCompra(p)));
+        novo.insereListaPgto(modeloPagamento);
+        totalPedido.setText("R$ " + String.valueOf(novo.totalCompra()));
     
     }
 
@@ -175,25 +174,23 @@ public class TelaPagamento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ticketActionPerformed
-        TelaCartao TelaCartao = new TelaCartao(p);
-        TelaCartao.setVisible(true);
-        this.setVisible(false);
+        novo.insereCartao();
     }//GEN-LAST:event_ticketActionPerformed
 
     private void visaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visaActionPerformed
-         novo.insereCartao(p);
+         novo.insereCartao();
     }//GEN-LAST:event_visaActionPerformed
 
     private void visaElectronActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visaElectronActionPerformed
-              novo.insereCartao(p);
+        novo.insereCartao();
     }//GEN-LAST:event_visaElectronActionPerformed
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
-             novo.insereCartao(p);
+             novo.insereCartao();
     }//GEN-LAST:event_voltarActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        novo.inicio(p);
+        novo.inicio();
     }//GEN-LAST:event_cancelarActionPerformed
 
     /**
