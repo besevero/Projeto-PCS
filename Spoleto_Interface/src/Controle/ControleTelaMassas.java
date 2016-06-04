@@ -25,7 +25,7 @@ public class ControleTelaMassas {
      
     
     public ControleTelaMassas(TelaMassas TelaMassas) {
-        this.pedido = new Pedido(1);
+        this.pedido = new Pedido();
         this.TelaMassas = TelaMassas;
     }
     public void telaIngredientes(){

@@ -20,7 +20,7 @@ public class ControlePagamento {
     private TelaPagamento TelaPagamento;
     
     public ControlePagamento(TelaPagamento TelaPagamento){
-        this.pedido = new Pedido(0);
+        this.pedido = new Pedido();
         this.TelaPagamento = TelaPagamento;
     }
     public void insereListaPgto(DefaultListModel modeloPedido){
@@ -40,38 +40,31 @@ public class ControlePagamento {
     public void insereCartao(){
         TelaCartao TelaCartao = new TelaCartao(pedido);
         TelaCartao.setVisible(true);
-        getTelaPagamento().setVisible(false);
+        TelaPagamento.setVisible(false);
     }
     public void inicio(){
         TelaInicial TelaInicial = new TelaInicial(pedido);
         TelaInicial.setVisible(true);
         getTelaPagamento().setVisible(false);
     }
+    
+    public void apagaPedido(){
+            pedido.getPratos().clear();
+        
+    }
 
-    /**
-     * @return the pedido
-     */
     public Pedido getPedido() {
         return pedido;
     }
 
-    /**
-     * @param pedido the pedido to set
-     */
     public void setPedido(Pedido pedido) {
         this.pedido = pedido;
     }
 
-    /**
-     * @return the TelaPagamento
-     */
     public TelaPagamento getTelaPagamento() {
         return TelaPagamento;
     }
 
-    /**
-     * @param TelaPagamento the TelaPagamento to set
-     */
     public void setTelaPagamento(TelaPagamento TelaPagamento) {
         this.TelaPagamento = TelaPagamento;
     }

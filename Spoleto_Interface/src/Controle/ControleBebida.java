@@ -25,7 +25,7 @@ public class ControleBebida {
      private Bebida bebida = new Bebida();
      
      public ControleBebida(TelaBebidas TelaBebidas){
-         this.pedido = new Pedido(1);
+         this.pedido = new Pedido();
          this.TelaBebidas = TelaBebidas;
      }
      

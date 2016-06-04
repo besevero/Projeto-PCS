@@ -24,7 +24,7 @@ public class ControlePromo{
      private Prato_Promocao pratos = new Prato_Promocao();
      
      public ControlePromo(TelaPromo promo){
-         this.pedido = new Pedido(0);
+         this.pedido = new Pedido();
          this.promo = promo;
      }
      public void iniciaBebida(){

@@ -212,7 +212,7 @@ public class TelaInicial extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Pedido p = new Pedido(1);
+                Pedido p = new Pedido();
                 new TelaInicial(p).setVisible(true);
             }
         });

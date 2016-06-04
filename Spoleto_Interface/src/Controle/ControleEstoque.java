@@ -21,7 +21,7 @@ public class ControleEstoque {
     private ArrayList<Produto> produtos = new ArrayList();
 
     public ControleEstoque(TelaEstoque TelaEstoque) {
-        this.pedido = new Pedido(0);
+        this.pedido = new Pedido();
         this.TelaEstoque = TelaEstoque;
     }
      

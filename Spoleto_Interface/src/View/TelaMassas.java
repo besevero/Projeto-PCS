@@ -381,7 +381,7 @@ public class TelaMassas extends javax.swing.JFrame {
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
         // TODO add your handling code here:
-        TelaInicial TelaInicial = new TelaInicial(new Pedido(1));
+        TelaInicial TelaInicial = new TelaInicial(new Pedido());
         TelaInicial.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_voltarActionPerformed

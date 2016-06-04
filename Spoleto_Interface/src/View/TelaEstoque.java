@@ -17,11 +17,12 @@ public class TelaEstoque extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaEstoque
-     */
+     */ControleEstoque novo = new ControleEstoque(this);
+     
     public TelaEstoque() {
         
-        Pedido p = new Pedido(0);
-        ControleEstoque novo = new ControleEstoque(this);
+        Pedido p = new Pedido();
+        
         
         initComponents();
     }

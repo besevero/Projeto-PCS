@@ -5,13 +5,11 @@
  */
 package View;
 
+import Controle.ControleTelaCartao;
 import java.beans.XMLEncoder;
 import java.io.IOException;
 import java.io.FileOutputStream;
 import Model.Pedido;
-import Model.Produto;
-import View.TelaNotaFiscal;
-import java.util.ArrayList;
 
 
 
@@ -24,11 +22,11 @@ public class TelaCartao extends javax.swing.JFrame {
     /**
      * Creates new form TelaCartao
      */
-    public Pedido s = new Pedido(1);
+    ControleTelaCartao novo = new ControleTelaCartao(this);
+    
     public TelaCartao(Pedido p) {
         initComponents();
-        s=p;
-        
+        novo.setPedido(p);
     }
 
     /**
@@ -100,39 +98,12 @@ public class TelaCartao extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        TelaInicial TelaInicial = new TelaInicial(s);
-        TelaInicial.setVisible(true);
-        this.setVisible(false);
+        novo.cancelar();
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
         
-        if(campoSenha.getText().equals("123")){
-            
-             try{ 
-                 XMLEncoder xmlEncoder= null;
-        try{ 
-            
-            xmlEncoder = new XMLEncoder ( new FileOutputStream ("relatorio.xml"));
-            xmlEncoder.writeObject(s);
-            
-        }
-        finally{
-            if(xmlEncoder != null)
-                xmlEncoder.close();
-            
-        }
-        }
-        catch (IOException e){
-            System.out.println(e.getMessage());
-            
-        }
-        TelaNotaFiscal TelaNotaFiscal = new TelaNotaFiscal(s);
-        TelaNotaFiscal.setVisible(true);
-        this.setVisible(false);    
-        }
-        else 
-            campoSenha.setText(" ");
+        if(!novo.imprimir(campoSenha.getText())) campoSenha.setText("");
         
     }//GEN-LAST:event_okActionPerformed
 
