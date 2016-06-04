@@ -21,7 +21,7 @@ public class ControlePedido {
     private TelaPedido TelaPedido;
     
     public ControlePedido(TelaPedido TelaPedido){
-        this.pedido = new Pedido(1);
+        this.pedido = new Pedido();
         this.TelaPedido = TelaPedido;
     }
     

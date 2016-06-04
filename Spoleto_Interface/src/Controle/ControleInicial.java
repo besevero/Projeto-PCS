@@ -20,7 +20,7 @@ public class ControleInicial{
     private TelaInicial inicial;
 
     public ControleInicial(TelaInicial inicial){
-        this.pedido = new Pedido(1);
+        this.pedido = new Pedido();
         this.inicial = inicial;
     }
     public void iniciaPromo(){

@@ -15,10 +15,12 @@ public class Prato_Promocao extends Produto{
     public Prato_Promocao(String nome, double valor, int quantidade, ArrayList<Produto> promoc) {
         super(nome, valor, quantidade);
         this.promoc = promoc;
+    
+    }
+    public Prato_Promocao(){    
         promoc.add(new Produto ("Penne a Carbonara", 15.00, 30));
         promoc.add(new Produto ("Spaghetti alho e oleo", 15.00, 30));
     }
-    public Prato_Promocao(){}
     /**
      * @return the promoc
      */

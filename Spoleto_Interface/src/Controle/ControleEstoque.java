@@ -20,8 +20,8 @@ public class ControleEstoque {
     private TelaEstoque TelaEstoque;
     private ArrayList<Produto> produtos = new ArrayList();
 
-    public ControleEstoque(Pedido pedido, TelaEstoque TelaEstoque) {
-        this.pedido = pedido;
+    public ControleEstoque(TelaEstoque TelaEstoque) {
+        this.pedido = new Pedido();
         this.TelaEstoque = TelaEstoque;
     }
      
@@ -32,7 +32,7 @@ public class ControleEstoque {
  }
  
     
-    int acrescentarQtdeProduto ( Produto p, int quantidade){
+    int acrescentarQtdeProduto (Produto p, int quantidade){
         int novaQuantidade=0;
         novaQuantidade = p.getQuantidade() + quantidade;
         return novaQuantidade;

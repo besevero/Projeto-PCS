@@ -21,10 +21,10 @@ public class ControlePromo{
      private Pedido pedido;
      private TelaPromo promo;
      private ArrayList<Produto> produtos = new ArrayList();
-     private Prato_Promocao pratos = new Prato_Promocao("Mate", 3, 3, produtos);
+     private Prato_Promocao pratos = new Prato_Promocao();
      
      public ControlePromo(TelaPromo promo){
-         this.pedido = new Pedido(0);
+         this.pedido = new Pedido();
          this.promo = promo;
      }
      public void iniciaBebida(){

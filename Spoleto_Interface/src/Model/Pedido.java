@@ -5,7 +5,6 @@
  */
 package Model;
 
-import Controle.ControleInicial;
 import java.util.ArrayList;
 
 /**
@@ -15,13 +14,18 @@ import java.util.ArrayList;
 public class Pedido {
       private ArrayList<Produto> pratos = new ArrayList();
       private int senha;
-
-    public Pedido(int senha) {
-        this.senha = senha;
+      
+    public Pedido() {
+        this.senha = 1;
+        
+    }
+    public int incrementaSenha(){
+        return senha++;
+    }
+    public String converteSenha(){
+        return Integer.toString(senha);
     }
 
-   public Pedido(){}
-   
     void incluirProdPed(Produto p){
             getPratos().add(p);
     }

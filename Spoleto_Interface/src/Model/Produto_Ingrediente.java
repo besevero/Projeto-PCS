@@ -15,12 +15,7 @@ public class Produto_Ingrediente extends Produto{
   
      ArrayList<Produto> ingrediente = new ArrayList();
     
-     Produto_Ingrediente(){}
-     
-    public Produto_Ingrediente(String nome, float valor,
-                               String Tipo_Ingrediente,int quantidade) {
-        super(nome, valor, quantidade);
-        
+     Produto_Ingrediente(){
         ingrediente.add(new Produto ("alcaparra", 0.00, 100));
         ingrediente.add(new Produto ("alho", 0.00, 100));
         ingrediente.add(new Produto ("alho poró", 0.00, 100));
@@ -47,6 +42,12 @@ public class Produto_Ingrediente extends Produto{
         ingrediente.add(new Produto ("salmão", 0.00, 100));
         ingrediente.add(new Produto ("tomate", 0.00, 100));
         ingrediente.add(new Produto ("tomate seco", 0.00, 100));
+    }
+     
+    public Produto_Ingrediente(String nome, float valor,
+                               String Tipo_Ingrediente,int quantidade) {
+        super(nome, valor, quantidade);
+        
         
     }
 

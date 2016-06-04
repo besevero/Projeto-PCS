@@ -19,15 +19,16 @@ public class Bebida extends Produto{
         super(nome, valor, quantidade);
         
         this.idBebida = idBebida;
+
+        
+    }
+    public Bebida() {        
         idBebida.add(new Produto ("Mate", 3.50, 20));
         idBebida.add(new Produto ("Suco de uva", 5.00, 20));
         idBebida.add(new Produto ("Suco de laranja", 5.00, 20));
         idBebida.add(new Produto ("Coca-cola", 4.50, 20));
         idBebida.add(new Produto ("Ice tea", 4.50, 20));
-        
-        
     }
-    public Bebida() {}
 
     /**
      * @return the idBebida

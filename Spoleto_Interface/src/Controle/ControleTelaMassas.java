@@ -21,11 +21,11 @@ public class ControleTelaMassas {
     private Pedido pedido;
     private TelaMassas TelaMassas;
     private ArrayList<Produto> produtos = new ArrayList();
-    private Produto_Massa massa = new Produto_Massa("Mate", 3, 3);
+    private Produto_Massa massa = new Produto_Massa();
      
     
     public ControleTelaMassas(TelaMassas TelaMassas) {
-        this.pedido = new Pedido(1);
+        this.pedido = new Pedido();
         this.TelaMassas = TelaMassas;
     }
     public void telaIngredientes(){
