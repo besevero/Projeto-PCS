@@ -9,6 +9,7 @@ import Model.Bebida;
 import Model.Pedido;
 import Model.Produto;
 import View.TelaBebidas;
+import View.TelaInicial;
 import View.TelaPedido;
 import View.TelaPromo;
 import java.util.ArrayList;
@@ -56,7 +57,19 @@ public class ControleBebida {
      public String selecao(int i){
          return getBebida().getIdBebida().get(i).getNome();
      }
-
+    public void apagaPedido(){
+            pedido.getPratos().clear();
+    }
+     public void cancelar(){
+      apagaPedido();
+      TelaInicial TelaInicial = new TelaInicial(pedido);
+      TelaInicial.setVisible(true);
+      TelaBebidas.setVisible(false);
+      
+     }
+     public void pular(){
+          this.iniciaPedido();
+     }
     /**
      * @return the pedido
      */

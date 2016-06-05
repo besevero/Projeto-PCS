@@ -53,6 +53,8 @@ public class TelaBebidas extends javax.swing.JFrame {
         proximo = new javax.swing.JButton();
         escolhaBebida = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        cancelar = new javax.swing.JButton();
+        Pular = new javax.swing.JButton();
         coca = new javax.swing.JButton();
         iceTea = new javax.swing.JButton();
         laranja = new javax.swing.JButton();
@@ -100,6 +102,26 @@ public class TelaBebidas extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Sua(s) Escolha(s) :");
 
+        cancelar.setBackground(new java.awt.Color(252, 207, 132));
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cancelar.setText("Cancelar");
+        cancelar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
+
+        Pular.setBackground(new java.awt.Color(252, 207, 132));
+        Pular.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Pular.setText("Pular");
+        Pular.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Pular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PularActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -113,6 +135,10 @@ public class TelaBebidas extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(escolhaBebida, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Pular, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
                         .addComponent(voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(proximo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,7 +154,9 @@ public class TelaBebidas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(proximo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(proximo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Pular, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(24, 24, 24))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -287,6 +315,14 @@ public class TelaBebidas extends javax.swing.JFrame {
         escolhaBebida.setText(novo.selecao(1));
     }//GEN-LAST:event_uvaActionPerformed
 
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        novo.cancelar();
+    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void PularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PularActionPerformed
+        novo.pular();
+    }//GEN-LAST:event_PularActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -323,6 +359,8 @@ public class TelaBebidas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Pular;
+    private javax.swing.JButton cancelar;
     private javax.swing.JButton coca;
     private javax.swing.JButton escolhaBebida;
     private javax.swing.JButton iceTea;

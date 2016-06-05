@@ -15,7 +15,7 @@
    <void method="add">
     <object class="Model.Produto">
      <void property="nome">
-      <string>Suco de uva</string>
+      <string>Mate</string>
      </void>
      <void property="quantidade">
       <int>20</int>
@@ -24,7 +24,7 @@
    </void>
   </void>
   <void property="senha">
-   <int>4</int>
+   <int>7</int>
   </void>
  </object>
 </java>
