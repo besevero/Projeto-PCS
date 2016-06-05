@@ -9,6 +9,7 @@ import Model.Pedido;
 import View.TelaCartao;
 import View.TelaInicial;
 import View.TelaPagamento;
+import View.TelaPedido;
 import javax.swing.DefaultListModel;
 
 /**
@@ -47,10 +48,14 @@ public class ControlePagamento {
         TelaInicial.setVisible(true);
         getTelaPagamento().setVisible(false);
     }
+    public void voltar(){
+        TelaPedido TelaPedido = new TelaPedido(pedido);
+        TelaPedido.setVisible(true);
+        getTelaPagamento().setVisible(false);
+    }
     
     public void apagaPedido(){
             pedido.getPratos().clear();
-        
     }
 
     public Pedido getPedido() {

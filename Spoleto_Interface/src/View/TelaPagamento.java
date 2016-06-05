@@ -186,7 +186,7 @@ public class TelaPagamento extends javax.swing.JFrame {
     }//GEN-LAST:event_visaElectronActionPerformed
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
-       novo.insereCartao();
+       novo.voltar();
     }//GEN-LAST:event_voltarActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
