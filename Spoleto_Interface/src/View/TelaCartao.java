@@ -6,9 +6,6 @@
 package View;
 
 import Controle.ControleTelaCartao;
-import java.beans.XMLEncoder;
-import java.io.IOException;
-import java.io.FileOutputStream;
 import Model.Pedido;
 
 

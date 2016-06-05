@@ -8,8 +8,6 @@ package Controle;
 import Model.Pedido;
 import View.TelaInicial;
 import View.TelaNotaFiscal;
-import View.TelaPagamento;
-
 /**
  *
  * @author Bernardo
@@ -26,6 +24,7 @@ public class ControleTelaNotaFiscal {
         TelaInicial TelaInicial = new TelaInicial(pedido);
         TelaNotaFiscal.setVisible(false);
         TelaInicial.setVisible(true);
+        
         pedido.incrementaSenha();
         pedido.getPratos().clear();
         

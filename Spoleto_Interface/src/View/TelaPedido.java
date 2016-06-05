@@ -36,7 +36,8 @@ public class TelaPedido extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listaPedido = new javax.swing.JList();
         adcionarPedido = new javax.swing.JButton();
-        gerarPedido = new javax.swing.JButton();
+        cancelar = new javax.swing.JButton();
+        gerarPedido1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(247, 224, 182));
@@ -65,14 +66,25 @@ public class TelaPedido extends javax.swing.JFrame {
             }
         });
 
-        gerarPedido.setBackground(new java.awt.Color(252, 207, 132));
-        gerarPedido.setText("Gerar Pedido");
-        gerarPedido.setMaximumSize(new java.awt.Dimension(69, 25));
-        gerarPedido.setMinimumSize(new java.awt.Dimension(69, 25));
-        gerarPedido.setPreferredSize(new java.awt.Dimension(69, 25));
-        gerarPedido.addActionListener(new java.awt.event.ActionListener() {
+        cancelar.setBackground(new java.awt.Color(252, 207, 132));
+        cancelar.setText("Cancelar");
+        cancelar.setMaximumSize(new java.awt.Dimension(69, 25));
+        cancelar.setMinimumSize(new java.awt.Dimension(69, 25));
+        cancelar.setPreferredSize(new java.awt.Dimension(69, 25));
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gerarPedidoActionPerformed(evt);
+                cancelarActionPerformed(evt);
+            }
+        });
+
+        gerarPedido1.setBackground(new java.awt.Color(252, 207, 132));
+        gerarPedido1.setText("Gerar Pedido");
+        gerarPedido1.setMaximumSize(new java.awt.Dimension(69, 25));
+        gerarPedido1.setMinimumSize(new java.awt.Dimension(69, 25));
+        gerarPedido1.setPreferredSize(new java.awt.Dimension(69, 25));
+        gerarPedido1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gerarPedido1ActionPerformed(evt);
             }
         });
 
@@ -89,10 +101,16 @@ public class TelaPedido extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(adcionarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(628, 628, 628)
-                        .addComponent(gerarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(269, 269, 269)
+                        .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(359, 359, 359))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 875, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(69, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(821, Short.MAX_VALUE)
+                    .addComponent(gerarPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(59, 59, 59)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,8 +122,13 @@ public class TelaPedido extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(adcionarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gerarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(514, Short.MAX_VALUE)
+                    .addComponent(gerarPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(25, 25, 25)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,9 +149,13 @@ public class TelaPedido extends javax.swing.JFrame {
         novo.inicial();
     }//GEN-LAST:event_adcionarPedidoActionPerformed
 
-    private void gerarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarPedidoActionPerformed
-        novo.gerarPedido();
-    }//GEN-LAST:event_gerarPedidoActionPerformed
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        novo.cancela();
+    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void gerarPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarPedido1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gerarPedido1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,7 +194,8 @@ public class TelaPedido extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adcionarPedido;
-    private javax.swing.JButton gerarPedido;
+    private javax.swing.JButton cancelar;
+    private javax.swing.JButton gerarPedido1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

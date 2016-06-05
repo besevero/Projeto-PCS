@@ -41,7 +41,13 @@ public class ControlePedido {
         getTelaPedido().setVisible(false);
         TelaPagamento.setVisible(true);
     }
-
+    public void cancela(){
+        pedido.getPratos().clear();
+        TelaInicial TelaInicial = new TelaInicial(getPedido());
+        getTelaPedido().setVisible(false);
+        TelaInicial.setVisible(true);
+        
+    }
     /**
      * @return the pedido
      */
