@@ -27,23 +27,23 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jButton3" min="-2" pref="123" max="-2" attributes="0"/>
+                      <Component id="extras" min="-2" pref="123" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton5" min="-2" pref="123" max="-2" attributes="0"/>
+                      <Component id="pratoPromo" min="-2" pref="123" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jLabel1" min="-2" pref="68" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="jButton1" min="-2" pref="123" max="-2" attributes="0"/>
+                          <Component id="massa" min="-2" pref="123" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jButton4" min="-2" pref="123" max="-2" attributes="0"/>
+                          <Component id="molhos" min="-2" pref="123" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jButton2" min="-2" pref="123" max="-2" attributes="0"/>
-                  <Component id="jButton6" min="-2" pref="123" max="-2" attributes="0"/>
+                  <Component id="ingredientes" min="-2" pref="123" max="-2" attributes="0"/>
+                  <Component id="bebidas" min="-2" pref="123" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="27" max="32767" attributes="0"/>
           </Group>
@@ -56,15 +56,15 @@
               <Component id="jLabel1" min="-2" pref="27" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
-                  <Component id="jButton4" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
+                  <Component id="massa" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
+                  <Component id="ingredientes" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
+                  <Component id="molhos" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton3" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
-                  <Component id="jButton6" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
-                  <Component id="jButton5" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
+                  <Component id="extras" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
+                  <Component id="bebidas" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
+                  <Component id="pratoPromo" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="32" max="32767" attributes="0"/>
           </Group>
@@ -77,38 +77,53 @@
         <Property name="text" type="java.lang.String" value="ESTOQUE"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="massa">
       <Properties>
         <Property name="text" type="java.lang.String" value="MASSAS"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="massaActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="ingredientes">
       <Properties>
         <Property name="text" type="java.lang.String" value="INGREDIENTES"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ingredientesActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="extras">
       <Properties>
         <Property name="text" type="java.lang.String" value="EXTRAS"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="extrasActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="molhos">
       <Properties>
         <Property name="text" type="java.lang.String" value="MOLHOS"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="molhosActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="pratoPromo">
       <Properties>
         <Property name="text" type="java.lang.String" value="PRATO PROMO&#xc7;&#xc3;O"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pratoPromoActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton6">
+    <Component class="javax.swing.JButton" name="bebidas">
       <Properties>
         <Property name="text" type="java.lang.String" value="BEBIDAS"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bebidasActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

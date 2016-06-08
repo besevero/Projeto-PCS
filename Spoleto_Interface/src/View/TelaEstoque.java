@@ -8,6 +8,7 @@ package View;
 
 import Controle.ControleEstoque;
 import Model.Pedido;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,11 +19,11 @@ public class TelaEstoque extends javax.swing.JFrame {
     /**
      * Creates new form TelaEstoque
      */ControleEstoque novo = new ControleEstoque(this);
-     
+     String nome= null;
+             
     public TelaEstoque() {
         
         Pedido p = new Pedido();
-        
         
         initComponents();
     }
@@ -37,33 +38,58 @@ public class TelaEstoque extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        massa = new javax.swing.JButton();
+        ingredientes = new javax.swing.JButton();
+        extras = new javax.swing.JButton();
+        molhos = new javax.swing.JButton();
+        pratoPromo = new javax.swing.JButton();
+        bebidas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("ESTOQUE");
 
-        jButton1.setText("MASSAS");
-
-        jButton2.setText("INGREDIENTES");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        massa.setText("MASSAS");
+        massa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                massaActionPerformed(evt);
             }
         });
 
-        jButton3.setText("EXTRAS");
+        ingredientes.setText("INGREDIENTES");
+        ingredientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ingredientesActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("MOLHOS");
+        extras.setText("EXTRAS");
+        extras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                extrasActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("PRATO PROMOÇÃO");
+        molhos.setText("MOLHOS");
+        molhos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                molhosActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("BEBIDAS");
+        pratoPromo.setText("PRATO PROMOÇÃO");
+        pratoPromo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pratoPromoActionPerformed(evt);
+            }
+        });
+
+        bebidas.setText("BEBIDAS");
+        bebidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bebidasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,19 +99,19 @@ public class TelaEstoque extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(extras, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(pratoPromo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(massa, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(26, 26, 26)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(molhos, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ingredientes, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bebidas, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -95,23 +121,71 @@ public class TelaEstoque extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(massa, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ingredientes, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(molhos, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(extras, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bebidas, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pratoPromo, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void ingredientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingredientesActionPerformed
+      
+      nome= "Ingredientes";  
+      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque (nome);
+      TelaVisualizarEstoque .setVisible(true);
+      this.setVisible(false);
+      
+    }//GEN-LAST:event_ingredientesActionPerformed
+
+    private void massaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_massaActionPerformed
+      nome="Massa";
+      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque (nome);
+      TelaVisualizarEstoque .setVisible(true);
+      this.setVisible(false);
+      
+    }//GEN-LAST:event_massaActionPerformed
+
+    private void molhosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_molhosActionPerformed
+      
+        nome="Molhos";
+      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque (nome);
+      TelaVisualizarEstoque .setVisible(true);
+      this.setVisible(false);
+       
+    }//GEN-LAST:event_molhosActionPerformed
+
+    private void extrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_extrasActionPerformed
+      
+        nome="Extras";
+        
+      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque (nome);
+      TelaVisualizarEstoque .setVisible(true);
+      this.setVisible(false);
+      
+    }//GEN-LAST:event_extrasActionPerformed
+
+    private void pratoPromoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pratoPromoActionPerformed
+      nome= "Prato Promoção";
+      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque (nome);
+      TelaVisualizarEstoque .setVisible(true);
+      this.setVisible(false);
+      
+    }//GEN-LAST:event_pratoPromoActionPerformed
+
+    private void bebidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bebidasActionPerformed
+      nome="Bebidas";
+      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque (nome);
+      TelaVisualizarEstoque .setVisible(true);
+      this.setVisible(false);
+      
+    }//GEN-LAST:event_bebidasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,12 +223,12 @@ public class TelaEstoque extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton bebidas;
+    private javax.swing.JButton extras;
+    private javax.swing.JButton ingredientes;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton massa;
+    private javax.swing.JButton molhos;
+    private javax.swing.JButton pratoPromo;
     // End of variables declaration//GEN-END:variables
 }
