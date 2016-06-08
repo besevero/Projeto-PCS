@@ -20,8 +20,11 @@ public class TelaMassas extends javax.swing.JFrame {
     /**
      * Creates new form TelaMassas
      */
+    
     public TelaMassas(Pedido s) {
         initComponents();
+        novo.setPedido(s);
+        proximo.setEnabled(false);
     }
     
     public void desativar(){
@@ -315,7 +318,6 @@ public class TelaMassas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void escolhaMassaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escolhaMassaActionPerformed
-        // TODO add your handling code here:
         escolhaMassa.setText("");
     }//GEN-LAST:event_escolhaMassaActionPerformed
 
@@ -325,17 +327,18 @@ public class TelaMassas extends javax.swing.JFrame {
     }//GEN-LAST:event_spaghettiActionPerformed
 
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
-        // TODO add your handling code here:
+       
+        novo.proximoMassa(escolhaMassa.getText());
         
     }//GEN-LAST:event_proximoActionPerformed
 
     private void farfalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_farfalleActionPerformed
-       escolhaMassa.setText("Spaghetti");
+       escolhaMassa.setText("Farfalle");
        desativar();
     }//GEN-LAST:event_farfalleActionPerformed
 
     private void fetuccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fetuccineActionPerformed
-       escolhaMassa.setText("Fetuccine");
+       escolhaMassa.setText("Fetccine");
        desativar();
     }//GEN-LAST:event_fetuccineActionPerformed
 
@@ -380,10 +383,7 @@ public class TelaMassas extends javax.swing.JFrame {
     }//GEN-LAST:event_ravioliTomateSecoActionPerformed
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
-        // TODO add your handling code here:
-        TelaInicial TelaInicial = new TelaInicial(new Pedido());
-        TelaInicial.setVisible(true);
-        this.setVisible(false);
+        novo.voltaMassa();
     }//GEN-LAST:event_voltarActionPerformed
 
     /**

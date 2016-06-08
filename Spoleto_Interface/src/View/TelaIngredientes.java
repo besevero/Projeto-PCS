@@ -5,6 +5,7 @@
  */
 package View;
 
+import Model.Pedido;
 import javax.swing.ImageIcon;
 
 /**
@@ -16,7 +17,7 @@ public class TelaIngredientes extends javax.swing.JFrame {
     /**
      * Creates new form TelaMassas
      */
-    public TelaIngredientes() {
+    public TelaIngredientes(Pedido s) {
         initComponents();
     }
     
@@ -549,15 +550,14 @@ public class TelaIngredientes extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(alho)
-                            .addComponent(alcaparra)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(alhoPoro)
-                                .addComponent(azeitona)
-                                .addComponent(bacon)
-                                .addComponent(brocolis)
-                                .addComponent(camarao)))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(alho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(alhoPoro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(azeitona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bacon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(brocolis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(camarao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(alcaparra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(carneSol)
                             .addComponent(cebola)
@@ -733,7 +733,7 @@ public class TelaIngredientes extends javax.swing.JFrame {
 
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
         // TODO add your handling code here:
-        TelaExtras TelaExtras = new TelaExtras();
+        TelaExtras TelaExtras = new TelaExtras(new Pedido());
         TelaExtras.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_proximoActionPerformed
@@ -771,7 +771,7 @@ public class TelaIngredientes extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaIngredientes().setVisible(true);
+                //new TelaIngredientes().setVisible(true);
             }
         });
     }

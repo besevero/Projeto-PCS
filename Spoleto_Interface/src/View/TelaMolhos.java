@@ -5,6 +5,7 @@
  */
 package View;
 
+import Model.Pedido;
 import javax.swing.ImageIcon;
 
 /**
@@ -13,11 +14,30 @@ import javax.swing.ImageIcon;
  */
 public class TelaMolhos extends javax.swing.JFrame {
     
+    private Pedido p;
     /**
      * Creates new form TelaMassas
      */
-    public TelaMolhos() {
+    public TelaMolhos(Pedido s) {
         initComponents();
+        p = s;
+        proximo.setEnabled(false);
+    }
+    public void ativar(){
+        bolognesa.setEnabled(true);
+        funghi.setEnabled(true);
+        sugo.setEnabled(true);
+        quatroQueijos.setEnabled(true);
+        branco.setEnabled(true);
+        proximo.setEnabled(false);
+    }
+    public void desativar(){
+        bolognesa.setEnabled(false);
+        funghi.setEnabled(false);
+        sugo.setEnabled(false);
+        quatroQueijos.setEnabled(false);
+        branco.setEnabled(false);
+        proximo.setEnabled(true);
     }
 
     /**
@@ -32,11 +52,11 @@ public class TelaMolhos extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         funghi = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        capturaMolho = new javax.swing.JButton();
+        escolhaMolho = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton12 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
+        proximo = new javax.swing.JButton();
+        voltar = new javax.swing.JButton();
+        cancelar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         sugo = new javax.swing.JButton();
         quatroQueijos = new javax.swing.JButton();
@@ -56,73 +76,72 @@ public class TelaMolhos extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(252, 207, 132));
 
-        capturaMolho.setBackground(new java.awt.Color(245, 156, 97));
-        capturaMolho.setFont(new java.awt.Font("BlackJack", 1, 24)); // NOI18N
-        capturaMolho.setToolTipText("");
-        capturaMolho.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 0), 1, true));
-        capturaMolho.addActionListener(new java.awt.event.ActionListener() {
+        escolhaMolho.setBackground(new java.awt.Color(245, 156, 97));
+        escolhaMolho.setToolTipText("");
+        escolhaMolho.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 0), 1, true));
+        escolhaMolho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                capturaMolhoActionPerformed(evt);
+                escolhaMolhoActionPerformed(evt);
             }
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Sua(s) Escolha(s) :");
 
-        jButton12.setBackground(new java.awt.Color(252, 207, 132));
-        jButton12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton12.setText("Próximo");
-        jButton12.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        proximo.setBackground(new java.awt.Color(252, 207, 132));
+        proximo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        proximo.setText("Próximo");
+        proximo.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        proximo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                proximoActionPerformed(evt);
             }
         });
 
-        jButton16.setBackground(new java.awt.Color(252, 207, 132));
-        jButton16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton16.setText("Voltar");
-        jButton16.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        voltar.setBackground(new java.awt.Color(252, 207, 132));
+        voltar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        voltar.setText("Voltar");
+        voltar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        jButton17.setBackground(new java.awt.Color(252, 207, 132));
-        jButton17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton17.setText("Cancelar");
-        jButton17.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cancelar.setBackground(new java.awt.Color(252, 207, 132));
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cancelar.setText("Cancelar");
+        cancelar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(53, 53, 53)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addContainerGap(793, Short.MAX_VALUE))
+                        .addContainerGap(797, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(capturaMolho, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(escolhaMolho, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))))
+                        .addComponent(proximo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(proximo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(7, 7, 7)
-                        .addComponent(capturaMolho, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addGap(18, 18, 18)
+                        .addComponent(escolhaMolho, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/titulo_molhos.png"))); // NOI18N
@@ -161,7 +180,7 @@ public class TelaMolhos extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(90, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(bolognesa, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -191,7 +210,7 @@ public class TelaMolhos extends javax.swing.JFrame {
                         .addComponent(funghi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addComponent(bolognesa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(branco, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84)
+                .addGap(61, 61, 61)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -209,41 +228,42 @@ public class TelaMolhos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void capturaMolhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_capturaMolhoActionPerformed
+    private void escolhaMolhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escolhaMolhoActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_capturaMolhoActionPerformed
+        ativar();
+        escolhaMolho.setText("");
+    }//GEN-LAST:event_escolhaMolhoActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
         // TODO add your handling code here:
-        //TelaIngredientes TelaIngredientes = new TelaIngredientes();
-        //TelaIngredientes.setVisible(true);
-        //this.setVisible(false);
-    }//GEN-LAST:event_jButton12ActionPerformed
+        TelaBebidas TelaBebidas = new TelaBebidas(p);
+        TelaBebidas.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_proximoActionPerformed
 
     private void bolognesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolognesaActionPerformed
-         ImageIcon molho = new ImageIcon(getClass().getResource("/Imagens/botao_bolognesa.png"));
-        capturaMolho.setIcon(molho);
+        desativar();
+        escolhaMolho.setText("bolognesa");
     }//GEN-LAST:event_bolognesaActionPerformed
 
     private void funghiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_funghiActionPerformed
-         ImageIcon molho = new ImageIcon(getClass().getResource("/Imagens/botao_funghi.png"));
-        capturaMolho.setIcon(molho);
+        desativar();
+        escolhaMolho.setText("funghi");
     }//GEN-LAST:event_funghiActionPerformed
 
     private void sugoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sugoActionPerformed
-         ImageIcon molho = new ImageIcon(getClass().getResource("/Imagens/botao_sugo.png"));
-        capturaMolho.setIcon(molho);
+        desativar();
+        escolhaMolho.setText("sugo");
     }//GEN-LAST:event_sugoActionPerformed
 
     private void quatroQueijosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quatroQueijosActionPerformed
-         ImageIcon molho = new ImageIcon(getClass().getResource("/Imagens/botao_quatro_queijos.png"));
-        capturaMolho.setIcon(molho);
+        desativar();
+        escolhaMolho.setText("quatro queijo");
     }//GEN-LAST:event_quatroQueijosActionPerformed
 
     private void brancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brancoActionPerformed
-        ImageIcon molho = new ImageIcon(getClass().getResource("/Imagens/botao_branco.png"));
-        capturaMolho.setIcon(molho);
+        desativar();
+        escolhaMolho.setText("branco");
     }//GEN-LAST:event_brancoActionPerformed
 
     /**
@@ -283,7 +303,7 @@ public class TelaMolhos extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaMolhos().setVisible(true);
+                //new TelaMolhos().setVisible(true);
             }
         });
     }
@@ -291,16 +311,16 @@ public class TelaMolhos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bolognesa;
     private javax.swing.JButton branco;
-    private javax.swing.JButton capturaMolho;
+    private javax.swing.JButton cancelar;
+    private javax.swing.JButton escolhaMolho;
     private javax.swing.JButton funghi;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton proximo;
     private javax.swing.JButton quatroQueijos;
     private javax.swing.JButton sugo;
+    private javax.swing.JButton voltar;
     // End of variables declaration//GEN-END:variables
 }

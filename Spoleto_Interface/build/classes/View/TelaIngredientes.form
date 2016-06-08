@@ -458,16 +458,14 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="alho" min="-2" max="-2" attributes="0"/>
-                                  <Component id="alcaparra" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="alhoPoro" min="-2" max="-2" attributes="0"/>
-                                      <Component id="azeitona" min="-2" max="-2" attributes="0"/>
-                                      <Component id="bacon" min="-2" max="-2" attributes="0"/>
-                                      <Component id="brocolis" min="-2" max="-2" attributes="0"/>
-                                      <Component id="camarao" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="alho" max="32767" attributes="0"/>
+                                  <Component id="alhoPoro" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="azeitona" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="bacon" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="brocolis" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="camarao" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="alcaparra" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="carneSol" min="-2" max="-2" attributes="0"/>

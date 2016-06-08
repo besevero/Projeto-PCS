@@ -13,24 +13,38 @@ import java.util.ArrayList;
  */
 public class Produto_Massa extends Produto{
 
-        ArrayList<Produto> massa = new ArrayList();
+        private ArrayList<Produto> IdMassa = new ArrayList();
+    
     public Produto_Massa(){
-        massa.add(new Produto ("farfalle", 18.00, 100));
-        massa.add(new Produto ("fettuccine", 18.00, 100));
-        massa.add(new Produto ("spaghetti", 17.00, 100));
-        massa.add(new Produto ("penne", 17.00, 100));
-        massa.add(new Produto ("ravioli de queijo com presunto", 24.00, 100));
-        massa.add(new Produto ("ravioli de ricota", 22.00, 100));
-        massa.add(new Produto ("ravioli de tomate seco", 24.00, 100));
-        massa.add(new Produto ("ravioli de gorgonzola", 25.00, 100));
-        massa.add(new Produto ("gnocchi", 20.00, 100));
-        massa.add(new Produto ("cappelletti de carne", 20.00, 100));
-        massa.add(new Produto ("cappelleti de frango", 20.00, 100));
+        IdMassa.add(new Produto ("Farfalle", 18.00, 100));
+        IdMassa.add(new Produto ("Fettuccine", 18.00, 100));
+        IdMassa.add(new Produto ("Spaghetti", 17.00, 100));
+        IdMassa.add(new Produto ("Penne", 17.00, 100));
+        IdMassa.add(new Produto ("Ravioli de Queijo com Presunto", 24.00, 100));
+        IdMassa.add(new Produto ("Ravioli de Ricota", 22.00, 100));
+        IdMassa.add(new Produto ("Ravioli de Tomate Seco", 24.00, 100));
+        IdMassa.add(new Produto ("Ravioli de Gorgonzola", 25.00, 100));
+        IdMassa.add(new Produto ("Gnocchi", 20.00, 100));
+        IdMassa.add(new Produto ("Cappelletti de Carne", 20.00, 100));
+        IdMassa.add(new Produto ("Cappelleti de Frango", 20.00, 100));
     }
+    
     public Produto_Massa(String nome, double valor, int quantidade) {
         super(nome, valor, quantidade);
-        
-       
+    }
+    
+    /**
+     * @return the IdMassa
+     */
+    public ArrayList<Produto> getIdMassa() {
+        return IdMassa;
+    }
+
+    /**
+     * @param IdMassa the IdMassa to set
+     */
+    public void setIdMassa(ArrayList<Produto> IdMassa) {
+        this.IdMassa = IdMassa;
     }
     
 }
