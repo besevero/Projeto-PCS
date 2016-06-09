@@ -13,42 +13,54 @@ import java.util.ArrayList;
  */
 public class Produto_Ingrediente extends Produto{
   
-     ArrayList<Produto> ingrediente = new ArrayList();
+     private ArrayList<Produto> idIngrediente = new ArrayList();
     
-     Produto_Ingrediente(){
-        ingrediente.add(new Produto ("alcaparra", 0.00, 100));
-        ingrediente.add(new Produto ("alho", 0.00, 100));
-        ingrediente.add(new Produto ("alho poró", 0.00, 100));
-        ingrediente.add(new Produto ("azeitona preta", 0.00, 100));
-        ingrediente.add(new Produto ("bacon", 0.00, 100));
-        ingrediente.add(new Produto ("brócolis", 0.00, 100));
-        ingrediente.add(new Produto ("camarão", 0.00, 100));
-        ingrediente.add(new Produto ("carne de sol", 0.00, 100));
-        ingrediente.add(new Produto ("cenoura", 0.00, 100));
-        ingrediente.add(new Produto ("champignon", 0.00, 100));
-        ingrediente.add(new Produto ("cebola", 0.00, 100));
-        ingrediente.add(new Produto ("ervilha", 0.00, 100));
-        ingrediente.add(new Produto ("frango", 0.00, 100));
-        ingrediente.add(new Produto ("gorgonzola", 0.00, 100));
-        ingrediente.add(new Produto ("linguiça calabresa", 0.00, 100));
-        ingrediente.add(new Produto ("milho", 0.00, 100));
-        ingrediente.add(new Produto ("ovo de codorna", 0.00, 100));
-        ingrediente.add(new Produto ("palmito", 0.00, 100));
-        ingrediente.add(new Produto ("passas", 0.00, 100));
-        ingrediente.add(new Produto ("peito de peru", 0.00, 100));
-        ingrediente.add(new Produto ("queijo coalho", 0.00, 100));
-        ingrediente.add(new Produto ("queijo minas", 0.00, 100));
-        ingrediente.add(new Produto ("presunto", 0.00, 100));
-        ingrediente.add(new Produto ("salmão", 0.00, 100));
-        ingrediente.add(new Produto ("tomate", 0.00, 100));
-        ingrediente.add(new Produto ("tomate seco", 0.00, 100));
+     public Produto_Ingrediente(){
+        idIngrediente.add(new Produto ("Alcaparra", 0.00, 100));
+        idIngrediente.add(new Produto ("Alho", 0.00, 100));
+        idIngrediente.add(new Produto ("Alho Poró", 0.00, 100));
+        idIngrediente.add(new Produto ("Azeitona Preta", 0.00, 100));
+        idIngrediente.add(new Produto ("Bacon", 0.00, 100));
+        idIngrediente.add(new Produto ("Brócolis", 0.00, 100));
+        idIngrediente.add(new Produto ("Camarão", 0.00, 100));
+        idIngrediente.add(new Produto ("Carne de Sol", 0.00, 100));
+        idIngrediente.add(new Produto ("Cenoura", 0.00, 100));
+        idIngrediente.add(new Produto ("Champignon", 0.00, 100));
+        idIngrediente.add(new Produto ("Cebola", 0.00, 100));
+        idIngrediente.add(new Produto ("Ervilha", 0.00, 100));
+        idIngrediente.add(new Produto ("Frango", 0.00, 100));
+        idIngrediente.add(new Produto ("Gorgonzola", 0.00, 100));
+        idIngrediente.add(new Produto ("Linguiça Calabresa", 0.00, 100));
+        idIngrediente.add(new Produto ("Milho", 0.00, 100));
+        idIngrediente.add(new Produto ("Ovo de Codorna", 0.00, 100));
+        idIngrediente.add(new Produto ("Palmito", 0.00, 100));
+        idIngrediente.add(new Produto ("Passas", 0.00, 100));
+        idIngrediente.add(new Produto ("Peito de Peru", 0.00, 100));
+        idIngrediente.add(new Produto ("Queijo Coalho", 0.00, 100));
+        idIngrediente.add(new Produto ("Queijo Minas", 0.00, 100));
+        idIngrediente.add(new Produto ("Presunto", 0.00, 100));
+        idIngrediente.add(new Produto ("Salmão", 0.00, 100));
+        idIngrediente.add(new Produto ("Tomate", 0.00, 100));
+        idIngrediente.add(new Produto ("Tomate Seco", 0.00, 100));
     }
      
     public Produto_Ingrediente(String nome, float valor,
                                String Tipo_Ingrediente,int quantidade) {
         super(nome, valor, quantidade);
-        
-        
+    }
+
+    /**
+     * @return the idIngrediente
+     */
+    public ArrayList<Produto> getIdIngrediente() {
+        return idIngrediente;
+    }
+
+    /**
+     * @param idIngrediente the idIngrediente to set
+     */
+    public void setIdIngrediente(ArrayList<Produto> idIngrediente) {
+        this.idIngrediente = idIngrediente;
     }
 
     

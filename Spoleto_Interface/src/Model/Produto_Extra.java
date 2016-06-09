@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Produto_Extra extends Produto{
     
     
-    ArrayList<Produto> prodExtra = new ArrayList();
+    private ArrayList<Produto> prodExtra = new ArrayList();
     public Produto_Extra(){       
         prodExtra.add(new Produto ("almondega", 6.00, 35));
         prodExtra.add(new Produto ("frango a parmegiana", 7.00, 35));
@@ -26,6 +26,20 @@ public class Produto_Extra extends Produto{
         super(nome, valor, quantidade);
         
 
+    }
+
+    /**
+     * @return the prodExtra
+     */
+    public ArrayList<Produto> getProdExtra() {
+        return prodExtra;
+    }
+
+    /**
+     * @param prodExtra the prodExtra to set
+     */
+    public void setProdExtra(ArrayList<Produto> prodExtra) {
+        this.prodExtra = prodExtra;
     }
     
 }

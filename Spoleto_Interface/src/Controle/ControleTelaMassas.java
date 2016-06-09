@@ -54,7 +54,13 @@ public class ControleTelaMassas {
        }
             this.anterior();
     }
-      
+    public void apagaPedido(){
+            pedido.getPratos().clear();
+    }
+    public void cancelar(){
+      apagaPedido();
+      anterior();  
+    }
     public Pedido getPedido() {
         return pedido;
     }

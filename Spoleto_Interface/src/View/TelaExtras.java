@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controle.ControleTelaExtras;
 import Model.Pedido;
 import javax.swing.ImageIcon;
 
@@ -14,14 +15,16 @@ import javax.swing.ImageIcon;
  */
 public class TelaExtras extends javax.swing.JFrame {
     
-    private Pedido p;
     ImageIcon prato = new ImageIcon(getClass().getResource("/Imagens/botao_penne.png"));
     /**
      * Creates new form TelaMassas
      */
+    ControleTelaExtras novo = new ControleTelaExtras(this);
+    
     public TelaExtras(Pedido s) {
         initComponents();
-        p = s;
+        novo.setPedido(s);
+       
     }
     public void ativar(){
         almondegas.setEnabled(true);
@@ -107,11 +110,21 @@ public class TelaExtras extends javax.swing.JFrame {
         voltar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         voltar.setText("Voltar");
         voltar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarActionPerformed(evt);
+            }
+        });
 
         cancelar.setBackground(new java.awt.Color(252, 207, 132));
         cancelar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cancelar.setText("Cancelar");
         cancelar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -284,9 +297,8 @@ public class TelaExtras extends javax.swing.JFrame {
 
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
         // TODO add your handling code here:
-        TelaMolhos TelaMolhos = new TelaMolhos(p);
-        TelaMolhos.setVisible(true);
-        this.setVisible(false);
+        novo.proximo(escolhaExtra.getText());
+        
     }//GEN-LAST:event_proximoActionPerformed
 
     private void almondegasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_almondegasActionPerformed
@@ -335,6 +347,14 @@ public class TelaExtras extends javax.swing.JFrame {
             desativar();
         }
     }//GEN-LAST:event_RadioNaoActionPerformed
+
+    private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
+        novo.voltar();
+    }//GEN-LAST:event_voltarActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        novo.cancelar();
+    }//GEN-LAST:event_cancelarActionPerformed
 
     /**
      * @param args the command line arguments

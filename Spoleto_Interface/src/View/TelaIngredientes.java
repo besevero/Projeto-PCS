@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controle.ControleTelaIngredientes;
 import Model.Pedido;
 import javax.swing.ImageIcon;
 
@@ -17,10 +18,28 @@ public class TelaIngredientes extends javax.swing.JFrame {
     /**
      * Creates new form TelaMassas
      */
+    ControleTelaIngredientes novo = new ControleTelaIngredientes(this);
+    
     public TelaIngredientes(Pedido s) {
         initComponents();
+        novo.setPedido(s);
+        proximo.setEnabled(false);
+        
     }
-    
+    public void botoes(){
+        op1.setText(novo.inserePadrao(0));
+        op2.setText(novo.inserePadrao(1));
+        op3.setText(novo.inserePadrao(2));
+        op4.setText(novo.inserePadrao(3));
+        op5.setText(novo.inserePadrao(4));
+        op6.setText(novo.inserePadrao(5));
+        op7.setText(novo.inserePadrao(6));
+        op8.setText(novo.inserePadrao(7));
+        ope1.setText(novo.insereExtra(0));
+        ope2.setText(novo.insereExtra(1));
+        ope3.setText(novo.insereExtra(2));
+        ope4.setText(novo.insereExtra(3));
+    }
     public void desativar(){
         alcaparra.setEnabled(false);
         alho.setEnabled(false);
@@ -96,21 +115,21 @@ public class TelaIngredientes extends javax.swing.JFrame {
         proximo = new javax.swing.JButton();
         voltar = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
-        jButton39 = new javax.swing.JButton();
-        jButton40 = new javax.swing.JButton();
-        jButton41 = new javax.swing.JButton();
-        jButton42 = new javax.swing.JButton();
-        jButton43 = new javax.swing.JButton();
-        jButton44 = new javax.swing.JButton();
-        jButton45 = new javax.swing.JButton();
-        jButton46 = new javax.swing.JButton();
-        jButton47 = new javax.swing.JButton();
-        jButton48 = new javax.swing.JButton();
-        jButton49 = new javax.swing.JButton();
-        jButton50 = new javax.swing.JButton();
+        op1 = new javax.swing.JButton();
+        op2 = new javax.swing.JButton();
+        op6 = new javax.swing.JButton();
+        op3 = new javax.swing.JButton();
+        op4 = new javax.swing.JButton();
+        op5 = new javax.swing.JButton();
+        op8 = new javax.swing.JButton();
+        op7 = new javax.swing.JButton();
+        ope3 = new javax.swing.JButton();
+        ope2 = new javax.swing.JButton();
+        ope1 = new javax.swing.JButton();
+        ope4 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        sim = new javax.swing.JRadioButton();
+        nao = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         alcaparra = new javax.swing.JButton();
@@ -164,50 +183,70 @@ public class TelaIngredientes extends javax.swing.JFrame {
         voltar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         voltar.setText("Voltar");
         voltar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarActionPerformed(evt);
+            }
+        });
 
         cancelar.setBackground(new java.awt.Color(252, 207, 132));
         cancelar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cancelar.setText("Cancelar");
         cancelar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
 
-        jButton39.setBackground(new java.awt.Color(245, 156, 97));
+        op1.setBackground(new java.awt.Color(245, 156, 97));
 
-        jButton40.setBackground(new java.awt.Color(245, 156, 97));
+        op2.setBackground(new java.awt.Color(245, 156, 97));
 
-        jButton41.setBackground(new java.awt.Color(245, 156, 97));
+        op6.setBackground(new java.awt.Color(245, 156, 97));
 
-        jButton42.setBackground(new java.awt.Color(245, 156, 97));
+        op3.setBackground(new java.awt.Color(245, 156, 97));
 
-        jButton43.setBackground(new java.awt.Color(245, 156, 97));
+        op4.setBackground(new java.awt.Color(245, 156, 97));
 
-        jButton44.setBackground(new java.awt.Color(245, 156, 97));
+        op5.setBackground(new java.awt.Color(245, 156, 97));
 
-        jButton45.setBackground(new java.awt.Color(245, 156, 97));
+        op8.setBackground(new java.awt.Color(245, 156, 97));
 
-        jButton46.setBackground(new java.awt.Color(245, 156, 97));
+        op7.setBackground(new java.awt.Color(245, 156, 97));
 
-        jButton47.setBackground(new java.awt.Color(245, 156, 97));
-        jButton47.setEnabled(false);
+        ope3.setBackground(new java.awt.Color(245, 156, 97));
+        ope3.setEnabled(false);
 
-        jButton48.setBackground(new java.awt.Color(245, 156, 97));
-        jButton48.setEnabled(false);
+        ope2.setBackground(new java.awt.Color(245, 156, 97));
+        ope2.setEnabled(false);
 
-        jButton49.setBackground(new java.awt.Color(245, 156, 97));
-        jButton49.setEnabled(false);
+        ope1.setBackground(new java.awt.Color(245, 156, 97));
+        ope1.setEnabled(false);
 
-        jButton50.setBackground(new java.awt.Color(245, 156, 97));
-        jButton50.setEnabled(false);
+        ope4.setBackground(new java.awt.Color(245, 156, 97));
+        ope4.setEnabled(false);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Adicionar Ingredientes Extras :");
 
-        buttonGroup2.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioButton1.setText("Sim");
+        buttonGroup2.add(sim);
+        sim.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        sim.setText("Sim");
+        sim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simActionPerformed(evt);
+            }
+        });
 
-        buttonGroup2.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioButton2.setText("Não");
+        buttonGroup2.add(nao);
+        nao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nao.setText("Não");
+        nao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                naoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -217,46 +256,46 @@ public class TelaIngredientes extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(op1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(op2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(op3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(op4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(op5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(op6, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(op7, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(op8, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(ope1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ope2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ope3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ope4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(sim)
+                                .addGap(18, 18, 18)
+                                .addComponent(nao))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(proximo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton39, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton41, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton42, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton43, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton44, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton40, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton46, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton45, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton49, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton48, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton47, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton50, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton2)))))
+                        .addComponent(proximo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(21, 21, 21))
         );
         jPanel2Layout.setVerticalGroup(
@@ -266,28 +305,28 @@ public class TelaIngredientes extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel3)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(sim)
+                    .addComponent(nao))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton46, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton45, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton39, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton44, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton43, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton42, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton41, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton40, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton47, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton48, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton50, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton49, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(op7, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(op8, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(op1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(op5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(op4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(op3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(op6, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ope3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ope2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ope4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ope1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(op2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(proximo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/titulo_ingrediente.png"))); // NOI18N
@@ -604,7 +643,7 @@ public class TelaIngredientes extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -626,117 +665,180 @@ public class TelaIngredientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void alcaparraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alcaparraActionPerformed
-        // TODO add your handling code here:
-        //jButton13.setIcon(prato);
-        jButton39.setText("Cappelletti de Queijo com Presunto");
+        novo.ingredientes_padrao("Alcaparra");
+        novo.ingredientes_extra("Alcaparra", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_alcaparraActionPerformed
 
     private void azeitonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_azeitonaActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Azeitona");
+        novo.ingredientes_extra("Azeitona", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_azeitonaActionPerformed
 
     private void brocolisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brocolisActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Brócolis");
+        novo.ingredientes_extra("Brócolis", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_brocolisActionPerformed
 
     private void baconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baconActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Bacon");
+        novo.ingredientes_extra("Bacon", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_baconActionPerformed
 
     private void cebolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cebolaActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Cebola");
+        novo.ingredientes_extra("Cebola", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_cebolaActionPerformed
 
     private void cenouraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cenouraActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Cenoura");
+        novo.ingredientes_extra("Cenoura", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_cenouraActionPerformed
 
     private void alhoPoroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alhoPoroActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Alho Poró");
+        novo.ingredientes_extra("Alho Poró", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_alhoPoroActionPerformed
 
     private void carneSolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carneSolActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Carne de Sol");
+        novo.ingredientes_extra("Carne de Sol", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_carneSolActionPerformed
 
     private void alhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alhoActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Alho");
+        novo.ingredientes_extra("Alho", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_alhoActionPerformed
 
     private void frangoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frangoActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Frango");
+        novo.ingredientes_extra("Frango", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_frangoActionPerformed
 
     private void camaraoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_camaraoActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Camarão");
+        novo.ingredientes_extra("Camarão", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_camaraoActionPerformed
 
     private void presuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presuntoActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Presunto");
+        novo.ingredientes_extra("Presunto", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_presuntoActionPerformed
 
     private void peitoPeruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peitoPeruActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Peito de Peru");
+        novo.ingredientes_extra("Peito de Peru", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_peitoPeruActionPerformed
 
     private void palmitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_palmitoActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Palmito");
+        novo.ingredientes_extra("Palmito", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_palmitoActionPerformed
 
     private void salmaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salmaoActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Salmão");
+        novo.ingredientes_extra("Salmão", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_salmaoActionPerformed
 
     private void linguicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_linguicaActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Linguiça Calabresa");
+        novo.ingredientes_extra("Linguiça Calabresa", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_linguicaActionPerformed
 
     private void mussarelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mussarelaActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Mussarela");
+        novo.ingredientes_extra("Mussarela", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_mussarelaActionPerformed
 
     private void milhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_milhoActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Milho");
+        novo.ingredientes_extra("Milho", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_milhoActionPerformed
 
     private void gorgonzolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gorgonzolaActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Gorgonzola");
+        novo.ingredientes_extra("Gorgonzola", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_gorgonzolaActionPerformed
 
     private void champignonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_champignonActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Champignon");
+        novo.ingredientes_extra("Champignon", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_champignonActionPerformed
 
     private void tomateSecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tomateSecoActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Tomate Seco");
+        novo.ingredientes_extra("Tomate Seco", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_tomateSecoActionPerformed
 
     private void uvaPassaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uvaPassaActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Uva Passa");
+        novo.ingredientes_extra("Uva Passa", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_uvaPassaActionPerformed
 
     private void minasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minasActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Queijo Minas");
+        novo.ingredientes_extra("Queijo Minas", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_minasActionPerformed
 
     private void coalhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coalhoActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Queijo Coalho");
+        novo.ingredientes_extra("Queijo Coalho", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_coalhoActionPerformed
 
     private void ovoCodornaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ovoCodornaActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Ovo de Codorna");
+        novo.ingredientes_extra("Ovo de Codorna", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_ovoCodornaActionPerformed
 
     private void tomateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tomateActionPerformed
-        // TODO add your handling code here:
+        novo.ingredientes_padrao("Tomate");
+        novo.ingredientes_extra("Tomate", sim.isEnabled());
+        botoes();
     }//GEN-LAST:event_tomateActionPerformed
 
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
-        // TODO add your handling code here:
-        TelaExtras TelaExtras = new TelaExtras(new Pedido());
-        TelaExtras.setVisible(true);
-        this.setVisible(false);
+        novo.proximo();
     }//GEN-LAST:event_proximoActionPerformed
+
+    private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
+        novo.voltar();
+    }//GEN-LAST:event_voltarActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        novo.cancelar();
+    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void simActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simActionPerformed
+        
+    }//GEN-LAST:event_simActionPerformed
+
+    private void naoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_naoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -794,36 +896,36 @@ public class TelaIngredientes extends javax.swing.JFrame {
     private javax.swing.JButton ervilha;
     private javax.swing.JButton frango;
     private javax.swing.JButton gorgonzola;
-    private javax.swing.JButton jButton39;
-    private javax.swing.JButton jButton40;
-    private javax.swing.JButton jButton41;
-    private javax.swing.JButton jButton42;
-    private javax.swing.JButton jButton43;
-    private javax.swing.JButton jButton44;
-    private javax.swing.JButton jButton45;
-    private javax.swing.JButton jButton46;
-    private javax.swing.JButton jButton47;
-    private javax.swing.JButton jButton48;
-    private javax.swing.JButton jButton49;
-    private javax.swing.JButton jButton50;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JButton linguica;
     private javax.swing.JButton milho;
     private javax.swing.JButton minas;
     private javax.swing.JButton mussarela;
+    private javax.swing.JRadioButton nao;
+    private javax.swing.JButton op1;
+    private javax.swing.JButton op2;
+    private javax.swing.JButton op3;
+    private javax.swing.JButton op4;
+    private javax.swing.JButton op5;
+    private javax.swing.JButton op6;
+    private javax.swing.JButton op7;
+    private javax.swing.JButton op8;
+    private javax.swing.JButton ope1;
+    private javax.swing.JButton ope2;
+    private javax.swing.JButton ope3;
+    private javax.swing.JButton ope4;
     private javax.swing.JButton ovoCodorna;
     private javax.swing.JButton palmito;
     private javax.swing.JButton peitoPeru;
     private javax.swing.JButton presunto;
     private javax.swing.JButton proximo;
     private javax.swing.JButton salmao;
+    private javax.swing.JRadioButton sim;
     private javax.swing.JButton tomate;
     private javax.swing.JButton tomateSeco;
     private javax.swing.JButton uvaPassa;
