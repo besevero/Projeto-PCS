@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Molho extends Produto{
     
-     ArrayList<Produto> molho = new ArrayList();
+     private ArrayList<Produto> molho = new ArrayList();
     
      public Molho(){        
         molho.add(new Produto ("bolonhesa", 0.00, 30));
@@ -26,6 +26,20 @@ public class Molho extends Produto{
         super(nome, valor, quantidade);
         
 
+    }
+
+    /**
+     * @return the molho
+     */
+    public ArrayList<Produto> getMolho() {
+        return molho;
+    }
+
+    /**
+     * @param molho the molho to set
+     */
+    public void setMolho(ArrayList<Produto> molho) {
+        this.molho = molho;
     }
     
 }

@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controle.ControleTelaMolhos;
 import Model.Pedido;
 import javax.swing.ImageIcon;
 
@@ -14,13 +15,13 @@ import javax.swing.ImageIcon;
  */
 public class TelaMolhos extends javax.swing.JFrame {
     
-    private Pedido p;
+ ControleTelaMolhos novo = new ControleTelaMolhos(this);
     /**
      * Creates new form TelaMassas
      */
     public TelaMolhos(Pedido s) {
         initComponents();
-        p = s;
+        novo.setPedido(s);
         proximo.setEnabled(false);
     }
     public void ativar(){
@@ -102,11 +103,21 @@ public class TelaMolhos extends javax.swing.JFrame {
         voltar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         voltar.setText("Voltar");
         voltar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarActionPerformed(evt);
+            }
+        });
 
         cancelar.setBackground(new java.awt.Color(252, 207, 132));
         cancelar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cancelar.setText("Cancelar");
         cancelar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -236,14 +247,12 @@ public class TelaMolhos extends javax.swing.JFrame {
 
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
         // TODO add your handling code here:
-        TelaBebidas TelaBebidas = new TelaBebidas(p);
-        TelaBebidas.setVisible(true);
-        this.setVisible(false);
+        novo.proximo(escolhaMolho.getText());
     }//GEN-LAST:event_proximoActionPerformed
 
     private void bolognesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolognesaActionPerformed
         desativar();
-        escolhaMolho.setText("bolognesa");
+        escolhaMolho.setText("bolonhesa");
     }//GEN-LAST:event_bolognesaActionPerformed
 
     private void funghiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_funghiActionPerformed
@@ -258,13 +267,21 @@ public class TelaMolhos extends javax.swing.JFrame {
 
     private void quatroQueijosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quatroQueijosActionPerformed
         desativar();
-        escolhaMolho.setText("quatro queijo");
+        escolhaMolho.setText("4 queijos");
     }//GEN-LAST:event_quatroQueijosActionPerformed
 
     private void brancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brancoActionPerformed
         desativar();
         escolhaMolho.setText("branco");
     }//GEN-LAST:event_brancoActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        novo.cancelar();
+    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
+        novo.voltar();
+    }//GEN-LAST:event_voltarActionPerformed
 
     /**
      * @param args the command line arguments

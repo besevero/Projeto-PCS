@@ -6,12 +6,12 @@
 package Controle;
 
 import Model.Pedido;
-import Model.Produto;
 import Model.Produto_Ingrediente;
 import View.TelaExtras;
 import View.TelaIngredientes;
 import View.TelaInicial;
 import java.util.ArrayList;
+import javax.swing.JButton;
 
 /**
  *
@@ -36,7 +36,26 @@ public class ControleTelaIngredientes {
         getTelaIngredientes().setVisible(false);
       
      }
-    public void proximo(){
+    public void proximo(ArrayList<JButton> escolhasIngredientes, ArrayList<JButton> escolhasExtras){
+        for(int i = 0; i<ingredientes.getIdIngrediente().size();i++){
+            for(int j = 0; j<escolhasIngredientes.size();j++){
+                if(ingredientes.getIdIngrediente().get(i).getNome().equals(escolhasIngredientes.get(j).getText())){
+                    pedido.getPratos().add(ingredientes.getIdIngrediente().get(i));
+                }
+            }   
+            if(i == escolhasIngredientes.size()-1) break;
+        }
+        if(escolhasExtras.size() > 0)
+            
+        for(int i = 0; i<ingredientes.getIdIngrediente().size();i++){
+            for(int j = 0; j<escolhasIngredientes.size();j++){
+                if(ingredientes.getIdIngrediente().get(i).getNome().equals(escolhasExtras.get(i).getText())){
+                    pedido.getPratos().add(ingredientes.getIdIngrediente().get(i));
+                }
+                
+            }
+            if(i == escolhasExtras.size()-1) break;
+        }
      TelaExtras TelaExtras = new TelaExtras(pedido);
      TelaExtras.setVisible(true);
     getTelaIngredientes().setVisible(false);

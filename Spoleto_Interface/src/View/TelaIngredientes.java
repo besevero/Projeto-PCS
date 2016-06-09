@@ -873,7 +873,7 @@ public class TelaIngredientes extends javax.swing.JFrame {
     }//GEN-LAST:event_tomateActionPerformed
 
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
-        novo.proximo();
+        novo.proximo(escolhasIngredientes, escolhasExtras);
     }//GEN-LAST:event_proximoActionPerformed
 
     private void escolha01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escolha01ActionPerformed

@@ -7,6 +7,9 @@ package Controle;
 
 import Model.Molho;
 import Model.Pedido;
+import View.TelaBebidas;
+import View.TelaExtras;
+import View.TelaInicial;
 import View.TelaMolhos;
 
 /**
@@ -20,11 +23,42 @@ public class ControleTelaMolhos {
          
          
          public ControleTelaMolhos(TelaMolhos TelaMolhos){
-             Pedido p = new Pedido();
+             this.pedido = new Pedido();
              this.TelaMolhos = TelaMolhos;
                      
          }
-
+         public void iniciaBebida(){
+            TelaBebidas TelaBebidas = new TelaBebidas(pedido);
+            TelaBebidas.setVisible(true);
+            TelaMolhos.setVisible(false);
+         }
+         public void proximo(String escolha){
+            for(int i=0; i<molho.getMolho().size() ; i++)
+            if(molho.getMolho().get(i).getNome().equals(escolha)){
+                pedido.getPratos().add(molho.getMolho().get(i));
+            }
+         this.iniciaBebida();
+         }
+        public void inicial(){
+            TelaInicial TelaInicial = new TelaInicial(pedido);
+            TelaMolhos.setVisible(false);
+            TelaInicial.setVisible(true);
+        }
+        public void voltar(){
+                if((pedido.getPratos().size())%2 != 0){
+                    pedido.getPratos().remove((pedido.getPratos().size()-1));
+                }
+                TelaExtras TelaExtras = new TelaExtras(pedido);
+                TelaExtras.setVisible(true);
+                TelaMolhos.setVisible(false);
+            }
+        public void apagaPedido(){
+             pedido.getPratos().clear();
+        }
+        public void cancelar(){
+          apagaPedido();
+          inicial();
+        }
     /**
      * @return the pedido
      */
