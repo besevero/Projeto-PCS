@@ -301,25 +301,25 @@ public class TelaExtras extends javax.swing.JFrame {
 
     private void almondegasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_almondegasActionPerformed
         // TODO add your handling code here:
-        escolhaExtra.setText("almôndegas");        
+        escolhaExtra.setText("Almôndegas");        
         desativar();
     }//GEN-LAST:event_almondegasActionPerformed
 
     private void parmegianaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parmegianaActionPerformed
         // TODO add your handling code here:
-        escolhaExtra.setText("frango a parmegiana");       
+        escolhaExtra.setText("Frango à Parmegiana");       
         desativar();
     }//GEN-LAST:event_parmegianaActionPerformed
 
     private void douradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_douradoActionPerformed
         // TODO add your handling code here:
-        escolhaExtra.setText("frango dourado");        
+        escolhaExtra.setText("Frango Dourado");        
         desativar();
     }//GEN-LAST:event_douradoActionPerformed
 
     private void peitoPeruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peitoPeruActionPerformed
         // TODO add your handling code here:
-        escolhaExtra.setText("peito de peru");        
+        escolhaExtra.setText("Peito de Peru");        
         desativar();
     }//GEN-LAST:event_peitoPeruActionPerformed
 
@@ -333,7 +333,7 @@ public class TelaExtras extends javax.swing.JFrame {
 
     private void polpetoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_polpetoneActionPerformed
         // TODO add your handling code here:
-        escolhaExtra.setText("polpetone");
+        escolhaExtra.setText("Polpetone");
         desativar();
     }//GEN-LAST:event_polpetoneActionPerformed
 
