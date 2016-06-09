@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/View/TelaPedido.java</file>
-            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/View/TelaBebidas.java</file>
-            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/Controle/ControlePedido.java</file>
-            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/Controle/ControleBebida.java</file>
+            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/Model/Produto_Ingrediente.java</file>
+            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/Controle/ControlePromo.java</file>
+            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/Controle/ControleTelaIngredientes.java</file>
+            <file>file:/C:/Users/Bernardo/Documents/GitHub/Projeto-PCS/Spoleto_Interface/src/View/TelaIngredientes.java</file>
         </group>
     </open-files>
 </project-private>

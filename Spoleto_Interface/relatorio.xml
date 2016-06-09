@@ -2,7 +2,7 @@
 <java version="1.8.0_51" class="java.beans.XMLDecoder">
  <object class="Model.Produto">
   <void property="nome">
-   <string>Ravioli de Gorgonzola</string>
+   <string>Ravioli de Ricota</string>
   </void>
   <void property="quantidade">
    <int>100</int>
@@ -10,7 +10,7 @@
  </object>
  <object class="Model.Produto">
   <void property="nome">
-   <string>funghi</string>
+   <string>branco</string>
   </void>
   <void property="quantidade">
    <int>30</int>
@@ -18,7 +18,23 @@
  </object>
  <object class="Model.Produto">
   <void property="nome">
-   <string>Ice tea</string>
+   <string>Suco de uva</string>
+  </void>
+  <void property="quantidade">
+   <int>20</int>
+  </void>
+ </object>
+ <object class="Model.Produto">
+  <void property="nome">
+   <string>Spaghetti alho e oleo</string>
+  </void>
+  <void property="quantidade">
+   <int>30</int>
+  </void>
+ </object>
+ <object class="Model.Produto">
+  <void property="nome">
+   <string>Suco de uva</string>
   </void>
   <void property="quantidade">
    <int>20</int>
