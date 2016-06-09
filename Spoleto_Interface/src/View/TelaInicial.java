@@ -31,6 +31,8 @@ public class TelaInicial extends javax.swing.JFrame {
     public TelaInicial(Pedido s) {
         initComponents();        
         novo.setPedido(s);
+        TelaAtendente TelaAtendente = new TelaAtendente(s);
+        TelaAtendente.setVisible(true);
     }
 
     /**

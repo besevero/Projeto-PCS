@@ -115,7 +115,7 @@ public class TelaVisualizarEstoque extends javax.swing.JFrame {
     }//GEN-LAST:event_voltarActionPerformed
 
     private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
-      TelaAtendente TelaAtendente  = new TelaAtendente ();
+      TelaAtendente TelaAtendente  = new TelaAtendente(pedido);
       TelaAtendente.setVisible(true);
       this.setVisible(false);
     }//GEN-LAST:event_okActionPerformed

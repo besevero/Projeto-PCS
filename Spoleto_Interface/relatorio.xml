@@ -10,23 +10,7 @@
  </object>
  <object class="Model.Produto">
   <void property="nome">
-   <string>branco</string>
-  </void>
-  <void property="quantidade">
-   <int>30</int>
-  </void>
- </object>
- <object class="Model.Produto">
-  <void property="nome">
-   <string>Suco de uva</string>
-  </void>
-  <void property="quantidade">
-   <int>20</int>
-  </void>
- </object>
- <object class="Model.Produto">
-  <void property="nome">
-   <string>Spaghetti alho e oleo</string>
+   <string>4 queijos</string>
   </void>
   <void property="quantidade">
    <int>30</int>
