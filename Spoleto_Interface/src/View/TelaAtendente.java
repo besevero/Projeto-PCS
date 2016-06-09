@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controle.ControlePedido;
 import Model.Pedido;
 
 /**
@@ -48,6 +49,11 @@ public class TelaAtendente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         venda.setText("Relatório ");
+        venda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vendaActionPerformed(evt);
+            }
+        });
 
         estoque.setText(" Estoque");
         estoque.addActionListener(new java.awt.event.ActionListener() {
@@ -149,6 +155,11 @@ public class TelaAtendente extends javax.swing.JFrame {
       TelaEstoque.setVisible(true);
       this.setVisible(false);
     }//GEN-LAST:event_estoqueActionPerformed
+
+    private void vendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vendaActionPerformed
+       TelaSenhaGerente TelaSenhaGerente= new TelaSenhaGerente();
+       TelaSenhaGerente.setVisible(true);
+    }//GEN-LAST:event_vendaActionPerformed
 
     /**
      * @param args the command line arguments

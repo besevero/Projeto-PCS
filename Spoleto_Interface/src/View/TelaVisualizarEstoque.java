@@ -5,6 +5,9 @@
  */
 package View;
 
+import Controle.ControleEstoque;
+import Model.Produto;
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 
 /**
@@ -17,11 +20,18 @@ public class TelaVisualizarEstoque extends javax.swing.JFrame {
      * Creates new form TelaVisualizarEstoque
      */
     private DefaultListModel modeloEstoque = new DefaultListModel();
+    private ControleEstoque controleEstoque;
     public TelaVisualizarEstoque(String nome) {
         initComponents();
+        //controleEstoque = p;
         titulo.setText(nome);
+        AdicionaEstoque();
+        listaDoEstoque.setModel(modeloEstoque);
+        //p.insereLista(modeloEstoque);
     }
 
+  
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,7 +46,7 @@ public class TelaVisualizarEstoque extends javax.swing.JFrame {
         repor = new javax.swing.JButton();
         titulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listaDoEstoque = new javax.swing.JList<String>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,7 +66,7 @@ public class TelaVisualizarEstoque extends javax.swing.JFrame {
 
         repor.setText("REPOR ESTOQUE");
 
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listaDoEstoque);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,7 +119,16 @@ public class TelaVisualizarEstoque extends javax.swing.JFrame {
       TelaAtendente.setVisible(true);
       this.setVisible(false);
     }//GEN-LAST:event_okActionPerformed
-
+    public void AdicionaEstoque(){        
+        /*for(int i = 0; i <bebidas.size();i++){
+            System.out.println(bebidas.get(i).getNome());
+            modeloEstoque.addElement(bebidas.get(i).getNome() + " ------ " + bebidas.get(i).getQuantidade());
+        }*/
+        modeloEstoque.addElement("Coca - Cola ----- 8");
+        modeloEstoque.addElement("Mate ----- 8");
+        modeloEstoque.addElement("Suco de Laranja ----- 8");
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -140,14 +159,14 @@ public class TelaVisualizarEstoque extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               // new TelaVisualizarEstoque().setVisible(true);
+               //new TelaVisualizarEstoque().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList<String> listaDoEstoque;
     private javax.swing.JButton ok;
     private javax.swing.JButton repor;
     private javax.swing.JLabel titulo;

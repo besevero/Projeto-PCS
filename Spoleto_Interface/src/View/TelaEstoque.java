@@ -6,6 +6,7 @@
 package View;
 
 
+import Controle.ControleBebida;
 import Controle.ControleEstoque;
 import Model.Pedido;
 import javax.swing.JOptionPane;
@@ -18,7 +19,11 @@ public class TelaEstoque extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaEstoque
-     */ControleEstoque novo = new ControleEstoque(this);
+     */
+     ControleEstoque novo;
+     ControleEstoque aux;
+     
+     ControleBebida[] b;
      String nome= null;
              
     public TelaEstoque() {
@@ -26,6 +31,8 @@ public class TelaEstoque extends javax.swing.JFrame {
         Pedido p = new Pedido();
         
         initComponents();
+        
+        
     }
 
     /**
@@ -181,6 +188,7 @@ public class TelaEstoque extends javax.swing.JFrame {
 
     private void bebidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bebidasActionPerformed
       nome="Bebidas";
+      //novo.visualizaEstoqueBebida();
       TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque (nome);
       TelaVisualizarEstoque .setVisible(true);
       this.setVisible(false);

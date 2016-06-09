@@ -23,7 +23,7 @@ public class ControleTelaExtras {
     
     public ControleTelaExtras(TelaExtras TelaExtras){
         this.pedido = new Pedido();
-        this.TelaExtras = new TelaExtras(pedido);
+        this.TelaExtras = TelaExtras;
     }
     public void proximo(String escolha){
         for(int i = 0; i < extra.getProdExtra().size() ; i++){

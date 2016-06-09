@@ -24,6 +24,7 @@ public class ControleBebida {
      private TelaBebidas TelaBebidas;
      private ArrayList<Produto> produtos = new ArrayList();
      private Bebida bebida = new Bebida();
+   
      
      public ControleBebida(TelaBebidas TelaBebidas){
          this.pedido = new Pedido();
@@ -118,12 +119,20 @@ public class ControleBebida {
     public Bebida getBebida() {
         return bebida;
     }
+    
+    ArrayList<Produto> getqtdeBebida(){
+        return getBebida().getIdBebida();        
+    }
 
     /**
      * @param bebida the bebida to set
      */
     public void setBebida(Bebida bebida) {
         this.bebida = bebida;
+    }
+
+    void getqtdeBebida(ControleBebida[] b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
 

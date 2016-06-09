@@ -10,6 +10,7 @@ import Model.Produto;
 import View.TelaBebidas;
 import View.TelaEstoque;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -19,36 +20,42 @@ public class ControleEstoque {
     private Pedido pedido; 
     private TelaEstoque TelaEstoque;
     private ArrayList<Produto> produtos = new ArrayList();
-
+    private ControleTelaMassas ControleTelaMassas;
+    private ControleBebida ControleBebida;
     public ControleEstoque(TelaEstoque TelaEstoque) {
         this.pedido = new Pedido();
         this.TelaEstoque = TelaEstoque;
-    }
-     
+    }     
   
-    int visualizarEstoqueProduto(Produto p){
+    public int visualizarEstoqueProduto(Produto p){
      
      return p.getQuantidade();
  }
  
     
-    int acrescentarQtdeProduto (Produto p, int quantidade){
+    public int acrescentarQtdeProduto (Produto p, int quantidade){
         int novaQuantidade=0;
         novaQuantidade = p.getQuantidade() + quantidade;
         return novaQuantidade;
  
     }
     
-    int diminuirEstoque (Produto p, int qtde){
+    public int diminuirEstoque (Produto p, int qtde){
         int novaQuantidade=0;
         novaQuantidade = p.getQuantidade() - qtde;
         return novaQuantidade;
     }
    
-    void visualizarTodoEstoque(Produto[] p){
-      for ( int i=0; i< p.length; i ++){
-          System.out.println(p[i].getNome() + " " + p[i].getQuantidade());
-      }
-      
+   public ArrayList<Produto> visualizaEstoqueBebida(){
+     ArrayList<Produto> bebidas = ControleBebida.getqtdeBebida();
+     return bebidas; 
   }
+
+    public void insereLista(DefaultListModel modeloEstoque) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+
+   
 }

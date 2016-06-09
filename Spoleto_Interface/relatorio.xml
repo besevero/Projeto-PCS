@@ -1,30 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.8.0_51" class="java.beans.XMLDecoder">
- <object class="Model.Pedido" id="Pedido0">
-  <void property="pratos">
-   <void method="add">
-    <object class="Model.Produto">
-     <void property="nome">
-      <string>Penne a Carbonara</string>
-     </void>
-     <void property="quantidade">
-      <int>30</int>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="Model.Produto">
-     <void property="nome">
-      <string>Mate</string>
-     </void>
-     <void property="quantidade">
-      <int>20</int>
-     </void>
-    </object>
-   </void>
+ <object class="Model.Produto">
+  <void property="nome">
+   <string>Penne a Carbonara</string>
   </void>
-  <void property="senha">
-   <int>7</int>
+  <void property="quantidade">
+   <int>30</int>
+  </void>
+ </object>
+ <object class="Model.Produto">
+  <void property="nome">
+   <string>Suco de laranja</string>
+  </void>
+  <void property="quantidade">
+   <int>20</int>
+  </void>
+ </object>
+ <object class="Model.Produto">
+  <void property="nome">
+   <string>Penne a Carbonara</string>
+  </void>
+  <void property="quantidade">
+   <int>30</int>
   </void>
  </object>
 </java>

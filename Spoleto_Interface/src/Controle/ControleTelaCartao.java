@@ -11,6 +11,7 @@ import View.TelaNotaFiscal;
 import java.beans.XMLEncoder;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,6 +19,7 @@ import java.io.IOException;
  */
 public class ControleTelaCartao {
     private Pedido pedido;
+    private ArrayList<Pedido> pedidos = new ArrayList();
     private TelaCartao TelaCartao;
     
     public ControleTelaCartao(TelaCartao TelaCartao){
@@ -29,6 +31,7 @@ public class ControleTelaCartao {
     }
     
     public boolean imprimir(String senha){
+        pedidos.add(pedido);
         if(senha.equals("123")){
             
              try{ 
@@ -36,8 +39,12 @@ public class ControleTelaCartao {
         try{ 
             
             xmlEncoder = new XMLEncoder ( new FileOutputStream ("relatorio.xml"));
-            xmlEncoder.writeObject(pedido);
-            
+            for(int i = 0 ; i<pedidos.size() ; i++){
+                for(int j = 0 ; j<pedidos.get(i).getPratos().size() ; j++){
+                System.out.print(pedidos.get(i).getPratos().get(j).getNome());
+                    xmlEncoder.writeObject(pedidos.get(i).getPratos().get(j));
+            }        
+        }
         }
         finally{
             if(xmlEncoder != null)

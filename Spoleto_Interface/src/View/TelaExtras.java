@@ -7,7 +7,6 @@ package View;
 
 import Controle.ControleTelaExtras;
 import Model.Pedido;
-import javax.swing.ImageIcon;
 
 /**
  *
@@ -15,7 +14,6 @@ import javax.swing.ImageIcon;
  */
 public class TelaExtras extends javax.swing.JFrame {
     
-    ImageIcon prato = new ImageIcon(getClass().getResource("/Imagens/botao_penne.png"));
     /**
      * Creates new form TelaMassas
      */
