@@ -213,9 +213,10 @@ public class TelaInicial extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 Pedido p = new Pedido();
-                new TelaInicial(p).setVisible(true);
                 TelaAtendente TelaAtendente = new TelaAtendente();
                 TelaAtendente.setVisible(true);
+                new TelaInicial(p).setVisible(true);
+
             }
         });
     }

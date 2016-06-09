@@ -328,6 +328,9 @@
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="escolhaExtra03ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="escolhaExtra02">
               <Properties>
@@ -336,6 +339,9 @@
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="escolhaExtra02ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="escolhaExtra01">
               <Properties>
@@ -344,6 +350,9 @@
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="escolhaExtra01ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="escolhaExtra04">
               <Properties>
@@ -352,6 +361,9 @@
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="escolhaExtra04ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
@@ -624,6 +636,9 @@
                   <Image iconType="3" name="/Imagens/botao_ervilha.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ervilhaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="alho">
               <Properties>

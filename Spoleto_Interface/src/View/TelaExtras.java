@@ -301,7 +301,7 @@ public class TelaExtras extends javax.swing.JFrame {
 
     private void almondegasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_almondegasActionPerformed
         // TODO add your handling code here:
-        escolhaExtra.setText("Almôndegas");        
+        escolhaExtra.setText("Almôndega");        
         desativar();
     }//GEN-LAST:event_almondegasActionPerformed
 

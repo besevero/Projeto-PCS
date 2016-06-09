@@ -37,17 +37,22 @@ public class ControleTelaIngredientes {
       
      }
     public void proximo(ArrayList<JButton> escolhasIngredientes, ArrayList<JButton> escolhasExtras){
+        
+        
         for(int i = 0; i<ingredientes.getIdIngrediente().size();i++){
             for(int j = 0; j<escolhasIngredientes.size();j++){
                 if(ingredientes.getIdIngrediente().get(i).getNome().equals(escolhasIngredientes.get(j).getText())){
                     pedido.getPratos().add(ingredientes.getIdIngrediente().get(i));
                 }
+                
             }
-            System.out.println(ingredientes.getIdIngrediente().get(i));
-            
-            if(i == escolhasIngredientes.size()-1) break;
         }
-        if(escolhasExtras.size() > 0)
+        int cont = 0;
+        for(int g = 0 ; g < escolhasExtras.size(); g++){
+           if(!escolhasExtras.get(g).getText().equals(""))
+               cont++;
+        }
+        if(cont == escolhasExtras.size()){
             
         for(int i = 0; i<ingredientes.getIdIngrediente().size();i++){
             for(int j = 0; j<escolhasIngredientes.size();j++){
@@ -56,9 +61,11 @@ public class ControleTelaIngredientes {
                 }
                
             }
-            
-            if(i == escolhasExtras.size()-1) break;
+                 }
         }
+            /*for(int g = 0; g<pedido.getPratos().size();g++){
+                System.out.println(pedido.getPratos().get(g).getNome());
+            }*/
      TelaExtras TelaExtras = new TelaExtras(pedido);
      TelaExtras.setVisible(true);
      getTelaIngredientes().setVisible(false);

@@ -131,14 +131,18 @@ public class TelaIngredientes extends javax.swing.JFrame {
     public void AtivarBotaoExtras (){
         for(int i = 0; i<escolhasExtras.size();i++){            
             escolhasExtras.get(i).setEnabled(true);
-            ativar();
+            
         }
+        ativar();
+        proximo.setEnabled(true);
     }
     public void DesativarBotaoExtras (){
         for(int i = 0; i<escolhasExtras.size();i++){
             escolhasExtras.get(i).setText("");
             escolhasExtras.get(i).setEnabled(false);
+            
         }
+        desativar();
     }
     //Os métodos acima foram mantidos na View pois eles regem a ativação de botões
     //e inserção de textos nos mesmo
@@ -295,15 +299,35 @@ public class TelaIngredientes extends javax.swing.JFrame {
 
         escolhaExtra03.setBackground(new java.awt.Color(245, 156, 97));
         escolhaExtra03.setEnabled(false);
+        escolhaExtra03.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                escolhaExtra03ActionPerformed(evt);
+            }
+        });
 
         escolhaExtra02.setBackground(new java.awt.Color(245, 156, 97));
         escolhaExtra02.setEnabled(false);
+        escolhaExtra02.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                escolhaExtra02ActionPerformed(evt);
+            }
+        });
 
         escolhaExtra01.setBackground(new java.awt.Color(245, 156, 97));
         escolhaExtra01.setEnabled(false);
+        escolhaExtra01.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                escolhaExtra01ActionPerformed(evt);
+            }
+        });
 
         escolhaExtra04.setBackground(new java.awt.Color(245, 156, 97));
         escolhaExtra04.setEnabled(false);
+        escolhaExtra04.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                escolhaExtra04ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Adicionar Ingredientes Extras :");
@@ -469,6 +493,11 @@ public class TelaIngredientes extends javax.swing.JFrame {
         });
 
         ervilha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/botao_ervilha.png"))); // NOI18N
+        ervilha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ervilhaActionPerformed(evt);
+            }
+        });
 
         alho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/botao_alho.png"))); // NOI18N
         alho.addActionListener(new java.awt.event.ActionListener() {
@@ -942,6 +971,31 @@ public class TelaIngredientes extends javax.swing.JFrame {
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         novo.cancelar();
     }//GEN-LAST:event_cancelarActionPerformed
+
+    private void ervilhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ervilhaActionPerformed
+        // TODO add your handling code here:
+        MostrarBotaoEscolha("Ervilha");
+    }//GEN-LAST:event_ervilhaActionPerformed
+
+    private void escolhaExtra01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escolhaExtra01ActionPerformed
+      escolhaExtra01.setText("");
+        ativar();    // TODO add your handling code here:
+    }//GEN-LAST:event_escolhaExtra01ActionPerformed
+
+    private void escolhaExtra03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escolhaExtra03ActionPerformed
+              escolhaExtra03.setText("");
+        ativar();    // TODO add your handling code here:
+    }//GEN-LAST:event_escolhaExtra03ActionPerformed
+
+    private void escolhaExtra04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escolhaExtra04ActionPerformed
+              escolhaExtra04.setText("");
+        ativar();    // TODO add your handling code here:
+    }//GEN-LAST:event_escolhaExtra04ActionPerformed
+
+    private void escolhaExtra02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escolhaExtra02ActionPerformed
+        escolhaExtra02.setText("");
+        ativar();    // TODO add your handling code here:
+    }//GEN-LAST:event_escolhaExtra02ActionPerformed
 
     /**
      * @param args the command line arguments
