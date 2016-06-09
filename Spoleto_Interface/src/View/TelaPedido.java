@@ -18,6 +18,7 @@ public class TelaPedido extends javax.swing.JFrame {
 
     private DefaultListModel modeloPedido = new DefaultListModel();
     ImageIcon click_MaisPedido = new ImageIcon(getClass().getResource("/Imagens/click_MaisPedidos.png"));
+    ImageIcon botao_MaisPedido = new ImageIcon(getClass().getResource("/Imagens/botao_MaisPedidos.png"));
     ControlePedido novo = new ControlePedido(this);
 
     public TelaPedido(Pedido p) {
@@ -139,13 +140,14 @@ public class TelaPedido extends javax.swing.JFrame {
 
     private void adicionarPedidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adicionarPedidoMouseClicked
         // TODO add your handling code here:
+        adicionarPedido.setIcon(botao_MaisPedido);
         novo.inicial();
     }//GEN-LAST:event_adicionarPedidoMouseClicked
 
     private void adicionarPedidoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adicionarPedidoMouseEntered
         // TODO add your handling code here:
         adicionarPedido.setIcon(click_MaisPedido);
-            novo.inicial();
+            
     }//GEN-LAST:event_adicionarPedidoMouseEntered
 
     /**

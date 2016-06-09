@@ -42,7 +42,9 @@ public class ControleTelaIngredientes {
                 if(ingredientes.getIdIngrediente().get(i).getNome().equals(escolhasIngredientes.get(j).getText())){
                     pedido.getPratos().add(ingredientes.getIdIngrediente().get(i));
                 }
-            }   
+            }
+            System.out.println(ingredientes.getIdIngrediente().get(i));
+            
             if(i == escolhasIngredientes.size()-1) break;
         }
         if(escolhasExtras.size() > 0)
@@ -52,13 +54,14 @@ public class ControleTelaIngredientes {
                 if(ingredientes.getIdIngrediente().get(i).getNome().equals(escolhasExtras.get(i).getText())){
                     pedido.getPratos().add(ingredientes.getIdIngrediente().get(i));
                 }
-                
+               
             }
+            
             if(i == escolhasExtras.size()-1) break;
         }
      TelaExtras TelaExtras = new TelaExtras(pedido);
      TelaExtras.setVisible(true);
-    getTelaIngredientes().setVisible(false);
+     getTelaIngredientes().setVisible(false);
     }
     public void voltar(){
         TelaInicial TelaInicial = new TelaInicial(getPedido());

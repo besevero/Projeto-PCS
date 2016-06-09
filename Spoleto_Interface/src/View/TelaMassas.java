@@ -324,6 +324,7 @@ public class TelaMassas extends javax.swing.JFrame {
 
     private void escolhaMassaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escolhaMassaActionPerformed
         escolhaMassa.setText("");
+        ativar();
     }//GEN-LAST:event_escolhaMassaActionPerformed
 
     private void spaghettiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spaghettiActionPerformed

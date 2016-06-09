@@ -749,12 +749,12 @@ public class TelaIngredientes extends javax.swing.JFrame {
 
     private void azeitonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_azeitonaActionPerformed
         // TODO add your handling code here:
-        MostrarBotaoEscolha("Azeitona");
+        MostrarBotaoEscolha("Azeitona Preta");
     }//GEN-LAST:event_azeitonaActionPerformed
 
     private void brocolisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brocolisActionPerformed
         // TODO add your handling code here:
-        MostrarBotaoEscolha("Brocólis");
+        MostrarBotaoEscolha("Brócolis");
     }//GEN-LAST:event_brocolisActionPerformed
 
     private void baconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baconActionPerformed
@@ -794,7 +794,7 @@ public class TelaIngredientes extends javax.swing.JFrame {
 
     private void camaraoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_camaraoActionPerformed
         // TODO add your handling code here:
-        MostrarBotaoEscolha("Camarao");
+        MostrarBotaoEscolha("Camarão");
     }//GEN-LAST:event_camaraoActionPerformed
 
     private void presuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presuntoActionPerformed
@@ -814,7 +814,7 @@ public class TelaIngredientes extends javax.swing.JFrame {
 
     private void salmaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salmaoActionPerformed
         // TODO add your handling code here:
-        MostrarBotaoEscolha("Salmao");
+        MostrarBotaoEscolha("Salmão");
     }//GEN-LAST:event_salmaoActionPerformed
 
     private void linguicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_linguicaActionPerformed

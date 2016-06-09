@@ -43,11 +43,12 @@ public class ControleTelaMassas {
     public void proximoMassa(String escolha){
         for(int i=0; i<massa.getIdMassa().size(); i++){
             if(massa.getIdMassa().get(i).getNome().equals(escolha)){
-                pedido.getPratos().add(massa.getIdMassa().get(i));
-                }
+                    pedido.getPratos().add(massa.getIdMassa().get(i));
             }
-            this.proximo();
+     
      }
+               this.proximo();
+    }
     public void voltaMassa(){
         if((pedido.getPratos().size())%2 != 0){
            pedido.getPratos().remove((pedido.getPratos().size()-1));

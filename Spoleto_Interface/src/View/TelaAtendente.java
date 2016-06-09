@@ -17,9 +17,9 @@ public class TelaAtendente extends javax.swing.JFrame {
     /**
      * Creates new form TelaAtendente
      */
-     private Pedido pedido;
      
-    public TelaAtendente(Pedido s) {
+     
+    public TelaAtendente() {
         
         
         initComponents();

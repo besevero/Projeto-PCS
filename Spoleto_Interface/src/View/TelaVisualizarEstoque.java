@@ -6,6 +6,7 @@
 package View;
 
 import Controle.ControleEstoque;
+import Model.Pedido;
 import Model.Produto;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
@@ -115,7 +116,7 @@ public class TelaVisualizarEstoque extends javax.swing.JFrame {
     }//GEN-LAST:event_voltarActionPerformed
 
     private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
-      TelaAtendente TelaAtendente  = new TelaAtendente(pedido);
+      TelaAtendente TelaAtendente  = new TelaAtendente();
       TelaAtendente.setVisible(true);
       this.setVisible(false);
     }//GEN-LAST:event_okActionPerformed

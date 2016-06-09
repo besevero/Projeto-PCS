@@ -34,8 +34,8 @@ public class ControleTelaMolhos {
          }
          public void proximo(String escolha){
             for(int i=0; i<molho.getMolho().size() ; i++)
-            if(molho.getMolho().get(i).getNome().equals(escolha)){
-                pedido.getPratos().add(molho.getMolho().get(i));
+                if(molho.getMolho().get(i).getNome().equals(escolha)){
+                    pedido.getPratos().add(molho.getMolho().get(i));
             }
          this.iniciaBebida();
          }

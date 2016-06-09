@@ -42,6 +42,8 @@ public class Produto_Ingrediente extends Produto{
         idIngrediente.add(new Produto ("Salmão", 0.00, 100));
         idIngrediente.add(new Produto ("Tomate", 0.00, 100));
         idIngrediente.add(new Produto ("Tomate Seco", 0.00, 100));
+        idIngrediente.add(new Produto ("Mussarela", 0.00, 100));
+        idIngrediente.add(new Produto ("Ervilha", 0.00, 100));
     }
      
     public Produto_Ingrediente(String nome, float valor,
