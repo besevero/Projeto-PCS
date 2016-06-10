@@ -8,6 +8,7 @@ package Controle;
 import Model.Pedido;
 import View.TelaCartao;
 import View.TelaNotaFiscal;
+import View.TelaPagamento;
 import java.beans.XMLEncoder;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -28,6 +29,8 @@ public class ControleTelaCartao {
     }
     public void cancelar(){
         TelaCartao.setVisible(false);
+        TelaPagamento TelaPagamento = new TelaPagamento(pedido);
+        TelaPagamento.setVisible(true);
     }
     
     public boolean imprimir(String senha){
