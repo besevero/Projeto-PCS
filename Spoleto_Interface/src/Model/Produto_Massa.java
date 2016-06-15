@@ -26,7 +26,7 @@ public class Produto_Massa extends Produto{
         IdMassa.add(new Produto ("Ravioli de Gorgonzola", 25.00, 100));
         IdMassa.add(new Produto ("Gnocchi", 20.00, 100));
         IdMassa.add(new Produto ("Cappelletti de Carne", 20.00, 100));
-        IdMassa.add(new Produto ("Cappelleti de Frango", 20.00, 100));
+        IdMassa.add(new Produto ("Cappelletti de Frango", 20.00, 100));
     }
     
     public Produto_Massa(String nome, double valor, int quantidade) {

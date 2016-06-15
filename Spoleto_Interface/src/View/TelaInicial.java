@@ -86,6 +86,9 @@ public class TelaInicial extends javax.swing.JFrame {
 
         labelFavor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/botao_favor.png"))); // NOI18N
         labelFavor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelFavorMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 labelFavorMouseEntered(evt);
             }
@@ -181,6 +184,10 @@ public class TelaInicial extends javax.swing.JFrame {
     private void labelPromoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelPromoMouseClicked
        novo.iniciaPromo();
     }//GEN-LAST:event_labelPromoMouseClicked
+
+    private void labelFavorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelFavorMouseClicked
+       novo.telaFavorito();
+    }//GEN-LAST:event_labelFavorMouseClicked
 
     /**
      * @param args the command line arguments

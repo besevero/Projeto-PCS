@@ -344,7 +344,7 @@ public class TelaMassas extends javax.swing.JFrame {
     }//GEN-LAST:event_farfalleActionPerformed
 
     private void fetuccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fetuccineActionPerformed
-       escolhaMassa.setText("Fetccine");
+       escolhaMassa.setText("Fettuccine");
        desativar();
     }//GEN-LAST:event_fetuccineActionPerformed
 
@@ -354,7 +354,7 @@ public class TelaMassas extends javax.swing.JFrame {
     }//GEN-LAST:event_penneActionPerformed
 
     private void gnochiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gnochiActionPerformed
-        escolhaMassa.setText("Gnochi");
+        escolhaMassa.setText("Gnocchi");
         desativar();
     }//GEN-LAST:event_gnochiActionPerformed
 

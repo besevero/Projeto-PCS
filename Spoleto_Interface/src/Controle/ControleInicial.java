@@ -6,6 +6,7 @@
 package Controle;
 
 import Model.Pedido;
+import View.TelaFavorito;
 import View.TelaInicial;
 import View.TelaMassas;
 import View.TelaPromo;
@@ -32,6 +33,11 @@ public class ControleInicial{
         TelaMassas TelaMassa = new TelaMassas(pedido);
         inicial.setVisible(false);
         TelaMassa.setVisible(true);
+    }
+     public void telaFavorito(){
+        TelaFavorito TelaFavorito = new TelaFavorito(pedido);
+        inicial.setVisible(false);
+        TelaFavorito.setVisible(true);
     }
   
     public Pedido getPedido() {
