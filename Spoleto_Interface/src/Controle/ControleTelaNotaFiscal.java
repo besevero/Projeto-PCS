@@ -17,16 +17,19 @@ import View.TelaPagamento;
 public class ControleTelaNotaFiscal {
     private Pedido pedido;
     private TelaNotaFiscal TelaNotaFiscal;
+    private ControleTelaAtendente ControleTelaAtendente; 
     
     public ControleTelaNotaFiscal(TelaNotaFiscal TelaNotaFiscal){
         this.pedido = new Pedido();
         this.TelaNotaFiscal = TelaNotaFiscal;
+        this.ControleTelaAtendente = new ControleTelaAtendente();
     }
     public void finalizar(){
         TelaInicial TelaInicial = new TelaInicial(pedido);
         TelaNotaFiscal.setVisible(false);
         TelaInicial.setVisible(true);
         pedido.incrementaSenha();
+        ControleTelaAtendente.MostrarPedido(pedido);
         pedido.getPratos().clear();
         
     }

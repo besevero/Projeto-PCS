@@ -21,8 +21,7 @@ public class TelaFavorito extends javax.swing.JFrame {
     ControleTelaFavoritos ControleFavorito = new ControleTelaFavoritos(this);
     
     public TelaFavorito(Pedido s) {
-        initComponents();
-         initComponents();
+        initComponents();        
         ControleFavorito.setPedido(s);
         proximo.setEnabled(false);
     }

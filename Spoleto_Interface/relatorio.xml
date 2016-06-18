@@ -1,71 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.8.0_45" class="java.beans.XMLDecoder">
+ <object class="Model.Produto">
+  <void property="nome">
+   <string>Penne</string>
+  </void>
+  <void property="quantidade">
+   <int>100</int>
+  </void>
+ </object>
  <object class="Model.Produto" id="Produto0">
   <void property="nome">
-   <string>Palmito</string>
+   <string>Peito de Peru</string>
   </void>
   <void property="quantidade">
    <int>100</int>
   </void>
  </object>
- <object class="Model.Produto" id="Produto1">
+ <object idref="Produto0"/>
+ <object idref="Produto0"/>
+ <object idref="Produto0"/>
+ <object idref="Produto0"/>
+ <object idref="Produto0"/>
+ <object idref="Produto0"/>
+ <object idref="Produto0"/>
+ <object class="Model.Produto">
   <void property="nome">
-   <string>Mussarela</string>
-  </void>
-  <void property="quantidade">
-   <int>100</int>
-  </void>
- </object>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object class="Model.Produto" id="Produto2">
-  <void property="nome">
-   <string>Polpetone</string>
-  </void>
-  <void property="quantidade">
-   <int>35</int>
-  </void>
- </object>
- <object class="Model.Produto" id="Produto3">
-  <void property="nome">
-   <string>4 queijos</string>
+   <string>branco</string>
   </void>
   <void property="quantidade">
    <int>30</int>
   </void>
  </object>
- <object class="Model.Produto" id="Produto4">
-  <void property="nome">
-   <string>Suco de uva</string>
-  </void>
-  <void property="quantidade">
-   <int>20</int>
-  </void>
- </object>
- <object idref="Produto0"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto2"/>
- <object idref="Produto3"/>
- <object idref="Produto4"/>
- <object idref="Produto0"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto1"/>
- <object idref="Produto2"/>
- <object idref="Produto3"/>
- <object idref="Produto4"/>
 </java>

@@ -7,6 +7,7 @@ package View;
 
 import Model.Pedido;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 
@@ -20,29 +21,20 @@ public class TelaAtendente extends javax.swing.JFrame {
      * Creates new form TelaAtendente
      */
      private Pedido pedido;
+     int qtdPedidos = 0;
      private FlowLayout layout;
      private Container container;
      
-    public TelaAtendente() {
-        
-        
+    public TelaAtendente() {      
+                   
         initComponents();
-        /*JButton botao = new JButton("OK");
-        JButton botao1 = new JButton("K");
-        JButton botao2 = new JButton("O");
-        JButton botao3 = new JButton("OK22");
-        botao.setBounds(0,240,50,100);
-        botao1.setBounds(100,240,50,100);
-        botao2.setBounds(200,240,50,100);
-        botao3.setBounds(300,240,50,100);
-        //PanelPedidos.setLayout(null);
-        PanelPedidos.add(botao);
-        PanelPedidos.add(botao1);
-        PanelPedidos.add(botao2);
-        PanelPedidos.add(botao3);*/
+        
         layout = new FlowLayout();
 	container = getContentPane();
         PanelPedidos.setLayout(layout);
+        
+        PanelPedidos.setPreferredSize(new Dimension(1000,600));
+        AdicionarPedidos();
         PanelPedido PanelPedido = new PanelPedido();
         PanelPedidos.add(PanelPedido);        
     }
@@ -64,6 +56,7 @@ public class TelaAtendente extends javax.swing.JFrame {
         botaoPedidos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         PanelPedidos.setBackground(new java.awt.Color(247, 207, 132));
 
@@ -143,7 +136,10 @@ public class TelaAtendente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public void AdicionarPedidos(){
+        
+    }
     private void estoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estoqueActionPerformed
       TelaEstoque TelaEstoque = new TelaEstoque();
       TelaEstoque.setVisible(true);
@@ -154,10 +150,20 @@ public class TelaAtendente extends javax.swing.JFrame {
         // TODO add your handling code here:
         PanelPedido PanelPedido = new PanelPedido();
         PanelPedidos.add(PanelPedido);
+        qtdPedidos++;
+        if(qtdPedidos > 4){
+            tamanho(qtdPedidos);
+        }
         this.setVisible(false);
         this.setVisible(true);
     }//GEN-LAST:event_botaoPedidosActionPerformed
 
+    public void tamanho(int tam){        
+        //return tam + 400;
+        PanelPedidos.setPreferredSize(new Dimension(tam,600));
+        this.setVisible(false);
+        this.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */
