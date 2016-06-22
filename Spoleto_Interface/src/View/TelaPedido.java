@@ -79,6 +79,9 @@ public class TelaPedido extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 adicionarPedidoMouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                adicionarPedidoMouseExited(evt);
+            }
         });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/rodape_pedidos.jpg"))); // NOI18N
@@ -149,6 +152,10 @@ public class TelaPedido extends javax.swing.JFrame {
         adicionarPedido.setIcon(click_MaisPedido);
             
     }//GEN-LAST:event_adicionarPedidoMouseEntered
+
+    private void adicionarPedidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adicionarPedidoMouseExited
+        adicionarPedido.setIcon(botao_MaisPedido);
+    }//GEN-LAST:event_adicionarPedidoMouseExited
 
     /**
      * @param args the command line arguments

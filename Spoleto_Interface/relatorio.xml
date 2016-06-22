@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_45" class="java.beans.XMLDecoder">
- <object class="Model.Produto">
-  <void property="nome">
-   <string>Penne</string>
-  </void>
-  <void property="quantidade">
-   <int>100</int>
-  </void>
- </object>
- <object class="Model.Produto" id="Produto0">
-  <void property="nome">
-   <string>Peito de Peru</string>
-  </void>
-  <void property="quantidade">
-   <int>100</int>
-  </void>
- </object>
- <object idref="Produto0"/>
- <object idref="Produto0"/>
- <object idref="Produto0"/>
- <object idref="Produto0"/>
- <object idref="Produto0"/>
- <object idref="Produto0"/>
- <object idref="Produto0"/>
- <object class="Model.Produto">
-  <void property="nome">
-   <string>branco</string>
-  </void>
-  <void property="quantidade">
-   <int>30</int>
+<java version="1.8.0_51" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="Model.Pedido" id="Pedido0">
+    <void property="pratos">
+     <void method="add">
+      <object class="Model.Produto">
+       <void property="nome">
+        <string>Penne a Carbonara</string>
+       </void>
+       <void property="quantidade">
+        <int>30</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="Model.Produto">
+       <void property="nome">
+        <string>Ice tea</string>
+       </void>
+       <void property="quantidade">
+        <int>20</int>
+       </void>
+      </object>
+     </void>
+    </void>
+   </object>
   </void>
  </object>
 </java>

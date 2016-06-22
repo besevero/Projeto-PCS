@@ -5,13 +5,14 @@
  */
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author PPGI
  */
-public class Pedido {
+public class Pedido implements Serializable{
       private ArrayList<Produto> pratos = new ArrayList();
       private int senha;
       
@@ -60,7 +61,5 @@ public class Pedido {
      */
     public void setSenha(int senha) {
         this.senha = senha;
-    }
-
-           
+    }          
 }

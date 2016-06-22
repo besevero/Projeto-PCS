@@ -5,22 +5,27 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author PPGI
  */
-public class Produto {
-    String nome;
-    double valor;
-    protected int quantidade;
-
+public class Produto implements Serializable{
+    private String nome;
+    private double valor;
+    private int quantidade;
+    
+    public Produto(){
+        
+    }
+    
     public Produto(String nome, double valor, int quantidade) {
         this.nome = nome;
         this.valor = valor;
         this.quantidade= quantidade;
     }
-    public Produto(){}
-    
+
     public String getNome() {
         return nome;
     }
@@ -38,9 +43,5 @@ public class Produto {
     }
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
-    }
-    
-    
-    
-    
+    }    
 }

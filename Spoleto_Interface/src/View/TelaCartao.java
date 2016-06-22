@@ -158,6 +158,7 @@ public class TelaCartao extends javax.swing.JFrame {
 
     private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
         novo.imprimir(campoSenha.getText());
+        novo.lerXML();
       
     }//GEN-LAST:event_okActionPerformed
 
