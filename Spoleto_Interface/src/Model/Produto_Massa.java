@@ -15,9 +15,9 @@ import java.util.ArrayList;
 public class Produto_Massa extends Produto{
 
         private ArrayList<Produto> IdMassa = new ArrayList();
-        private Arquivos persistencia = new Arquivos("massas.xml", IdMassa);
+        private Arquivos persistencia = new Arquivos("Massa.xml", IdMassa);
     public Produto_Massa(){
-        IdMassa.add(new Produto ("Farfalle", 18, 100));
+        /*IdMassa.add(new Produto ("Farfalle", 18, 100));
         IdMassa.add(new Produto ("Fettuccine", 18, 100));
         IdMassa.add(new Produto ("Spaghetti", 17, 100));
         IdMassa.add(new Produto ("Penne", 17, 100));
@@ -28,7 +28,7 @@ public class Produto_Massa extends Produto{
         IdMassa.add(new Produto ("Gnocchi", 20, 100));
         IdMassa.add(new Produto ("Cappelletti de Carne", 20, 100));
         IdMassa.add(new Produto ("Cappelletti de Frango", 20, 100));
-        persistencia.imprimir();
+        persistencia.imprimir();*/
         IdMassa = persistencia.lerXML();
     }
     

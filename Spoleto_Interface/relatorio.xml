@@ -7,64 +7,10 @@
      <void method="add">
       <object class="Model.Produto">
        <void property="nome">
-        <string>Spaghetti</string>
+        <string>Penne a Carbonara</string>
        </void>
        <void property="preco">
-        <int>17</int>
-       </void>
-       <void property="quantidade">
-        <int>100</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="Model.Produto" id="Produto0">
-       <void property="nome">
-        <string>Bacon</string>
-       </void>
-       <void property="quantidade">
-        <int>100</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object idref="Produto0"/>
-     </void>
-     <void method="add">
-      <object idref="Produto0"/>
-     </void>
-     <void method="add">
-      <object idref="Produto0"/>
-     </void>
-     <void method="add">
-      <object idref="Produto0"/>
-     </void>
-     <void method="add">
-      <object idref="Produto0"/>
-     </void>
-     <void method="add">
-      <object idref="Produto0"/>
-     </void>
-     <void method="add">
-      <object idref="Produto0"/>
-     </void>
-     <void method="add">
-      <object class="Model.Produto">
-       <void property="nome">
-        <string>Frango à Parmegiana</string>
-       </void>
-       <void property="preco">
-        <int>7</int>
-       </void>
-       <void property="quantidade">
-        <int>35</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="Model.Produto">
-       <void property="nome">
-        <string>4 queijos</string>
+        <int>15</int>
        </void>
        <void property="quantidade">
         <int>30</int>
@@ -74,19 +20,16 @@
      <void method="add">
       <object class="Model.Produto">
        <void property="nome">
-        <string>Suco de uva</string>
+        <string>Mate</string>
        </void>
        <void property="preco">
-        <int>5</int>
+        <int>4</int>
        </void>
        <void property="quantidade">
         <int>20</int>
        </void>
       </object>
      </void>
-    </void>
-    <void property="senha">
-     <int>2</int>
     </void>
    </object>
   </void>

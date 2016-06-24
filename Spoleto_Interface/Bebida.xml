@@ -10,7 +10,7 @@
      <int>4</int>
     </void>
     <void property="quantidade">
-     <int>20</int>
+     <int>35</int>
     </void>
    </object>
   </void>
@@ -23,7 +23,7 @@
      <int>5</int>
     </void>
     <void property="quantidade">
-     <int>20</int>
+     <int>35</int>
     </void>
    </object>
   </void>
@@ -36,7 +36,7 @@
      <int>5</int>
     </void>
     <void property="quantidade">
-     <int>20</int>
+     <int>35</int>
     </void>
    </object>
   </void>
@@ -49,7 +49,7 @@
      <int>4</int>
     </void>
     <void property="quantidade">
-     <int>20</int>
+     <int>35</int>
     </void>
    </object>
   </void>
@@ -62,7 +62,7 @@
      <int>4</int>
     </void>
     <void property="quantidade">
-     <int>20</int>
+     <int>35</int>
     </void>
    </object>
   </void>

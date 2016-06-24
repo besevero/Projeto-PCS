@@ -144,16 +144,15 @@ public class TelaEstoque extends javax.swing.JFrame {
 
     private void ingredientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingredientesActionPerformed
       
-      nome= "Ingredientes";  
-      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque (nome);
+      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque("Ingrediente.xml");
       TelaVisualizarEstoque .setVisible(true);
       this.setVisible(false);
       
     }//GEN-LAST:event_ingredientesActionPerformed
 
     private void massaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_massaActionPerformed
-      nome="Massa";
-      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque (nome);
+      
+      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque("Massa.xml");
       TelaVisualizarEstoque .setVisible(true);
       this.setVisible(false);
       
@@ -161,43 +160,33 @@ public class TelaEstoque extends javax.swing.JFrame {
 
     private void molhosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_molhosActionPerformed
       
-        nome="Molhos";
-      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque (nome);
+      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque ("Molho.xml");
       TelaVisualizarEstoque .setVisible(true);
       this.setVisible(false);
        
     }//GEN-LAST:event_molhosActionPerformed
 
     private void extrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_extrasActionPerformed
-      
-        nome="Extras";
-        
-      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque (nome);
+      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque("Extra.xml");
       TelaVisualizarEstoque .setVisible(true);
       this.setVisible(false);
       
     }//GEN-LAST:event_extrasActionPerformed
 
     private void pratoPromoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pratoPromoActionPerformed
-      nome= "Prato Promoção";
-      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque (nome);
+      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque("Promocao.xml");
       TelaVisualizarEstoque .setVisible(true);
       this.setVisible(false);
       
     }//GEN-LAST:event_pratoPromoActionPerformed
 
     private void bebidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bebidasActionPerformed
-      nome="Bebidas";
-      //novo.visualizaEstoqueBebida();
-      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque (nome);
-      TelaVisualizarEstoque .setVisible(true);
+      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque ("Bebida.xml");
+      TelaVisualizarEstoque.setVisible(true);
       this.setVisible(false);
       
     }//GEN-LAST:event_bebidasActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -15,10 +15,10 @@ import java.util.ArrayList;
 public class Produto_Ingrediente extends Produto{
   
      private ArrayList<Produto> idIngrediente = new ArrayList();
-     private Arquivos persistencia = new Arquivos("ingredientes.xml", idIngrediente);
+     private Arquivos persistencia = new Arquivos("Ingrediente.xml", idIngrediente);
     
      public Produto_Ingrediente(){
-        idIngrediente.add(new Produto ("Alcaparra", 0, 100));
+      /*  idIngrediente.add(new Produto ("Alcaparra", 0, 100));
         idIngrediente.add(new Produto ("Alho", 0, 100));
         idIngrediente.add(new Produto ("Alho Poró", 0, 100));
         idIngrediente.add(new Produto ("Azeitona Preta", 0, 100));
@@ -46,7 +46,7 @@ public class Produto_Ingrediente extends Produto{
         idIngrediente.add(new Produto ("Tomate Seco", 0, 100));
         idIngrediente.add(new Produto ("Mussarela", 0, 100));
         idIngrediente.add(new Produto ("Ervilha", 0, 100));
-        persistencia.imprimir();
+        persistencia.imprimir();*/
         idIngrediente = persistencia.lerXML();
     }
      

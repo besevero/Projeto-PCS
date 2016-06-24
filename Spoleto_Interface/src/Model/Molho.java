@@ -15,32 +15,22 @@ import java.util.ArrayList;
 public class Molho extends Produto{
     
      private ArrayList<Produto> molho = new ArrayList();
-    private Arquivos persistencia = new Arquivos("molhos.xml", molho);
+    private Arquivos persistencia = new Arquivos("Molho.xml", molho);
      public Molho(){        
-        molho.add(new Produto ("bolonhesa", 0, 30));
+       /* molho.add(new Produto ("bolonhesa", 0, 30));
         molho.add(new Produto ("4 queijos", 0, 30));
         molho.add(new Produto ("sugo", 0, 30));
         molho.add(new Produto ("funghi", 0,30));
         molho.add(new Produto ("branco", 0, 30));
-        persistencia.imprimir();
+        persistencia.imprimir();*/
         molho=persistencia.lerXML();
      }
     public Molho(String nome, int valor, int quantidade) {
         super(nome, valor, quantidade);
-        
-
     }
-
-    /**
-     * @return the molho
-     */
     public ArrayList<Produto> getMolho() {
         return molho;
     }
-
-    /**
-     * @param molho the molho to set
-     */
     public void setMolho(ArrayList<Produto> molho) {
         this.molho = molho;
     }

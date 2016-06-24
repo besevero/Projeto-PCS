@@ -17,13 +17,16 @@ import java.util.ArrayList;
  * @author Bernardo
  */
 public class Arquivos {
-    protected ArrayList escrever;
-    protected String file;
+    private ArrayList escrever;
+    private String file;
     public Arquivos(){}
     
     public Arquivos(String file, ArrayList escrever){
         this.file = file;
         this.escrever = escrever;
+    }
+    public Arquivos(String file){
+        this.file = file;
     }
     
     public void imprimir(){
@@ -32,9 +35,9 @@ public class Arquivos {
                  XMLEncoder xmlEncoder= null;
         try{ 
             
-            xmlEncoder = new XMLEncoder ( new FileOutputStream (file));
+            xmlEncoder = new XMLEncoder ( new FileOutputStream (getFile()));
            
-            xmlEncoder.writeObject(escrever);
+            xmlEncoder.writeObject(getEscrever());
         
         }
         finally{
@@ -53,7 +56,7 @@ public class Arquivos {
           XMLDecoder xmlDecoder = null;
           try{
             xmlDecoder = new XMLDecoder(
-                    new FileInputStream(file));
+                    new FileInputStream(getFile()));
             lido = (ArrayList) xmlDecoder.readObject();
             
           }finally{
@@ -65,5 +68,33 @@ public class Arquivos {
           }
       return lido;
       }
+
+    /**
+     * @return the escrever
+     */
+    public ArrayList getEscrever() {
+        return escrever;
+    }
+
+    /**
+     * @param escrever the escrever to set
+     */
+    public void setEscrever(ArrayList escrever) {
+        this.escrever = escrever;
+    }
+
+    /**
+     * @return the file
+     */
+    public String getFile() {
+        return file;
+    }
+
+    /**
+     * @param file the file to set
+     */
+    public void setFile(String file) {
+        this.file = file;
+    }
     
 }
