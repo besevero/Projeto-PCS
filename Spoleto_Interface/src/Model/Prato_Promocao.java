@@ -5,22 +5,36 @@
  */
 package Model;
 
+import Controle.Arquivos;
+import View.TelaNotaFiscal;
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
 public class Prato_Promocao extends Produto{
     
      private ArrayList<Produto> promoc = new ArrayList();
-
-    public Prato_Promocao(String nome, double valor, int quantidade, ArrayList<Produto> promoc) {
-        super(nome, valor, quantidade);
-        this.promoc = promoc;
+     private Arquivos persistencia = new Arquivos("promocao.xml", promoc);
     
+    public Prato_Promocao(){
+      promoc.add(new Produto ("Penne a Carbonara", 15, 30));
+      promoc.add(new Produto ("Spaghetti alho e oleo", 15, 30));
+      
+      persistencia.imprimir();
+      promoc=persistencia.lerXML();
+
     }
-    public Prato_Promocao(){    
-        promoc.add(new Produto ("Penne a Carbonara", 15.00, 30));
-        promoc.add(new Produto ("Spaghetti alho e oleo", 15.00, 30));
+    
+    public Prato_Promocao(String nome, int valor, int quantidade) {
+        super(nome, valor, quantidade);
     }
+    
+    
     /**
      * @return the promoc
      */

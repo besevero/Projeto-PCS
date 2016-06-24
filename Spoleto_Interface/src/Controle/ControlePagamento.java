@@ -27,14 +27,14 @@ public class ControlePagamento {
     public void insereListaPgto(DefaultListModel modeloPedido){
         for(int i = 0; i<getPedido().getPratos().size();i++){
             modeloPedido.addElement((getPedido().getPratos().get(i).getNome()
-                    + " ------- " + getPedido().getPratos().get(i).getValor()));
+                    + " ------- " + (double)getPedido().getPratos().get(i).getPreco()));
         }
         
     }
     public double totalCompra(){
         double totalCompra = 0;
          for(int i = 0; i<getPedido().getPratos().size();i++){
-                 totalCompra = totalCompra + getPedido().getPratos().get(i).getValor();
+                 totalCompra = totalCompra + getPedido().getPratos().get(i).getPreco();
          }
          return totalCompra;
     }

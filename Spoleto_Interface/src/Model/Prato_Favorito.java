@@ -5,21 +5,24 @@
  */
 package Model;
 
+import Controle.Arquivos;
 import java.util.ArrayList;
 
 
 public class Prato_Favorito extends Produto{
     
      private ArrayList<Produto> favorito = new ArrayList();
-
-    public Prato_Favorito(String nome, double valor, int quantidade, ArrayList<Produto> promoc) {
+     private Arquivos persistencia = new Arquivos("favoritos.xml", favorito);
+    public Prato_Favorito(String nome, int valor, int quantidade, ArrayList<Produto> promoc) {
         super(nome, valor, quantidade);
         this.favorito = favorito;
     
     }
     public Prato_Favorito(){    
-        favorito.add(new Produto ("Lasanha", 25.00, 30));
-        favorito.add(new Produto ("Penne a Matriciana", 25.00, 30));
+        favorito.add(new Produto ("Lasanha", 25, 30));
+        favorito.add(new Produto ("Penne a Matriciana", 25, 30));
+        persistencia.imprimir();
+        favorito = persistencia.lerXML();
     }
     /**
      * @return the favorito

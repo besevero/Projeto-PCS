@@ -5,6 +5,7 @@
  */
 package Model;
 
+import Controle.Arquivos;
 import java.util.ArrayList;
 
 /**
@@ -15,14 +16,17 @@ public class Produto_Extra extends Produto{
     
     
     private ArrayList<Produto> prodExtra = new ArrayList();
+    private Arquivos persistencia = new Arquivos("extras.xml", prodExtra);
     public Produto_Extra(){       
-        prodExtra.add(new Produto ("Almôndega", 6.00, 35));
-        prodExtra.add(new Produto ("Frango à Parmegiana", 7.00, 35));
-        prodExtra.add(new Produto ("Frango Dourado", 5.00, 35));
-        prodExtra.add(new Produto ("Peito de Peru", 4.00, 35));
-        prodExtra.add(new Produto ("Polpetone", 8.00, 35));
+        prodExtra.add(new Produto ("Almôndega", 6, 35));
+        prodExtra.add(new Produto ("Frango à Parmegiana", 7, 35));
+        prodExtra.add(new Produto ("Frango Dourado", 5, 35));
+        prodExtra.add(new Produto ("Peito de Peru", 4, 35));
+        prodExtra.add(new Produto ("Polpetone", 8, 35));
+        persistencia.imprimir();
+        prodExtra=persistencia.lerXML();
     }
-    public Produto_Extra(String nome, float valor, int quantidade) {
+    public Produto_Extra(String nome, int valor, int quantidade) {
         super(nome, valor, quantidade);
         
 

@@ -13,16 +13,16 @@ import java.io.Serializable;
  */
 public class Produto implements Serializable{
     private String nome;
-    private double valor;
+    private int preco;
     private int quantidade;
     
     public Produto(){
         
     }
     
-    public Produto(String nome, double valor, int quantidade) {
+    public Produto(String nome, int valor, int quantidade) {
         this.nome = nome;
-        this.valor = valor;
+        this.preco = valor;
         this.quantidade= quantidade;
     }
 
@@ -32,11 +32,11 @@ public class Produto implements Serializable{
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public double getValor() {
-        return valor;
+    public int getPreco() {
+        return preco;
     }
-    public void setValor(float valor) {
-        this.valor = valor;
+    public void setPreco(int valor) {
+        this.preco = valor;
     }
     public int getQuantidade() {
         return quantidade;

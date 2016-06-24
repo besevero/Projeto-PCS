@@ -28,7 +28,7 @@ public class ControlePedido {
     public void insereLista(DefaultListModel modeloPedido){
         for(int i = 0; i<getPedido().getPratos().size();i++){
             modeloPedido.addElement((getPedido().getPratos().get(i).getNome() 
-                    + " ------- " + getPedido().getPratos().get(i).getValor()));
+                    + " ------- " + (double)getPedido().getPratos().get(i).getPreco()));
         }
     }
     public void inicial(){

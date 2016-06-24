@@ -18,7 +18,7 @@ public class Montar_Prato extends Produto{
     public Montar_Prato(){}
     public Montar_Prato(Produto_Massa m, Produto_Ingrediente[] ingr, Molho mol, 
                         Produto_Extra prodEx, boolean adProdEx, boolean adIngredExtra, 
-                        String nome, double valor, int qtde) {
+                        String nome, int valor, int qtde) {
         super(nome, valor, qtde);
         this.massa = m;
         this.ingrediente = ingr;
@@ -32,7 +32,7 @@ public class Montar_Prato extends Produto{
     double acrescentaIngrdExtra(Produto_Massa m){
        Produto_Ingrediente[] ingrExtra;
        
-        custo= m.getValor();
+        custo= m.getPreco();
         
         if(adIngredienteExtra == true){
             for (int i=0; i<4; i++){ 
@@ -40,11 +40,11 @@ public class Montar_Prato extends Produto{
                 ingrExtra[i].getNome();
         
                 if (ingrExtra[i].getQuantidade()>0){
-                    quantidade--;
+                    setQuantidade(getQuantidade()-1);
                 }
             }
       
-           custo= m.getValor()+ 6.00;
+           custo= m.getPreco()+ 6.00;
         }  
         
         return custo;
@@ -57,8 +57,8 @@ public class Montar_Prato extends Produto{
             p.getNome();
          
             if(p.getQuantidade()>0){
-                custo = custo + p.getValor();
-                quantidade--;
+                custo = custo + p.getPreco();
+                setQuantidade(getQuantidade()-1);
             }
         }
         

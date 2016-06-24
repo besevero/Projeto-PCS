@@ -5,6 +5,7 @@
  */
 package Model;
 
+import Controle.Arquivos;
 import java.util.ArrayList;
 
 /**
@@ -14,20 +15,21 @@ import java.util.ArrayList;
 public class Bebida extends Produto{
     
     private ArrayList<Produto> idBebida = new ArrayList();
-    
-    public Bebida(String nome, float valor,int quantidade, ArrayList<Produto> idBebida) {
+    private Arquivos persistencia = new Arquivos("bebidas.xml", idBebida); 
+    public Bebida(String nome, int valor,int quantidade) {
         super(nome, valor, quantidade);
-        
         this.idBebida = idBebida;
 
         
     }
     public Bebida() {        
-        idBebida.add(new Produto ("Mate", 3.50, 20));
-        idBebida.add(new Produto ("Suco de uva", 5.00, 20));
-        idBebida.add(new Produto ("Suco de laranja", 5.00, 20));
-        idBebida.add(new Produto ("Coca-cola", 4.50, 20));
-        idBebida.add(new Produto ("Ice tea", 4.50, 20));
+        idBebida.add(new Produto ("Mate", 4, 20));
+        idBebida.add(new Produto ("Suco de uva", 5, 20));
+        idBebida.add(new Produto ("Suco de laranja", 5, 20));
+        idBebida.add(new Produto ("Coca-cola", 4, 20));
+        idBebida.add(new Produto ("Ice tea", 4, 20));
+        persistencia.imprimir();
+        idBebida = persistencia.lerXML();
     }
 
     /**
