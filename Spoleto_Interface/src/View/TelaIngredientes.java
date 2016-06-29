@@ -17,12 +17,15 @@ import javax.swing.JButton;
 public class TelaIngredientes extends javax.swing.JFrame {
     ArrayList<JButton> escolhasIngredientes = new ArrayList();
     ArrayList<JButton> escolhasExtras = new ArrayList();
-    ControleTelaIngredientes novo = new ControleTelaIngredientes(this);
+    ControleTelaIngredientes novo;
+    
     /**
      * Creates new form TelaMassas
      */
-    public TelaIngredientes(Pedido p) {
+    public TelaIngredientes(Pedido p, TelaAtendente atendente) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        novo = new ControleTelaIngredientes(this, atendente);
         novo.setPedido(p);
         proximo.setEnabled(false);
         
@@ -208,6 +211,8 @@ public class TelaIngredientes extends javax.swing.JFrame {
         tomate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ingredientes");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 224, 182));
 

@@ -24,12 +24,14 @@ public class TelaInicial extends javax.swing.JFrame {
     ImageIcon favor = new ImageIcon(getClass().getResource("/Imagens/botao_favor.png"));
     ImageIcon favorClick = new ImageIcon(getClass().getResource("/Imagens/botao_favor_click.png"));
     
-    ControleInicial novo = new ControleInicial(this);
+    ControleInicial novo;
     /**
      * Creates new form TelaInicial
      */
-    public TelaInicial(Pedido s) {
-        initComponents();        
+    public TelaInicial(Pedido s, TelaAtendente TelaAtendente) {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        novo = new ControleInicial(this, TelaAtendente);
         novo.setPedido(s);
     }
 
@@ -50,6 +52,7 @@ public class TelaInicial extends javax.swing.JFrame {
         labelFavor = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema de Auto Atendimento - Spoleto");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 224, 182));
@@ -222,7 +225,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 Pedido p = new Pedido();
                 TelaAtendente TelaAtendente = new TelaAtendente();
                 TelaAtendente.setVisible(true);
-                new TelaInicial(p).setVisible(true);
+                new TelaInicial(p, TelaAtendente).setVisible(true);
 
             }
         });

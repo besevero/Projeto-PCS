@@ -15,10 +15,13 @@ public class TelaPromo extends javax.swing.JFrame {
     /**
      * Creates new form TelaPromo
      */
-   ControlePromo ControlePromo = new ControlePromo(this);
+   ControlePromo ControlePromo;
+   TelaAtendente atendente;
     
-    public TelaPromo(Pedido s) {
+    public TelaPromo(Pedido s, TelaAtendente atendente) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        ControlePromo = new ControlePromo(this, atendente);
         ControlePromo.setPedido(s);
         proximo.setEnabled(false);
     }
@@ -52,7 +55,9 @@ public class TelaPromo extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Promoções");
         setBackground(new java.awt.Color(247, 224, 182));
+        setResizable(false);
 
         Jpanel1.setBackground(new java.awt.Color(247, 224, 182));
         Jpanel1.setMinimumSize(new java.awt.Dimension(0, 0));

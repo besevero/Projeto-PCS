@@ -8,6 +8,7 @@ package Controle;
 import Model.Pedido;
 import Model.Produto;
 import Model.Produto_Massa;
+import View.TelaAtendente;
 import View.TelaIngredientes;
 import View.TelaInicial;
 import View.TelaMassas;
@@ -23,19 +24,21 @@ public class ControleTelaMassas {
     private TelaMassas TelaMassas;
     private ArrayList<Produto> produtos = new ArrayList();
     private Produto_Massa massa = new Produto_Massa();
+    private TelaAtendente atendente;
      
     
-    public ControleTelaMassas(TelaMassas TelaMassas) {
+    public ControleTelaMassas(TelaMassas TelaMassas, TelaAtendente atendente) {
         this.pedido = new Pedido();
+        this.atendente = atendente;
         this.TelaMassas = TelaMassas;
     }
     public void proximo(){
-        TelaIngredientes TelaIngredientes = new TelaIngredientes(pedido);
+        TelaIngredientes TelaIngredientes = new TelaIngredientes(pedido, atendente);
         TelaIngredientes.setVisible(true);
         TelaMassas.setVisible(false);
     }
     public void anterior(){
-        TelaInicial TelaInicial = new TelaInicial(pedido);
+        TelaInicial TelaInicial = new TelaInicial(pedido, atendente);
         TelaInicial.setVisible(true);
         TelaMassas.setVisible(false);
     }

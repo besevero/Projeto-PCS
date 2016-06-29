@@ -7,6 +7,7 @@ package Controle;
 
 import Model.Pedido;
 import Model.Produto_Ingrediente;
+import View.TelaAtendente;
 import View.TelaExtras;
 import View.TelaIngredientes;
 import View.TelaInicial;
@@ -21,9 +22,11 @@ public class ControleTelaIngredientes {
     private Pedido pedido;
     private TelaIngredientes TelaIngredientes;
     private Produto_Ingrediente ingredientes = new Produto_Ingrediente();
+    private TelaAtendente atendente;
     
-    public ControleTelaIngredientes(TelaIngredientes TelaIngredientes){
+    public ControleTelaIngredientes(TelaIngredientes TelaIngredientes, TelaAtendente atendente){
         this.pedido = new Pedido();
+        this.atendente = atendente;
         this.TelaIngredientes = TelaIngredientes;
     }
     public void apagaPedido(){
@@ -31,7 +34,7 @@ public class ControleTelaIngredientes {
     }
     public void cancelar(){
       apagaPedido();
-      TelaInicial TelaInicial = new TelaInicial(getPedido());
+      TelaInicial TelaInicial = new TelaInicial(getPedido(), atendente);
       TelaInicial.setVisible(true);
         getTelaIngredientes().setVisible(false);
       
@@ -66,12 +69,12 @@ public class ControleTelaIngredientes {
             /*for(int g = 0; g<pedido.getPratos().size();g++){
                 System.out.println(pedido.getPratos().get(g).getNome());
             }*/
-     TelaExtras TelaExtras = new TelaExtras(pedido);
+     TelaExtras TelaExtras = new TelaExtras(pedido, atendente);
      TelaExtras.setVisible(true);
      getTelaIngredientes().setVisible(false);
     }
     public void voltar(){
-        TelaInicial TelaInicial = new TelaInicial(getPedido());
+        TelaInicial TelaInicial = new TelaInicial(getPedido(), atendente);
         TelaInicial.setVisible(true);
         getTelaIngredientes().setVisible(false);
     }

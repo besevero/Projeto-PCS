@@ -25,11 +25,12 @@ public class TelaEstoque extends javax.swing.JFrame {
      
      ControleBebida[] b;
      String nome= null;
+     TelaAtendente atendente;
              
-    public TelaEstoque() {
+    public TelaEstoque(TelaAtendente atendente) {
         
         Pedido p = new Pedido();
-        
+        this.atendente = atendente;
         initComponents();
         
         
@@ -44,148 +45,192 @@ public class TelaEstoque extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        voltar = new javax.swing.JButton();
         massa = new javax.swing.JButton();
-        ingredientes = new javax.swing.JButton();
-        extras = new javax.swing.JButton();
         molhos = new javax.swing.JButton();
+        ingredientes = new javax.swing.JButton();
         pratoPromo = new javax.swing.JButton();
+        extras = new javax.swing.JButton();
         bebidas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Estoque");
+        setResizable(false);
 
+        jPanel1.setBackground(new java.awt.Color(196, 239, 196));
+        jPanel1.setPreferredSize(new java.awt.Dimension(100, 600));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 51));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icon_estoque.png"))); // NOI18N
         jLabel1.setText("ESTOQUE");
 
-        massa.setText("MASSAS");
+        voltar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icon_estoque_voltar.png"))); // NOI18N
+        voltar.setText("VOLTAR");
+        voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarActionPerformed(evt);
+            }
+        });
+
+        massa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icon_estoque_massa.png"))); // NOI18N
         massa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 massaActionPerformed(evt);
             }
         });
 
-        ingredientes.setText("INGREDIENTES");
-        ingredientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ingredientesActionPerformed(evt);
-            }
-        });
-
-        extras.setText("EXTRAS");
-        extras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                extrasActionPerformed(evt);
-            }
-        });
-
-        molhos.setText("MOLHOS");
+        molhos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icon_estoque_molho.png"))); // NOI18N
         molhos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 molhosActionPerformed(evt);
             }
         });
 
-        pratoPromo.setText("PRATO PROMOÇÃO");
+        ingredientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icon_estoque_ingred.png"))); // NOI18N
+        ingredientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ingredientesActionPerformed(evt);
+            }
+        });
+
+        pratoPromo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icon_estoque_promo.png"))); // NOI18N
         pratoPromo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pratoPromoActionPerformed(evt);
             }
         });
 
-        bebidas.setText("BEBIDAS");
+        extras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icon_estoque_extra.png"))); // NOI18N
+        extras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                extrasActionPerformed(evt);
+            }
+        });
+
+        bebidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icon_estoque_bebida.png"))); // NOI18N
         bebidas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bebidasActionPerformed(evt);
             }
         });
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(extras, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(massa, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(45, 45, 45)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pratoPromo, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ingredientes, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(molhos, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bebidas, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(194, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(massa)
+                            .addGap(30, 30, 30)
+                            .addComponent(extras))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(ingredientes)
+                            .addGap(229, 229, 229))
+                        .addComponent(pratoPromo, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(molhos, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(229, 229, 229))
+                        .addComponent(bebidas, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(31, 31, 31))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(extras, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pratoPromo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(massa, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(26, 26, 26)
-                            .addComponent(molhos, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ingredientes, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bebidas, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(massa, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ingredientes, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(molhos, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(extras, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bebidas, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pratoPromo, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ingredientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingredientesActionPerformed
-      
-      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque("Ingrediente.xml");
-      TelaVisualizarEstoque .setVisible(true);
-      this.setVisible(false);
-      
-    }//GEN-LAST:event_ingredientesActionPerformed
+    private void bebidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bebidasActionPerformed
+        TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque ("Bebida.xml", atendente, this);
+        TelaVisualizarEstoque.setVisible(true);
+        this.setVisible(false);
 
-    private void massaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_massaActionPerformed
-      
-      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque("Massa.xml");
-      TelaVisualizarEstoque .setVisible(true);
-      this.setVisible(false);
-      
-    }//GEN-LAST:event_massaActionPerformed
-
-    private void molhosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_molhosActionPerformed
-      
-      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque ("Molho.xml");
-      TelaVisualizarEstoque .setVisible(true);
-      this.setVisible(false);
-       
-    }//GEN-LAST:event_molhosActionPerformed
+    }//GEN-LAST:event_bebidasActionPerformed
 
     private void extrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_extrasActionPerformed
-      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque("Extra.xml");
-      TelaVisualizarEstoque .setVisible(true);
-      this.setVisible(false);
-      
+        TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque("Extra.xml", atendente, this);
+        TelaVisualizarEstoque .setVisible(true);
+        this.setVisible(false);
+
     }//GEN-LAST:event_extrasActionPerformed
 
     private void pratoPromoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pratoPromoActionPerformed
-      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque("Promocao.xml");
-      TelaVisualizarEstoque .setVisible(true);
-      this.setVisible(false);
-      
+        TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque("Promocao.xml", atendente, this);
+        TelaVisualizarEstoque .setVisible(true);
+        this.setVisible(false);
+
     }//GEN-LAST:event_pratoPromoActionPerformed
 
-    private void bebidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bebidasActionPerformed
-      TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque ("Bebida.xml");
-      TelaVisualizarEstoque.setVisible(true);
-      this.setVisible(false);
-      
-    }//GEN-LAST:event_bebidasActionPerformed
+    private void ingredientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingredientesActionPerformed
+
+        TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque("Ingrediente.xml", atendente, this);
+        TelaVisualizarEstoque .setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_ingredientesActionPerformed
+
+    private void molhosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_molhosActionPerformed
+
+        TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque ("Molho.xml", atendente, this);
+        TelaVisualizarEstoque .setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_molhosActionPerformed
+
+    private void massaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_massaActionPerformed
+
+        TelaVisualizarEstoque TelaVisualizarEstoque  = new TelaVisualizarEstoque("Massa.xml", atendente, this);
+        TelaVisualizarEstoque .setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_massaActionPerformed
+
+    private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
+        // TODO add your handling code here:
+        atendente.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_voltarActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -214,7 +259,7 @@ public class TelaEstoque extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaEstoque().setVisible(true);
+                //new TelaEstoque().setVisible(true);
             }
         });
     }
@@ -224,8 +269,10 @@ public class TelaEstoque extends javax.swing.JFrame {
     private javax.swing.JButton extras;
     private javax.swing.JButton ingredientes;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton massa;
     private javax.swing.JButton molhos;
     private javax.swing.JButton pratoPromo;
+    private javax.swing.JButton voltar;
     // End of variables declaration//GEN-END:variables
 }

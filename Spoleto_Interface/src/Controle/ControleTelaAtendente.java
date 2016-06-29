@@ -15,11 +15,16 @@ import View.TelaAtendente;
 public class ControleTelaAtendente {
     
     private TelaAtendente TelaAtendente;
+    private Arquivos arquivo = new Arquivos("relatorio.xml");
     
-    public ControleTelaAtendente(){       
+    public ControleTelaAtendente(TelaAtendente TelaAtendente){
+        this.TelaAtendente = TelaAtendente;
     }
     
     public void MostrarPedido(Pedido pedido){
-        
+        TelaAtendente.AdicionarPedidos(pedido);
+    }
+    public Arquivos getArquivo(){
+        return arquivo;
     }
 }

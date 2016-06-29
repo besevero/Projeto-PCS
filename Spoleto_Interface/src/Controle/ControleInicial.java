@@ -6,6 +6,7 @@
 package Controle;
 
 import Model.Pedido;
+import View.TelaAtendente;
 import View.TelaFavorito;
 import View.TelaInicial;
 import View.TelaMassas;
@@ -19,23 +20,25 @@ public class ControleInicial{
     
     private Pedido pedido;
     private TelaInicial inicial;
+    private TelaAtendente atendente;
 
-    public ControleInicial(TelaInicial inicial){
+    public ControleInicial(TelaInicial inicial, TelaAtendente atendente){
         this.pedido = new Pedido();
         this.inicial = inicial;
+        this.atendente = atendente;
     }
     public void iniciaPromo(){
-        TelaPromo promo = new TelaPromo(pedido);
+        TelaPromo promo = new TelaPromo(pedido, atendente);
         inicial.setVisible(false);
         promo.setVisible(true);
     }
     public void telaMassa(){
-        TelaMassas TelaMassa = new TelaMassas(pedido);
+        TelaMassas TelaMassa = new TelaMassas(pedido, atendente);
         inicial.setVisible(false);
         TelaMassa.setVisible(true);
     }
      public void telaFavorito(){
-        TelaFavorito TelaFavorito = new TelaFavorito(pedido);
+        TelaFavorito TelaFavorito = new TelaFavorito(pedido, atendente);
         inicial.setVisible(false);
         TelaFavorito.setVisible(true);
     }

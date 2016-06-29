@@ -6,6 +6,7 @@
 package Controle;
 
 import Model.Pedido;
+import View.TelaAtendente;
 import View.TelaCartao;
 import View.TelaNotaFiscal;
 import java.util.ArrayList;
@@ -19,10 +20,15 @@ public class ControleTelaCartao {
     private ArrayList<Pedido> pedidos = new ArrayList();
     private TelaCartao TelaCartao;
     private ArrayList<Pedido> pedidoLido;
-    private Arquivos persistencia = new Arquivos("relatorio.xml", pedidos);
-    public ControleTelaCartao(TelaCartao TelaCartao){
-        this.pedido = new Pedido();
+    private Arquivos persistencia;
+    private TelaAtendente atendente;
+    
+    public ControleTelaCartao(TelaCartao TelaCartao, TelaAtendente atendente, Pedido pedido){
+        this.pedido = pedido;
+        this.atendente = atendente;
         this.TelaCartao = TelaCartao;
+        this.persistencia = atendente.getControleAtendente().getArquivo();
+        persistencia.setEscrever(pedido.getPratos());
     }
     public void cancelar(){
         TelaCartao.setVisible(false);
@@ -33,7 +39,7 @@ public class ControleTelaCartao {
         if(senha.equals("123")){
             persistencia.imprimir();
 
-        TelaNotaFiscal TelaNotaFiscal = new TelaNotaFiscal(pedido);
+        TelaNotaFiscal TelaNotaFiscal = new TelaNotaFiscal(pedido, atendente);
         TelaNotaFiscal.setVisible(true);
         TelaCartao.setVisible(false);    
         

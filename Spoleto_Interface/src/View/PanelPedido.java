@@ -14,8 +14,18 @@ public class PanelPedido extends javax.swing.JPanel {
     /**
      * Creates new form PanelPedido
      */
-    public PanelPedido() {
+    private TelaAtendente atendente;
+    
+    public PanelPedido(TelaAtendente atendente) {
         initComponents();
+        this.atendente = atendente;
+    }    
+    public void setTextPedido(String produto){
+        String anterior = TextPedido.getText();
+        TextPedido.setText(anterior + produto);
+    }
+    public void setSenha (String senha){       
+        LabelSenha.setText(senha);
     }
 
     /**
@@ -28,21 +38,31 @@ public class PanelPedido extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        LabelSenha = new javax.swing.JLabel();
+        concluido = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TextPedido = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(247, 207, 182));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Pedido : ");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("0001");
+        LabelSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jLabel3.setText("Prato 1 :");
+        concluido.setText("Concluído");
+        concluido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                concluidoActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("Concluído");
+        TextPedido.setEditable(false);
+        TextPedido.setBackground(new java.awt.Color(247, 207, 182));
+        TextPedido.setColumns(20);
+        TextPedido.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        TextPedido.setRows(5);
+        jScrollPane1.setViewportView(TextPedido);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -53,36 +73,42 @@ public class PanelPedido extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2))))
+                                .addComponent(LabelSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(jButton1)))
-                .addContainerGap(165, Short.MAX_VALUE))
+                        .addGap(133, 133, 133)
+                        .addComponent(concluido, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(42, 42, 42)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 246, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(28, 28, 28))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LabelSenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(concluido, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void concluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_concluidoActionPerformed
+        // TODO add your handling code here:
+        atendente.retirarPedido(this);        
+    }//GEN-LAST:event_concluidoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel LabelSenha;
+    private javax.swing.JTextArea TextPedido;
+    private javax.swing.JButton concluido;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

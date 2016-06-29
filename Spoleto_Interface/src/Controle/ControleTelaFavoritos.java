@@ -8,6 +8,7 @@ package Controle;
 import Model.Pedido;
 import Model.Prato_Favorito;
 import Model.Produto;
+import View.TelaAtendente;
 import java.util.ArrayList;
 import View.TelaBebidas;
 import View.TelaInicial;
@@ -19,18 +20,20 @@ public class ControleTelaFavoritos{
      private TelaFavorito favor;
      private ArrayList<Produto> produtos = new ArrayList();
      private Prato_Favorito pratos = new Prato_Favorito();
+     private TelaAtendente atendente;
      
-     public ControleTelaFavoritos(TelaFavorito favor){
+     public ControleTelaFavoritos(TelaFavorito favor, TelaAtendente atendente){
          this.pedido = new Pedido();
+         this.atendente = atendente;
          this.favor = favor;
      }
       public void iniciaBebida(){
-        TelaBebidas bebidas = new TelaBebidas(pedido);
+        TelaBebidas bebidas = new TelaBebidas(pedido, atendente);
         favor.setVisible(false);
         bebidas.setVisible(true);
     }
      public void inicial(){
-        TelaInicial TelaInicial = new TelaInicial(pedido);
+        TelaInicial TelaInicial = new TelaInicial(pedido, atendente);
         favor.setVisible(false);
         TelaInicial.setVisible(true);
      }

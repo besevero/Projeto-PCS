@@ -19,10 +19,12 @@ public class TelaPedido extends javax.swing.JFrame {
     private DefaultListModel modeloPedido = new DefaultListModel();
     ImageIcon click_MaisPedido = new ImageIcon(getClass().getResource("/Imagens/click_MaisPedidos.png"));
     ImageIcon botao_MaisPedido = new ImageIcon(getClass().getResource("/Imagens/botao_MaisPedidos.png"));
-    ControlePedido novo = new ControlePedido(this);
+    ControlePedido novo;
 
-    public TelaPedido(Pedido p) {
+    public TelaPedido(Pedido p, TelaAtendente atendente) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        novo = new ControlePedido(this, atendente);
         novo.setPedido(p);
         listaPedido.setModel(modeloPedido);
         novo.insereLista(modeloPedido);
@@ -42,7 +44,9 @@ public class TelaPedido extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Seus Pedidos");
         setBackground(new java.awt.Color(247, 224, 182));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 224, 182));
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));

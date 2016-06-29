@@ -15,12 +15,14 @@ import javax.swing.ImageIcon;
  */
 public class TelaMolhos extends javax.swing.JFrame {
     
- ControleTelaMolhos novo = new ControleTelaMolhos(this);
+ ControleTelaMolhos novo;
     /**
      * Creates new form TelaMassas
      */
-    public TelaMolhos(Pedido s) {
+    public TelaMolhos(Pedido s, TelaAtendente atendente) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        novo = new ControleTelaMolhos(this, atendente);
         novo.setPedido(s);
         proximo.setEnabled(false);
     }
@@ -65,6 +67,8 @@ public class TelaMolhos extends javax.swing.JFrame {
         branco = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Molhos");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 224, 182));
 

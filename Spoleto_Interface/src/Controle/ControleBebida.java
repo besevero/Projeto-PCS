@@ -8,6 +8,7 @@ package Controle;
 import Model.Bebida;
 import Model.Pedido;
 import Model.Produto;
+import View.TelaAtendente;
 import View.TelaBebidas;
 import View.TelaInicial;
 import View.TelaPedido;
@@ -24,20 +25,22 @@ public class ControleBebida {
      private TelaBebidas TelaBebidas;
      private ArrayList<Produto> produtos = new ArrayList();
      private Bebida bebida = new Bebida();
+     private TelaAtendente atendente;
    
      
-     public ControleBebida(TelaBebidas TelaBebidas){
+     public ControleBebida(TelaBebidas TelaBebidas, TelaAtendente atendente){
          this.pedido = new Pedido();
+         this.atendente = atendente;
          this.TelaBebidas = TelaBebidas;
      }
      
      public void iniciaPedido(){
-        TelaPedido TelaPedido = new TelaPedido(getPedido());
+        TelaPedido TelaPedido = new TelaPedido(getPedido(), atendente);
         getTelaBebidas().setVisible(false);
         TelaPedido.setVisible(true);
      }
      public void iniciaPromocao(){
-        TelaPromo TelaPromo = new TelaPromo(getPedido());
+        TelaPromo TelaPromo = new TelaPromo(getPedido(), atendente);
         getTelaBebidas().setVisible(false);
         TelaPromo.setVisible(true);
      }
@@ -63,7 +66,7 @@ public class ControleBebida {
     }
      public void cancelar(){
       apagaPedido();
-      TelaInicial TelaInicial = new TelaInicial(pedido);
+      TelaInicial TelaInicial = new TelaInicial(pedido, atendente);
       TelaInicial.setVisible(true);
       TelaBebidas.setVisible(false);
       

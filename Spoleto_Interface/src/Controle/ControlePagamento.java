@@ -6,6 +6,7 @@
 package Controle;
 
 import Model.Pedido;
+import View.TelaAtendente;
 import View.TelaCartao;
 import View.TelaInicial;
 import View.TelaPagamento;
@@ -19,9 +20,11 @@ import javax.swing.DefaultListModel;
 public class ControlePagamento {
     private Pedido pedido;
     private TelaPagamento TelaPagamento;
+    private TelaAtendente atendente;
     
-    public ControlePagamento(TelaPagamento TelaPagamento){
+    public ControlePagamento(TelaPagamento TelaPagamento, TelaAtendente atendente){
         this.pedido = new Pedido();
+        this.atendente = atendente;
         this.TelaPagamento = TelaPagamento;
     }
     public void insereListaPgto(DefaultListModel modeloPedido){
@@ -39,17 +42,17 @@ public class ControlePagamento {
          return totalCompra;
     }
     public void insereCartao(){
-        TelaCartao TelaCartao = new TelaCartao(pedido);
+        TelaCartao TelaCartao = new TelaCartao(pedido, atendente);
         TelaCartao.setVisible(true);
         TelaPagamento.setVisible(false);
     }
     public void inicio(){
-        TelaInicial TelaInicial = new TelaInicial(pedido);
+        TelaInicial TelaInicial = new TelaInicial(pedido, atendente);
         TelaInicial.setVisible(true);
         getTelaPagamento().setVisible(false);
     }
     public void voltar(){
-        TelaPedido TelaPedido = new TelaPedido(pedido);
+        TelaPedido TelaPedido = new TelaPedido(pedido, atendente);
         TelaPedido.setVisible(true);
         getTelaPagamento().setVisible(false);
     }

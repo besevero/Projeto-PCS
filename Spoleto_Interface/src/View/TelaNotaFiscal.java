@@ -16,10 +16,12 @@ public class TelaNotaFiscal extends javax.swing.JFrame {
     /**
      * Creates new form TelaNotaFiscal
      */
-    private ControleTelaNotaFiscal novo = new ControleTelaNotaFiscal(this);
+    private ControleTelaNotaFiscal novo;
     
-    public TelaNotaFiscal(Pedido p) {
+    public TelaNotaFiscal(Pedido p, TelaAtendente atendente) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        novo = new ControleTelaNotaFiscal(this, atendente);
         novo.setPedido(p);
         nrPedido.setText(novo.getPedido().converteSenha());
 	
@@ -45,6 +47,8 @@ public class TelaNotaFiscal extends javax.swing.JFrame {
         finalizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Finalizando");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 224, 182));
 

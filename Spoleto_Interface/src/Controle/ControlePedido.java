@@ -6,6 +6,7 @@
 package Controle;
 
 import Model.Pedido;
+import View.TelaAtendente;
 import View.TelaInicial;
 import View.TelaPagamento;
 import View.TelaPedido;
@@ -19,9 +20,11 @@ public class ControlePedido {
     
    private Pedido pedido;
     private TelaPedido TelaPedido;
+   private TelaAtendente atendente;
     
-    public ControlePedido(TelaPedido TelaPedido){
+    public ControlePedido(TelaPedido TelaPedido, TelaAtendente atendente){
         this.pedido = new Pedido();
+        this.atendente = atendente;
         this.TelaPedido = TelaPedido;
     }
     
@@ -32,12 +35,12 @@ public class ControlePedido {
         }
     }
     public void inicial(){
-        TelaInicial TelaInicial = new TelaInicial(getPedido());
+        TelaInicial TelaInicial = new TelaInicial(getPedido(), atendente);
         getTelaPedido().setVisible(false);
         TelaInicial.setVisible(true);
     }
     public void gerarPedido(){
-        TelaPagamento TelaPagamento = new TelaPagamento(getPedido());
+        TelaPagamento TelaPagamento = new TelaPagamento(getPedido(), atendente);
         getTelaPedido().setVisible(false);
         TelaPagamento.setVisible(true);
     }

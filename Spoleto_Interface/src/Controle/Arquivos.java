@@ -29,14 +29,14 @@ public class Arquivos {
         this.file = file;
     }
     
-    public void imprimir(){
+    public void imprimir(){        
         
-             try{ 
+        try{ 
                  XMLEncoder xmlEncoder= null;
         try{ 
             
-            xmlEncoder = new XMLEncoder ( new FileOutputStream (getFile()));
-           
+            xmlEncoder = new XMLEncoder ( new FileOutputStream (getFile(), true));           
+            
             xmlEncoder.writeObject(getEscrever());
         
         }

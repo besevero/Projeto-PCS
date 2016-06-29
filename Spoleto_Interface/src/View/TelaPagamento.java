@@ -13,10 +13,12 @@ import javax.swing.DefaultListModel;
 public class TelaPagamento extends javax.swing.JFrame {
     private DefaultListModel modeloPagamento = new DefaultListModel();
     
-    ControlePagamento novo = new ControlePagamento(this);
+    ControlePagamento novo;
     
-    public TelaPagamento(Pedido t) {
+    public TelaPagamento(Pedido t, TelaAtendente atendente) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        novo = new ControlePagamento(this, atendente);
         novo.setPedido(t);
         listaPgto.setModel(modeloPagamento);
         novo.insereListaPgto(modeloPagamento);
@@ -44,6 +46,8 @@ public class TelaPagamento extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Formas de Pagamento");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 224, 182));
 

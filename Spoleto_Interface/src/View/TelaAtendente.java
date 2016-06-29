@@ -5,10 +5,12 @@
  */
 package View;
 
+import Controle.ControleTelaAtendente;
 import Model.Pedido;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import javax.swing.JButton;
 
 /**
@@ -20,23 +22,19 @@ public class TelaAtendente extends javax.swing.JFrame {
     /**
      * Creates new form TelaAtendente
      */
-     private Pedido pedido;
+    private ControleTelaAtendente ControleTelaAtendente;    
      int qtdPedidos = 0;
-     private FlowLayout layout;
+     private GridLayout layout;
      private Container container;
      
     public TelaAtendente() {      
                    
         initComponents();
-        
-        layout = new FlowLayout();
+        ControleTelaAtendente = new ControleTelaAtendente(this);
+        layout = new GridLayout();
 	container = getContentPane();
-        PanelPedidos.setLayout(layout);
-        
-        PanelPedidos.setPreferredSize(new Dimension(1000,600));
-        AdicionarPedidos();
-        PanelPedido PanelPedido = new PanelPedido();
-        PanelPedidos.add(PanelPedido);        
+        PanelPedidos.setLayout(layout);        
+        PanelPedidos.setPreferredSize(new Dimension(1000,500));                 
     }
 
     /**
@@ -48,17 +46,72 @@ public class TelaAtendente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelPedidos = new javax.swing.JPanel();
         PanelTitulo = new javax.swing.JPanel();
         titulo = new javax.swing.JLabel();
         estoque = new javax.swing.JButton();
-        venda = new javax.swing.JButton();
-        botaoPedidos = new javax.swing.JButton();
+        relatorio = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        PanelPedidos = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema Atendente");
         setResizable(false);
 
-        PanelPedidos.setBackground(new java.awt.Color(247, 207, 132));
+        PanelTitulo.setBackground(new java.awt.Color(247, 207, 132));
+
+        titulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        titulo.setText("PEDIDOS");
+
+        estoque.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icon_estoque.png"))); // NOI18N
+        estoque.setText("ESTOQUE");
+        estoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                estoqueActionPerformed(evt);
+            }
+        });
+
+        relatorio.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        relatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icon_relatorio.png"))); // NOI18N
+        relatorio.setText("RELATÓRIO");
+        relatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                relatorioActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelTituloLayout = new javax.swing.GroupLayout(PanelTitulo);
+        PanelTitulo.setLayout(PanelTituloLayout);
+        PanelTituloLayout.setHorizontalGroup(
+            PanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelTituloLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(titulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(estoque)
+                .addGap(18, 18, 18)
+                .addComponent(relatorio)
+                .addGap(52, 52, 52))
+        );
+        PanelTituloLayout.setVerticalGroup(
+            PanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelTituloLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(titulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTituloLayout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addGroup(PanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
+        );
+
+        jScrollPane1.setBackground(new java.awt.Color(247, 207, 132));
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        PanelPedidos.setBackground(new java.awt.Color(247, 207, 182));
 
         javax.swing.GroupLayout PanelPedidosLayout = new javax.swing.GroupLayout(PanelPedidos);
         PanelPedidos.setLayout(PanelPedidosLayout);
@@ -71,99 +124,66 @@ public class TelaAtendente extends javax.swing.JFrame {
             .addGap(0, 516, Short.MAX_VALUE)
         );
 
-        PanelTitulo.setBackground(new java.awt.Color(247, 207, 182));
-
-        titulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        titulo.setText("PEDIDOS");
-
-        estoque.setText(" Estoque");
-        estoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                estoqueActionPerformed(evt);
-            }
-        });
-
-        venda.setText("Relatório ");
-
-        botaoPedidos.setText("pedido");
-        botaoPedidos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoPedidosActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout PanelTituloLayout = new javax.swing.GroupLayout(PanelTitulo);
-        PanelTitulo.setLayout(PanelTituloLayout);
-        PanelTituloLayout.setHorizontalGroup(
-            PanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelTituloLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(titulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoPedidos)
-                .addGap(46, 46, 46)
-                .addComponent(estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(venda, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
-        );
-        PanelTituloLayout.setVerticalGroup(
-            PanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelTituloLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(PanelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(titulo)
-                    .addComponent(estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(venda, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoPedidos))
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
+        jScrollPane1.setViewportView(PanelPedidos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelPedidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(PanelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(PanelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PanelPedidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    public void AdicionarPedidos(){
-        
+    public ControleTelaAtendente getControle(){
+        return ControleTelaAtendente;
+    }
+    public ControleTelaAtendente getControleAtendente(){
+        return ControleTelaAtendente;
+    }
+    public void AdicionarPedidos(Pedido pedido){
+        PanelPedido PanelPedido = new PanelPedido(this);
+        PanelPedido.setTextPedido("PRODUTOS: \n");
+        for(int i = 0; i < pedido.getPratos().size(); i++){
+            String produto = pedido.getPratos().get(i).getNome() + "\n";
+            PanelPedido.setTextPedido(produto);
+        }            
+        PanelPedido.setSenha(Integer.toString(pedido.getSenha()));
+        PanelPedidos.add(PanelPedido);
+        Dimension d = PanelPedidos.getPreferredSize();
+        d.setSize(d.getWidth()+ 100,d.getHeight());
+        PanelPedidos.setPreferredSize(d);
+        this.setVisible(false);
+        this.setVisible(true);        
+    }
+    public void retirarPedido(PanelPedido panel){
+        PanelPedidos.remove(panel);
+        Dimension d = PanelPedidos.getPreferredSize();
+        d.setSize(d.getWidth()- 100,d.getHeight());
+        PanelPedidos.setPreferredSize(d);
+        this.setVisible(false);
+        this.setVisible(true);
     }
     private void estoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estoqueActionPerformed
-      TelaEstoque TelaEstoque = new TelaEstoque();
+      TelaEstoque TelaEstoque = new TelaEstoque(this);
       TelaEstoque.setVisible(true);
       this.setVisible(false);
     }//GEN-LAST:event_estoqueActionPerformed
 
-    private void botaoPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPedidosActionPerformed
+    private void relatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatorioActionPerformed
         // TODO add your handling code here:
-        PanelPedido PanelPedido = new PanelPedido();
-        PanelPedidos.add(PanelPedido);
-        qtdPedidos++;
-        if(qtdPedidos > 4){
-            tamanho(qtdPedidos);
-        }
-        this.setVisible(false);
-        this.setVisible(true);
-    }//GEN-LAST:event_botaoPedidosActionPerformed
+        TelaSenhaGerente senha = new TelaSenhaGerente();
+        senha.setVisible(true);
+    }//GEN-LAST:event_relatorioActionPerformed
 
-    public void tamanho(int tam){        
-        //return tam + 400;
-        PanelPedidos.setPreferredSize(new Dimension(tam,600));
-        this.setVisible(false);
-        this.setVisible(true);
-    }
     /**
      * @param args the command line arguments
      */
@@ -202,9 +222,9 @@ public class TelaAtendente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelPedidos;
     private javax.swing.JPanel PanelTitulo;
-    private javax.swing.JButton botaoPedidos;
     private javax.swing.JButton estoque;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton relatorio;
     private javax.swing.JLabel titulo;
-    private javax.swing.JButton venda;
     // End of variables declaration//GEN-END:variables
 }

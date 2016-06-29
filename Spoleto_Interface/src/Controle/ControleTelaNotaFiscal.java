@@ -6,6 +6,7 @@
 package Controle;
 
 import Model.Pedido;
+import View.TelaAtendente;
 import View.TelaInicial;
 import View.TelaNotaFiscal;
 import View.TelaPagamento;
@@ -17,19 +18,19 @@ import View.TelaPagamento;
 public class ControleTelaNotaFiscal {
     private Pedido pedido;
     private TelaNotaFiscal TelaNotaFiscal;
-    private ControleTelaAtendente ControleTelaAtendente; 
+    private TelaAtendente atendente;
     
-    public ControleTelaNotaFiscal(TelaNotaFiscal TelaNotaFiscal){
+    public ControleTelaNotaFiscal(TelaNotaFiscal TelaNotaFiscal, TelaAtendente atendente){
         this.pedido = new Pedido();
+        this.atendente = atendente;
         this.TelaNotaFiscal = TelaNotaFiscal;
-        this.ControleTelaAtendente = new ControleTelaAtendente();
     }
     public void finalizar(){
-        TelaInicial TelaInicial = new TelaInicial(pedido);
+        TelaInicial TelaInicial = new TelaInicial(pedido, atendente);
         TelaNotaFiscal.setVisible(false);
-        TelaInicial.setVisible(true);
+        TelaInicial.setVisible(true);        
+        atendente.getControleAtendente().MostrarPedido(pedido);
         pedido.incrementaSenha();
-        ControleTelaAtendente.MostrarPedido(pedido);
         pedido.getPratos().clear();
         
     }

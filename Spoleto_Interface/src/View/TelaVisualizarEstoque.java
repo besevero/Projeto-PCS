@@ -23,9 +23,11 @@ import java.util.ArrayList;
  */
 public class TelaVisualizarEstoque extends javax.swing.JFrame {
 
-    private DefaultListModel modeloEstoque = new DefaultListModel();
+    private DefaultListModel modeloEstoque = new DefaultListModel();  
     private ControleEstoque controleEstoque;
     private String nome;
+    private TelaAtendente atendente;
+    private TelaEstoque estoque;
     private boolean reposicao = false;
     private ArrayList produto = new ArrayList();
     
@@ -154,9 +156,11 @@ public class TelaVisualizarEstoque extends javax.swing.JFrame {
         }
             
     }
-    public TelaVisualizarEstoque(String nome) {
+    public TelaVisualizarEstoque(String nome, TelaAtendente atendente, TelaEstoque estoque) {
         this.nome = nome;
-        initComponents();
+        this.atendente = atendente;
+        this.estoque = estoque;
+        initComponents();        
         if(nome.equals("Promocao.xml")){
                 titulo.setText("Pratos Promoção");
         }
@@ -176,6 +180,8 @@ public class TelaVisualizarEstoque extends javax.swing.JFrame {
         listaDoEstoque = new javax.swing.JList<String>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Visualizando Estoque");
+        setResizable(false);
 
         ok.setText("OK");
         ok.addActionListener(new java.awt.event.ActionListener() {
@@ -241,15 +247,13 @@ public class TelaVisualizarEstoque extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
-      TelaEstoque TelaEstoque  = new TelaEstoque ();
-      TelaEstoque .setVisible(true);
-      this.setVisible(false);
+      estoque.setVisible(true);
+      this.dispose();
     }//GEN-LAST:event_voltarActionPerformed
 
     private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
-      TelaAtendente TelaAtendente  = new TelaAtendente();
-      TelaAtendente.setVisible(true);
-      this.setVisible(false);
+      atendente.setVisible(true);
+      this.dispose();
     }//GEN-LAST:event_okActionPerformed
 
     private void reporActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporActionPerformed

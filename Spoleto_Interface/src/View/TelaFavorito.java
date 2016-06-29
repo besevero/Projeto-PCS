@@ -18,10 +18,12 @@ public class TelaFavorito extends javax.swing.JFrame {
     /**
      * Creates new form TelaFavorito
      */
-    ControleTelaFavoritos ControleFavorito = new ControleTelaFavoritos(this);
+    ControleTelaFavoritos ControleFavorito;
     
-    public TelaFavorito(Pedido s) {
-        initComponents();        
+    public TelaFavorito(Pedido s, TelaAtendente atendente) {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        ControleFavorito = new ControleTelaFavoritos(this, atendente);
         ControleFavorito.setPedido(s);
         proximo.setEnabled(false);
     }
@@ -57,6 +59,8 @@ public class TelaFavorito extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Favoritos");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 224, 182));
 

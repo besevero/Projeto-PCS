@@ -7,6 +7,7 @@ package Controle;
 
 import Model.Molho;
 import Model.Pedido;
+import View.TelaAtendente;
 import View.TelaBebidas;
 import View.TelaExtras;
 import View.TelaInicial;
@@ -20,15 +21,17 @@ public class ControleTelaMolhos {
          private Pedido pedido;
          private TelaMolhos TelaMolhos;
          private Molho molho = new Molho();
+         private TelaAtendente atendente;
          
          
-         public ControleTelaMolhos(TelaMolhos TelaMolhos){
+         public ControleTelaMolhos(TelaMolhos TelaMolhos, TelaAtendente atendente){
              this.pedido = new Pedido();
+             this.atendente = atendente;
              this.TelaMolhos = TelaMolhos;
                      
          }
          public void iniciaBebida(){
-            TelaBebidas TelaBebidas = new TelaBebidas(pedido);
+            TelaBebidas TelaBebidas = new TelaBebidas(pedido, atendente);
             TelaBebidas.setVisible(true);
             TelaMolhos.setVisible(false);
          }
@@ -40,7 +43,7 @@ public class ControleTelaMolhos {
          this.iniciaBebida();
          }
         public void inicial(){
-            TelaInicial TelaInicial = new TelaInicial(pedido);
+            TelaInicial TelaInicial = new TelaInicial(pedido, atendente);
             TelaMolhos.setVisible(false);
             TelaInicial.setVisible(true);
         }
@@ -48,7 +51,7 @@ public class ControleTelaMolhos {
                 if((pedido.getPratos().size())%2 != 0){
                     pedido.getPratos().remove((pedido.getPratos().size()-1));
                 }
-                TelaExtras TelaExtras = new TelaExtras(pedido);
+                TelaExtras TelaExtras = new TelaExtras(pedido, atendente);
                 TelaExtras.setVisible(true);
                 TelaMolhos.setVisible(false);
             }

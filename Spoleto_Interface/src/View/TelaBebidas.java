@@ -14,7 +14,7 @@ public class TelaBebidas extends javax.swing.JFrame {
     /**
      * Creates new form TelaBebidas
      */
-    ControleBebida novo = new ControleBebida(this);
+    ControleBebida novo;
             
     public void desativar(){
         coca.setEnabled(false);
@@ -32,8 +32,10 @@ public class TelaBebidas extends javax.swing.JFrame {
         uva.setEnabled(true);
         proximo.setEnabled(false);
     }
-    public TelaBebidas(Pedido s) {
+    public TelaBebidas(Pedido s, TelaAtendente atendente) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        novo = new ControleBebida(this, atendente);
         novo.setPedido(s);
         proximo.setEnabled(false);
     }
@@ -63,6 +65,8 @@ public class TelaBebidas extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Bebidas");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 224, 182));
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));

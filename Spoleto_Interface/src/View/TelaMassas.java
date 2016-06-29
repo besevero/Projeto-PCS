@@ -15,14 +15,16 @@ import javax.swing.ImageIcon;
  */
 public class TelaMassas extends javax.swing.JFrame {
     
-    private ControleTelaMassas novo = new ControleTelaMassas(this);
+    private ControleTelaMassas novo;
     
     /**
      * Creates new form TelaMassas
      */
     
-    public TelaMassas(Pedido s) {
+    public TelaMassas(Pedido s, TelaAtendente atendente) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        novo = new ControleTelaMassas(this, atendente);
         novo.setPedido(s);
         proximo.setEnabled(false);
     }
@@ -86,6 +88,8 @@ public class TelaMassas extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Massas");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 224, 182));
 

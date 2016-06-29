@@ -10,6 +10,7 @@ import java.beans.XMLEncoder;
 import java.io.IOException;
 import java.io.FileOutputStream;
 import Model.Pedido;
+import javax.swing.JOptionPane;
 
 
 
@@ -22,11 +23,13 @@ public class TelaCartao extends javax.swing.JFrame {
     /**
      * Creates new form TelaCartao
      */
-    ControleTelaCartao novo = new ControleTelaCartao(this);
+    ControleTelaCartao novo;
     
-    public TelaCartao(Pedido p) {
+    public TelaCartao(Pedido p, TelaAtendente atendente) {
         initComponents();
-        novo.setPedido(p);
+        this.setLocationRelativeTo(null);
+        novo = new ControleTelaCartao(this, atendente, p);
+        //novo.setPedido(p);
     }
 
     /**
@@ -49,6 +52,8 @@ public class TelaCartao extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Senha");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 224, 182));
 
@@ -157,7 +162,10 @@ public class TelaCartao extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
-        novo.imprimir(campoSenha.getText());
+        boolean senha = novo.imprimir(campoSenha.getText());
+        if(senha == false){
+            JOptionPane.showMessageDialog(null, "Senha Incorreta !", "ERRO", JOptionPane.ERROR_MESSAGE);
+        }
         novo.lerXML();
       
     }//GEN-LAST:event_okActionPerformed

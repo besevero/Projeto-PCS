@@ -17,10 +17,12 @@ public class TelaExtras extends javax.swing.JFrame {
     /**
      * Creates new form TelaMassas
      */
-    ControleTelaExtras novo = new ControleTelaExtras(this);
+    ControleTelaExtras novo;
     
-    public TelaExtras(Pedido s) {
+    public TelaExtras(Pedido s, TelaAtendente atendente) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        novo =  new ControleTelaExtras(this, atendente);
         novo.setPedido(s);
        
     }
@@ -69,6 +71,8 @@ public class TelaExtras extends javax.swing.JFrame {
         RadioNao = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Extras");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 224, 182));
 
