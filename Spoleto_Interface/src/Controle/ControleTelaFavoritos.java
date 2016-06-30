@@ -28,9 +28,11 @@ public class ControleTelaFavoritos{
          this.favor = favor;
      }
       public void iniciaBebida(){
+        
         TelaBebidas bebidas = new TelaBebidas(pedido, atendente);
         favor.setVisible(false);
         bebidas.setVisible(true);
+        
     }
      public void inicial(){
         TelaInicial TelaInicial = new TelaInicial(pedido, atendente);
@@ -42,6 +44,7 @@ public class ControleTelaFavoritos{
             if(pratos.getFavorito().get(i).getNome().equals(escolha)){
                 pedido.getPratos().add(pratos.getFavorito().get(i));
             }
+         pedido.setCodigo(1);
          this.iniciaBebida();
      }
      public void voltarFavorito(){

@@ -10,7 +10,9 @@ import Model.Pedido;
 import Model.Produto;
 import View.TelaAtendente;
 import View.TelaBebidas;
+import View.TelaFavorito;
 import View.TelaInicial;
+import View.TelaMolhos;
 import View.TelaPedido;
 import View.TelaPromo;
 import java.util.ArrayList;
@@ -44,6 +46,23 @@ public class ControleBebida {
         getTelaBebidas().setVisible(false);
         TelaPromo.setVisible(true);
      }
+     public void Anterior(){
+         if(pedido.getCodigo() == 0){
+            TelaPromo TelaPromo = new TelaPromo(getPedido(), atendente);
+            getTelaBebidas().setVisible(false);
+            TelaPromo.setVisible(true);
+         }
+         if(pedido.getCodigo() == 1){
+            TelaFavorito TelaFavorito = new TelaFavorito(getPedido(), atendente);
+            getTelaBebidas().setVisible(false);
+            TelaFavorito.setVisible(true);
+         }
+         if(pedido.getCodigo() == 2){
+            TelaMolhos TelaMolhos = new TelaMolhos(getPedido(), atendente);
+            getTelaBebidas().setVisible(false);
+            TelaMolhos.setVisible(true);
+         }
+     }
      public void proximoBebida(String escolha){
             for(int i=0; i<getBebida().getIdBebida().size(); i++){
                 if(getBebida().getIdBebida().get(i).getNome().equals(escolha)){
@@ -56,7 +75,8 @@ public class ControleBebida {
      }
      public void voltaBebida(){
          getPedido().getPratos().remove((getPedido().getPratos().size()-1));
-         this.iniciaPromocao();
+        
+         this.Anterior();
      }
      public String selecao(int i){
          return getBebida().getIdBebida().get(i).getNome();
@@ -74,51 +94,29 @@ public class ControleBebida {
      public void pular(){
           this.iniciaPedido();
      }
-    /**
-     * @return the pedido
-     */
     public Pedido getPedido() {
         return pedido;
     }
-
-    /**
-     * @param pedido the pedido to set
-     */
     public void setPedido(Pedido pedido) {
         this.pedido = pedido;
     }
 
-    /**
-     * @return the TelaBebidas
-     */
     public TelaBebidas getTelaBebidas() {
         return TelaBebidas;
     }
 
-    /**
-     * @param TelaBebidas the TelaBebidas to set
-     */
     public void setTelaBebidas(TelaBebidas TelaBebidas) {
         this.TelaBebidas = TelaBebidas;
     }
 
-    /**
-     * @return the produtos
-     */
     public ArrayList<Produto> getProdutos() {
         return produtos;
     }
 
-    /**
-     * @param produtos the produtos to set
-     */
     public void setProdutos(ArrayList<Produto> produtos) {
         this.produtos = produtos;
     }
 
-    /**
-     * @return the bebida
-     */
     public Bebida getBebida() {
         return bebida;
     }
@@ -126,16 +124,10 @@ public class ControleBebida {
     ArrayList<Produto> getqtdeBebida(){
         return getBebida().getIdBebida();        
     }
-
-    /**
-     * @param bebida the bebida to set
-     */
     public void setBebida(Bebida bebida) {
         this.bebida = bebida;
     }
-
     void getqtdeBebida(ControleBebida[] b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
-

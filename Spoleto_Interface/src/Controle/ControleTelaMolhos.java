@@ -31,15 +31,18 @@ public class ControleTelaMolhos {
                      
          }
          public void iniciaBebida(){
+             
             TelaBebidas TelaBebidas = new TelaBebidas(pedido, atendente);
             TelaBebidas.setVisible(true);
             TelaMolhos.setVisible(false);
+            
          }
          public void proximo(String escolha){
             for(int i=0; i<molho.getMolho().size() ; i++)
                 if(molho.getMolho().get(i).getNome().equals(escolha)){
                     pedido.getPratos().add(molho.getMolho().get(i));
             }
+            pedido.setCodigo(2);
          this.iniciaBebida();
          }
         public void inicial(){

@@ -31,9 +31,11 @@ public class ControlePromo{
          this.atendente = atendente;
      }
      public void iniciaBebida(){
+         
         TelaBebidas bebidas = new TelaBebidas(pedido, atendente);
         promo.setVisible(false);
         bebidas.setVisible(true);
+        
     }
      public void inicial(){
         TelaInicial TelaInicial = new TelaInicial(pedido, atendente);
@@ -45,6 +47,7 @@ public class ControlePromo{
             if(pratos.getPromoc().get(i).getNome().equals(escolha)){
                 pedido.getPratos().add(pratos.getPromoc().get(i));
             }
+         pedido.setCodigo(0);
          this.iniciaBebida();
      }
      public void voltarPromo(){

@@ -35,7 +35,7 @@ public class Arquivos {
                  XMLEncoder xmlEncoder= null;
         try{ 
             
-            xmlEncoder = new XMLEncoder ( new FileOutputStream (getFile(), true));           
+            xmlEncoder = new XMLEncoder ( new FileOutputStream (getFile()));           
             
             xmlEncoder.writeObject(getEscrever());
         

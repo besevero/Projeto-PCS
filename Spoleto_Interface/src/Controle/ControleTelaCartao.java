@@ -9,6 +9,7 @@ import Model.Pedido;
 import View.TelaAtendente;
 import View.TelaCartao;
 import View.TelaNotaFiscal;
+import View.TelaPagamento;
 import java.util.ArrayList;
 
 /**
@@ -23,6 +24,7 @@ public class ControleTelaCartao {
     private Arquivos persistencia;
     private TelaAtendente atendente;
     
+    
     public ControleTelaCartao(TelaCartao TelaCartao, TelaAtendente atendente, Pedido pedido){
         this.pedido = pedido;
         this.atendente = atendente;
@@ -31,6 +33,8 @@ public class ControleTelaCartao {
         persistencia.setEscrever(pedido.getPratos());
     }
     public void cancelar(){
+        TelaPagamento pagamento = new TelaPagamento(pedido, atendente);
+        pagamento.setVisible(true);
         TelaCartao.setVisible(false);
     }
     

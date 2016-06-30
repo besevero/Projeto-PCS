@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class Pedido implements Serializable{
       private ArrayList<Produto> pratos = new ArrayList();
       private int senha;
+      private int codigo = 0;
       
     public Pedido() {
         this.senha = 1;
@@ -35,31 +36,30 @@ public class Pedido implements Serializable{
         return getPratos();
     }
 
-    /**
-     * @return the pratos
-     */
     public ArrayList<Produto> getPratos() {
         return pratos;
     }
 
-    /**
-     * @param pratos the pratos to set
-     */
     public void setPratos(ArrayList<Produto> pratos) {
         this.pratos = pratos;
     }
 
-    /**
-     * @return the senha
-     */
     public int getSenha() {
         return senha;
     }
 
-    /**
-     * @param senha the senha to set
-     */
     public void setSenha(int senha) {
         this.senha = senha;
     }          
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    /**
+     * @param codigo the codigo to set
+     */
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
 }
