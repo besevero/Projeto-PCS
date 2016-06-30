@@ -108,6 +108,7 @@ public class TelaBebidas extends javax.swing.JFrame {
 
         cancelar.setBackground(new java.awt.Color(252, 207, 132));
         cancelar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
         cancelar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -118,6 +119,7 @@ public class TelaBebidas extends javax.swing.JFrame {
 
         Pular.setBackground(new java.awt.Color(252, 207, 132));
         Pular.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Pular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icon_pular.png"))); // NOI18N
         Pular.setText("Pular");
         Pular.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Pular.addActionListener(new java.awt.event.ActionListener() {
@@ -141,8 +143,8 @@ public class TelaBebidas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(Pular, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15)
+                        .addComponent(Pular, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(proximo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
