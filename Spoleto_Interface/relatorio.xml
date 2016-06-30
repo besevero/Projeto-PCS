@@ -4,6 +4,32 @@
   <void method="add">
    <object class="Model.Produto">
     <void property="nome">
+     <string>Penne a Carbonara</string>
+    </void>
+    <void property="preco">
+     <int>15</int>
+    </void>
+    <void property="quantidade">
+     <int>35</int>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Model.Produto">
+    <void property="nome">
+     <string>Ice tea</string>
+    </void>
+    <void property="preco">
+     <int>4</int>
+    </void>
+    <void property="quantidade">
+     <int>35</int>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Model.Produto">
+    <void property="nome">
      <string>Spaghetti alho e oleo</string>
     </void>
     <void property="preco">
@@ -17,10 +43,10 @@
   <void method="add">
    <object class="Model.Produto">
     <void property="nome">
-     <string>Suco de uva</string>
+     <string>Coca-cola</string>
     </void>
     <void property="preco">
-     <int>5</int>
+     <int>4</int>
     </void>
     <void property="quantidade">
      <int>35</int>

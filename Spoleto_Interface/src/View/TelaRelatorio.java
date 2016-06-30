@@ -19,9 +19,11 @@ public class TelaRelatorio extends javax.swing.JFrame {
      * Creates new form TelaRelatorio
      */
     private Arquivos arquivo = new Arquivos("relatorio.xml");
+    private TelaAtendente atendente;
     
-    public TelaRelatorio() {
+    public TelaRelatorio(TelaAtendente atendente) {
         initComponents();
+        this.atendente = atendente;
         exibirRelatorio();
     }
 
@@ -60,7 +62,7 @@ public class TelaRelatorio extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         valorTotal = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        voltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,9 +102,14 @@ public class TelaRelatorio extends javax.swing.JFrame {
 
         valorTotal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icon_estoque_voltar.png"))); // NOI18N
-        jButton1.setText("VOLTAR");
+        voltar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icon_estoque_voltar.png"))); // NOI18N
+        voltar.setText("VOLTAR");
+        voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -144,7 +151,7 @@ public class TelaRelatorio extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(voltar)
                 .addGap(39, 39, 39))
         );
         jPanel1Layout.setVerticalGroup(
@@ -176,7 +183,7 @@ public class TelaRelatorio extends javax.swing.JFrame {
                     .addComponent(jScrollPane4)
                     .addComponent(jScrollPane2))
                 .addGap(56, 56, 56)
-                .addComponent(jButton1)
+                .addComponent(voltar)
                 .addGap(35, 35, 35))
         );
 
@@ -193,6 +200,11 @@ public class TelaRelatorio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
+        atendente.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_voltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,13 +236,12 @@ public class TelaRelatorio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaRelatorio().setVisible(true);
+                //new TelaRelatorio().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -250,5 +261,6 @@ public class TelaRelatorio extends javax.swing.JFrame {
     private javax.swing.JList listaMassas;
     private javax.swing.JList listaMolhos;
     private javax.swing.JLabel valorTotal;
+    private javax.swing.JButton voltar;
     // End of variables declaration//GEN-END:variables
 }

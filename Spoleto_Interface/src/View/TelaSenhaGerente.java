@@ -16,8 +16,11 @@ public class TelaSenhaGerente extends javax.swing.JFrame {
     /**
      * Creates new form TelaSenhaGerente
      */
-    public TelaSenhaGerente() {
+    private TelaAtendente atendente;
+    
+    public TelaSenhaGerente(TelaAtendente atendente) {
         initComponents();
+        this.atendente = atendente;
         this.setLocationRelativeTo(null);
     }
 
@@ -127,7 +130,7 @@ public class TelaSenhaGerente extends javax.swing.JFrame {
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
         // TODO add your handling code here:
         if(senha.getText().equals("123")){
-            TelaRelatorio relatorio = new TelaRelatorio();
+            TelaRelatorio relatorio = new TelaRelatorio(atendente);
             relatorio.setVisible(true);
             this.dispose();
         }
@@ -166,7 +169,7 @@ public class TelaSenhaGerente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaSenhaGerente().setVisible(true);
+                //new TelaSenhaGerente().setVisible(true);
             }
         });
     }

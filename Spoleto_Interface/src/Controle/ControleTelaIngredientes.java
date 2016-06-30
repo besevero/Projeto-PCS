@@ -58,8 +58,8 @@ public class ControleTelaIngredientes {
         if(cont == escolhasExtras.size()){
             
         for(int i = 0; i<ingredientes.getIdIngrediente().size();i++){
-            for(int j = 0; j<escolhasIngredientes.size();j++){
-                if(ingredientes.getIdIngrediente().get(i).getNome().equals(escolhasExtras.get(i).getText())){
+            for(int j = 0; j<escolhasExtras.size();j++){
+                if(ingredientes.getIdIngrediente().get(i).getNome().equals(escolhasExtras.get(j).getText())){
                     pedido.getPratos().add(ingredientes.getIdIngrediente().get(i));
                 }
                

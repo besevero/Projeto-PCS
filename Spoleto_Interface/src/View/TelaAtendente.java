@@ -180,7 +180,7 @@ public class TelaAtendente extends javax.swing.JFrame {
 
     private void relatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatorioActionPerformed
         // TODO add your handling code here:
-        TelaSenhaGerente senha = new TelaSenhaGerente();
+        TelaSenhaGerente senha = new TelaSenhaGerente(this);
         senha.setVisible(true);
     }//GEN-LAST:event_relatorioActionPerformed
 

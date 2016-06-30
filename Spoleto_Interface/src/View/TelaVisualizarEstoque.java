@@ -143,15 +143,16 @@ public class TelaVisualizarEstoque extends javax.swing.JFrame {
                 for(int i = 0 ; i<massa.getIdMassa().size();i++){
                 modeloEstoque.addElement(massa.getIdMassa().get(i).getNome()
                         + " ------ " + massa.getIdMassa().get(i).getQuantidade());
+                
             }
                 if(isReposicao() == true){
-                for(int i = 0 ; i<massa.getIdMassa().size();i++){
-                    massa.getIdMassa().get(i).setQuantidade(35);
-                }
-                    setReposicao(false);
-                persistencia.setEscrever(massa.getIdMassa());
-                persistencia.imprimir();
-            }
+                    for(int i = 0 ; i<massa.getIdMassa().size();i++){
+                        massa.getIdMassa().get(i).setQuantidade(35);
+                    }
+                        setReposicao(false);
+                    persistencia.setEscrever(massa.getIdMassa());
+                    persistencia.imprimir();
+                 }   
         }
         }
             
@@ -165,6 +166,9 @@ public class TelaVisualizarEstoque extends javax.swing.JFrame {
                 titulo.setText("Pratos Promoção");
         }
         else    titulo.setText(nome.substring(0, (nome.length()-4)));
+        if(nome.equals("Massa.xml")){
+            
+        }
         AdicionaEstoque(nome);
         listaDoEstoque.setModel(modeloEstoque);
     }
@@ -281,6 +285,9 @@ public class TelaVisualizarEstoque extends javax.swing.JFrame {
     private void reporActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporActionPerformed
         setReposicao(true);
         AdicionaEstoque(nome);
+        this.setVisible(false);
+        this.setVisible(true);
+        
     }//GEN-LAST:event_reporActionPerformed
 
     /**
